@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1514003322 source:/home/abdullah/git/CPractice/CPrimerPlusBook/Ch1to10Basics/printing.c
+	<stdio.h>
+
+1514051295 source:/home/abdullah/git/CPractice/CPrimerPlusBook/Ch1to10Basics/helloWorld.c
+	<stdio.h>
+	<stdlib.h>
+
