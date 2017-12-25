@@ -4,11 +4,17 @@
 #include <string.h>
 #include <limits.h>
 #include <float.h>
+#include <stdbool.h>    //This includes bool as an alias for _Bool and true and false as symbolic constants for 1 and 0, resp.
+#include <iso646.h>     //This allows the use of aliases for && (and), || (or), and ! (not).
+
 
 #define DENSITY 62.4    //average human density in lbs per cubic feet
 #define PAGES 959   //sample value for practicing format modifiers.
+#define ADJUST 7.31 //this is for the first program of Chapter 5 concerning shoe sizes
+#define SPACE ' '
 
-void print_example(int num);    //<-- This is the prototype of the function
+//void print_example(int num);    //<-- This is the prototype of the function; this is in the form of ANSI C and beyond.
+//int print_character_x_times(char c, int x);
 
 int main(void)
 {
@@ -161,17 +167,206 @@ int main(void)
 //    printf("*%-5.3d*\n", 2);
 
 //SPREADING A PRINTF STATEMENT OVER SEVERAL LINES FOR EASIER READABILITY
-    printf("Here's one way to print a ");
-    printf("long string.\n");
+//    printf("Here's one way to print a ");
+//    printf("long string.\n");
+//
+//    printf("Here's another way to print a \
+//long string.\n");
+//
+//    printf("Here's the newest way to print a "
+//            " long string.\n");     //ANSI C
+//
+////    char string_way[3] = "way";   //NOPE. NOT QUITE.
+//    printf("Here's another " "example of the newest" " way.\n");
 
-    printf("Here's another way to print a \
-long string.\n");
+//USING THE '*' PLACEHOLDER WITH PRINTF() AND SCANF()
+//    unsigned int field_width;
+//
+//    printf("What would you like the field width to be? (I am going to skip over your first character): ");
+//    scanf("%*c%d", &field_width);
+//
+//    int sample_value;
+//    printf("What value would you like to print at this specified field width? ");
+//    scanf("%d", &sample_value);
+//
+//    printf("\n\tHere is your value formatted as you said: *%*d*\n", field_width, sample_value);
 
-    printf("Here's the newest way to print a "
-            " long string.\n");     //ANSI C
+//FIRST PROGRAM OF CHAPTER 5. HERE IS THE FIRST USE OF THE WHILE LOOP
+//    const double SCALE = 0.333;
+//    double shoe, foot;
+//
+//    printf("Shoe Size (Men's)     Foot Length (Inches)\n");
+//
+//    shoe = 3.0;
+//    while(shoe < 18.5){
+//        foot = (SCALE * shoe) + ADJUST;
+//        printf("%10.2f %15.5f inches\n", shoe, foot);
+//        shoe += 0.01;
+//    }
+//
+//    printf("\nIf the shoe fits...\n");
 
-//    char string_way[3] = "way";   //NOPE. NOT QUITE.
-    printf("Here's another " "example of the newest" " way.\n");
+//TABLE OF SQUARES UP TO A CERTAIN NUMBER IN DISCRETE JUMPS SPECIFIED BY USER
+//    float start_number, end_number, square_of_number;
+//
+//    printf("This is a program to display a table of squares.\n\n");
+//
+//    printf("Where would you like to start? ");
+//    scanf("%f", &start_number);
+//    printf("Where would you like to end? ");
+//    scanf("%f", &end_number);
+//
+//    float discrete_jump;
+//    printf("What would you like the discrete jumps between numbers to be? ");
+//    scanf("%f", &discrete_jump);
+//
+//    printf("\n   Number          Square\n");
+//    for(float number_to_square=start_number; number_to_square<end_number; number_to_square+=discrete_jump){
+//
+//        square_of_number = number_to_square * number_to_square;
+//
+//        if(discrete_jump == 1){
+//            printf("     %-8.0f        %-8.0f\n", number_to_square, square_of_number);
+//        } else{
+//            printf("  %8.5f        %8.5f\n", number_to_square, square_of_number);
+//        }
+//    }
+
+//DIFFERENCE BETWEEN PREFIX AND POSTFIX FORM OF INCREMENTATION OPERATOR (SAME APPLIES TO DECREMENTATION)
+//    int i = 1, j = 1;
+//    int a = ++i, b = j++;
+//
+//    printf("Using i = 1 and a = ++i, i = %d, a = %d\n", i, a);
+//    printf("Using j = 1 and b = j++, j = %d, b = %d\n", j, b);
+
+//THE SIDE EFFECTS OF IMPLICIT TYPE CONVERSIONS
+//    char character_val;
+//    int integer_val;
+//    float float_val;
+//
+//    float_val = integer_val = character_val = 'C';
+//    printf("Assigning all variables C, character_val = %c, integer_val = %d, float_val = %2.2f\n", character_val, integer_val, float_val);
+//
+//    character_val++;
+//    integer_val = float_val + 2 * character_val;
+//    float_val = 2.0 * character_val + integer_val;
+//    printf("\nAdding one to the character_val, and doing various operations on the other two, character_val = %c, integer_val = %d, float_val = %2.2f\n", character_val, integer_val, float_val);
+//
+//    character_val = 1623;
+//    printf("\n\nAssining 1623 to character_val, now the character_val = %c\n", character_val);
+//
+//    character_val = 80.89;
+//    printf("\nAssigning 80.89 to character_val, now the character_val = %c\n", character_val);
+
+//FIRST USE OF FUNCTIONS WITH PARAMETERS
+//    char character_val;
+//    int number_of_times;
+//
+//    printf("What character would you like to print? ");
+//    scanf("%c", &character_val);
+//    printf("How many times? ");
+//    scanf("%d", &number_of_times);
+//
+//    printf("\n\nYour character was printed %d times.\n", print_character_x_times(character_val, number_of_times));
+
+//INTERESTING NOTE ON THE WHILE LOOP. WITH THE KNOWLEDGE THAT ';' ON A LINE IS CONSIDERED A STATEMENT ON ITS OWN, THE FOLLOWING
+//IS EQUIVALENT TO THE COMMENTED PART PROCEEDING IT.
+
+//    unsigned short int n = 0;
+//
+//    while(n++ < 3); //NOTE THIS ALSO IS ANOTHER DEMONSTRATION OF HOW INCREMENTATION WORKS. RECALL WHAT SEQUENCE POINTS ARE. FIRST THE CONDITION IS TESTED, THEN N IS INCREMENTED.
+//    printf("%2d", n);
+//
+//    printf("\nProgram done.");
+//
+////    while(n++ < 3){ ;}
+////    printf("%2d", n);
+////
+////    printf("\nProgram done.");
+
+//SOMETHING TO NOTE ABOUT HOW C EXPRESSIONS ALWAYS HAVE A VALUE.
+
+//    unsigned short int n;
+//
+//    printf("%d\n", n = 5 - 2);
+//
+//    //ALSO
+//
+//    unsigned short int m = 5 + (n = 5 + 3) * 2;
+//
+//    printf("%d\n", m);
+
+//FIRST-USE OF BOOLEAN VARIABLES
+//    bool is_good;
+//    char character_read;
+//
+//    printf("Are you good m8? (y/n) ");
+//    scanf("%c", &character_read);
+//
+//    if(character_read == 'y'){
+//        is_good = true;
+//    } else{
+//        is_good = false;
+//    }
+//
+//    if(is_good){
+//        printf("\nRight on man!\n");
+//    } else{
+//        printf("\nBe strong. Believe.\n");
+//    }
+
+//USE OF THE COMMA OPERATOR
+//    for(int i = 0, j = 0; i < 10; i++){
+//        j = i * i;
+//        printf("%-3d\t%-3d\n", i, j);
+//    }
+//    int x;
+//    printf("%d", (x = 5,3));
+
+//    int y = (x = 3), (int z = 5 * 2 - 3) + 5;
+
+//USE OF GETCHAR() AND PUTCHAR()
+//    char character;
+//
+//    //NOTE IF THERE IS NO INPUT, GETCHAR() WAITS FOR YOU TO PUT INPUT AND HIT ENTER.
+//    while((character = getchar()) != '\n'){     //NOTE THE FIRST PART OF THE CONDITION DEMONSTRATES THE VALUE OF AN ASSIGNMENT EXPRESSION
+//        if(isalpha(character)) {
+//            putchar(character + 1);
+//        } else {
+//            putchar(character);
+//        }
+//    }
+//
+//    putchar(character);
+
+//SHOWING THAT LOGICAL OPERATORS ARE SEQUENCE POINTS
+//    int i=0, j=0;
+//
+//    if(i++ == 0 && 1 / i == 1){ //Note how this works because the postfix incrementation occurs after the equality check.
+//        putchar(i + 65);
+//    }
+//
+//    if(++j == 0 && 1 / i == 1){ //Note how this doesn't work because the prefix incrementation occurs before the equality check
+//        putchar(j + 75);
+//    }
+
+//FIRST-USE OF THE CONDITIONAL OPERATOR
+//    int x = (1 > 2) ? 50 : 60;
+//    int y = (1 < 2) ? 50 : 60;
+//    printf("%-3d%-3d", x, y);
+
+//CHAPTER 8 INTRODUCTORY PROGRAM - ECHOING KEYBOARD INPUT TO CONSOLE
+//    int character;
+//    while((character = getchar()) != '\n'){
+//        putchar(character);
+//    }
+
+//USING EOF FOR INPUT - REWRITING THE ECHOING PROGRAM WITH EOF
+//    printf("%d", EOF);  //--> prints -1.
+    int character;
+    while((character = getchar()) != EOF) {     //NOTE THAT CTRL+D IS THE EOF FOR KEYBOARD INPUT.
+        putchar(character);
+    }
 
     return 0;
 }
@@ -182,4 +377,18 @@ void print_example(int num) {
     printf("computer.\n");
     printf("My favorite number is %d because it is first.\a", num);
 
+}
+
+int print_character_x_times(char c, int x) {
+    int debug_check = 0;
+
+    printf("\n");
+    for(int i=0; i<x; i++){
+        printf("#");
+        debug_check++;
+    }
+
+    printf("\n\nSorry but OCTOTHORP RULES ALL!!!");
+
+    return debug_check;
 }
