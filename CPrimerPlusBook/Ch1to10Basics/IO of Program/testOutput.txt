@@ -1,0 +1,5 @@
+What float would you like to use? The float value: 7.52e+01
+The character represented by the first byte of the value address: h
+The character represented by the second byte of the value address: z
+The character represented by the third byte of the value address: –
+The character represented by the fourth byte of the value address: B

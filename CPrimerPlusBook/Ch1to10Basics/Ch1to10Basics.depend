@@ -2,7 +2,17 @@
 1514003322 source:/home/abdullah/git/CPractice/CPrimerPlusBook/Ch1to10Basics/printing.c
 	<stdio.h>
 
-1514233909 source:/home/abdullah/git/CPractice/CPrimerPlusBook/Ch1to10Basics/helloWorld.c
+1514266115 source:/home/abdullah/git/CPractice/CPrimerPlusBook/Ch1to10Basics/helloWorld.c
+	<stdio.h>
+	<inttypes.h>
+	<string.h>
+	<limits.h>
+	<float.h>
+	<stdbool.h>
+	<iso646.h>
+	"ch1to10.h"
+
+1514264201 source:/home/abdullah/git/CPractice/CPrimerPlusBook/Ch1to10Basics/ch1to10.c
 	<stdio.h>
 	<inttypes.h>
 	<string.h>
@@ -11,12 +21,5 @@
 	<stdbool.h>
 	<iso646.h>
 
-1514258682 source:/home/abdullah/git/CPractice/CPrimerPlusBook/Ch1to10Basics/ch1to10.c
-	<stdio.h>
-	<inttypes.h>
-	<string.h>
-	<limits.h>
-	<float.h>
-	<stdbool.h>
-	<iso646.h>
+1514265592 /home/abdullah/git/CPractice/CPrimerPlusBook/Ch1to10Basics/ch1to10.h
 

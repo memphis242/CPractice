@@ -64,7 +64,7 @@ void swap_values(int * x, int * y) {
     *y = temp;
 }
 
-//int array_size(int array_to_be_sized[]) {                 //THIS CAN'T REALLY BE DONE STANDARD IN C!
+//int array_size(int array_to_be_sized[]) {                 //THIS CAN'T REALLY BE DONE STANDARDIZED IN C! LOOK TO CHARACTER STRING ARRAYS FOR THE ONLY IMPLEMENTATION
 //    return ((sizeof array_to_be_sized) / sizeof(int));
 //}
 
@@ -76,4 +76,46 @@ int sum_int_array(int * arr, int arr_size) {
     }
 
     return sum;
+}
+
+//Pass float pointer and function will interpret bytes as characters.
+//This makes use of the fact that the type of a pointer specifies the number of bytes that are hooked on to the address it is referring to
+void interpret_float_bytes_as_characters(float val) {
+    float* val_ptr = &val;
+    char* char1 = (char*) val_ptr;
+    char* char2 = char1 + 1;
+    char* char3 = char2 + 1;
+    char* char4 = char3 + 1;
+
+    printf("The float value: %.2e\nThe character represented by the first byte of the value address: %c\n"
+            "The character represented by the second byte of the value address: %c\n"
+            "The character represented by the third byte of the value address: %c\n"
+            "The character represented by the fourth byte of the value address: %c\n", *val_ptr, *char1, *char2, *char3, *char4);
+}
+
+void interpret_char_bytes_as_float() {
+    char* char_array[4];        //Is array so that we are guaranteed all char bytes are adjacent to each other.
+    printf("Your characters: ");
+//    scanf("%c %c %c %c", char_array, char_array + 1, char_array + 2, char_array + 3);
+    *char_array = getchar();
+    *(char_array + 1) = getchar();
+    *(char_array + 2) = getchar();
+    *(char_array + 3) = getchar();
+
+    float val;
+    float* val_ptr = (float*) char_array;
+    val = *val_ptr;
+    printf("The corresponding float value when connecting the addresses of the characters together: %e\n\n", val);
+
+    interpret_float_bytes_as_characters(val);
+}
+
+void print_array(int* arr, int arr_size) {
+    for(int i=0; i<arr_size; i++) {
+        if(i == (arr_size - 1)) {
+            printf("%d\n", *(arr + i));
+        } else {
+            printf("%d, ", *(arr + i));
+        }
+    }
 }

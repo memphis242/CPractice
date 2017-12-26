@@ -25,4 +25,10 @@ void swap_values(int * x, int * y);
 
 int sum_int_array(int* arr, int arr_size);
 
+void interpret_float_bytes_as_characters(float val);
+
+void interpret_char_bytes_as_float();
+
+void print_array(int* arr, int arr_size);
+
 #endif // CH1TO10_H_INCLUDED

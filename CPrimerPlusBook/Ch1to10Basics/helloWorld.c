@@ -434,8 +434,46 @@ int main(void)
 //    }
 
 //USING ARRAYS AS ARGUMENTS/PARAMETERS
-    int sample_array[5] = {1, 3, 5};
-    printf("Sum of the elements of the array: %d\n", sum_int_array(sample_array, 5));
+//    int sample_array[5] = {1, 3, 5};
+//    printf("Sum of the elements of the array: %d\n", sum_int_array(sample_array, 5));
+
+//SOME MORE FUN WITH POINTERS...
+//    printf("What float would you like to use? ");
+//    float val;
+//    scanf("%f", &val);
+//
+//    interpret_float_bytes_as_characters(&val);
+
+//VARIOUS OPERATIONS ON POINTERS
+//    int arr[5] = {100, 200, 300, 400, 500};
+//    printf("The array: ");
+//    print_array(arr, 5);
+//
+//    int* ptr1;
+//    int* ptr2;
+//    int* ptr3;      //For some reason, could not declare them in one line...
+//
+//    ptr1 = arr;
+//    ptr2 = arr + 2;
+//
+//    printf("Value of pointer, it's dereferenced value, and its address:\n");
+//    printf("ptr1 = %p  *ptr1 = %d  &ptr1 = %p\n", ptr1, *ptr1, &ptr1);
+//
+//    ptr3 = ptr1 + 4;
+//    printf("\nAdding an integer to a pointer:\n");
+//    printf("ptr1 + 4 = %p  *(ptr1 + 4) = %d\n", ptr3, *ptr3);
+//
+//    ptr2--;
+//    printf("\nValue of ptr2 after ptr2--:\n");
+//    printf("ptr2 = %p  *ptr2 = %d  &ptr2 = %p\n", ptr2, *ptr2, &ptr2);
+//
+//    printf("\nSubtracting two pointers from each other:\n");
+//    printf("ptr1 = %p  ptr3 = %p  (ptr3 - ptr1) = %td\n", ptr1, ptr3, (ptr3 - ptr1));
+
+//INTERPRETING CHARACTER BYTES AS FLOAT AND FLOAT BYTES AS CHARACTERS --> NEEDS WORK
+//    interpret_char_bytes_as_float();
+
+
 
     return 0;
 }
