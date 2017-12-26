@@ -7,14 +7,18 @@
 #include <stdbool.h>    //This includes bool as an alias for _Bool and true and false as symbolic constants for 1 and 0, resp.
 #include <iso646.h>     //This allows the use of aliases for && (and), || (or), and ! (not).
 
+#include "ch1to10.h"    //This is the header file for this project
 
-#define DENSITY 62.4    //average human density in lbs per cubic feet
-#define PAGES 959   //sample value for practicing format modifiers.
-#define ADJUST 7.31 //this is for the first program of Chapter 5 concerning shoe sizes
-#define SPACE ' '
-
+//#define DENSITY 62.4    //average human density in lbs per cubic feet
+//#define PAGES 959   //sample value for practicing format modifiers.
+//#define ADJUST 7.31 //this is for the first program of Chapter 5 concerning shoe sizes
+//#define SPACE ' '
+//
 //void print_example(int num);    //<-- This is the prototype of the function; this is in the form of ANSI C and beyond.
 //int print_character_x_times(char c, int x);
+//void display(char character_to_print, int rows, int columns);
+//void skip_to_next_line(void);
+//void trace_memory_addresses(int sample_value);
 
 int main(void)
 {
@@ -363,32 +367,120 @@ int main(void)
 
 //USING EOF FOR INPUT - REWRITING THE ECHOING PROGRAM WITH EOF
 //    printf("%d", EOF);  //--> prints -1.
-    int character;
-    while((character = getchar()) != EOF) {     //NOTE THAT CTRL+D IS THE EOF FOR KEYBOARD INPUT.
-        putchar(character);
-    }
+//    int character;
+//    while((character = getchar()) != EOF) {     //NOTE THAT CTRL+D IS THE EOF FOR KEYBOARD INPUT.
+//        putchar(character);
+//    }
+
+//MIXING INPUTS AND ACCOUNTING FOR THE DIFFERENCES BETWEEN SCANF() AND GETCHAR()
+//    int character, rows, columns;   //this program will print a certain character in a certain number of rows and columns using display()
+//
+//    printf("Type in what charcter you want to print along with how many rows and columns you wish: ");
+//    while((character = getchar()) != '\n') {
+//        if(scanf("%d %d", &rows, &columns) != 2){       //FOR SOME REASON, THERE SEEMS TO BE IN ISSUE WHEN THE NUMBERS ARE NEXT TO EACH OTHER.
+//            break;
+//        }
+//
+//        display((char) character, rows, columns);
+//
+//        skip_to_next_line();
+//
+//        printf("Do it again! Or just enter to quit: ");
+//    }
+//
+//    printf("Done.");
+
+//CHAPTER 9 RECURSION PRACTICE
+//    trace_memory_addresses(0);
+
+//CHAPTER 9 SHOWING WHERE VARIABLES AND THEIR VALUES/ADDRESSES ARE STORED
+//    int sample1 = 2, sample2 = 50;
+//
+//    printf("In main(), sample1 = %d and &sample1 = %p\n", sample1, &sample1);
+//    printf("In main(), sample2 = %d and &sample2 = %p\n", sample2, &sample2);
+//
+//    other_location(sample2);
+
+//USING POINTERS FOR THE FIRST TIME!!! WE SEEK TO SWAP TWO VARIABLE'S VALUES USING AN EXTERNAL FUNCTION.
+//    int x=5, y=10;
+//
+//    printf("Initially, x = %d, y = %d.\n", x, y);
+//    swap_values(&x, &y);
+//    printf("Now, after swapping, x = %d, y = %d.", x, y);
+
+//CHAPTER 10 USE OF DESIGNATED INITIALIZERS FOR ARRAY INITIALIZATION
+//    int days[MONTHS] = {31, 28, [4] = 31, 30, 31, [1] = 29};
+//    for(int i=0; i<MONTHS; i++) {
+//        if(i == MONTHS - 1) {
+//            printf("%3d\n", days[i]);
+//        } else {
+//            printf("%3d, ", days[i]);
+//        }
+//    }
+//    printf("\n");
+
+//RELATING THE ARRAYS TO POINTERS!
+//    short array_short[5];
+//    short * pointer_to_array_short;
+//    char array_char[5];
+//    char * pointer_to_array_char;
+//
+//    pointer_to_array_short = array_short;
+//    pointer_to_array_char = array_char;
+//
+//    printf("%23s %15s\n", "short", "char");
+//    for(int i=0; i<5; i++) {
+//        printf("Pointers + %d: %10p %10p\n", i, pointer_to_array_short + i, pointer_to_array_char + i);
+//    }
+
+//USING ARRAYS AS ARGUMENTS/PARAMETERS
+    int sample_array[5] = {1, 3, 5};
+    printf("Sum of the elements of the array: %d\n", sum_int_array(sample_array, 5));
 
     return 0;
 }
 
-void print_example(int num) {
-
-    printf("I am a simple ");
-    printf("computer.\n");
-    printf("My favorite number is %d because it is first.\a", num);
-
-}
-
-int print_character_x_times(char c, int x) {
-    int debug_check = 0;
-
-    printf("\n");
-    for(int i=0; i<x; i++){
-        printf("#");
-        debug_check++;
-    }
-
-    printf("\n\nSorry but OCTOTHORP RULES ALL!!!");
-
-    return debug_check;
-}
+//void print_example(int num) {
+//
+//    printf("I am a simple ");
+//    printf("computer.\n");
+//    printf("My favorite number is %d because it is first.\a", num);
+//
+//}
+//
+//int print_character_x_times(char c, int x) {
+//    int debug_check = 0;
+//
+//    printf("\n");
+//    for(int i=0; i<x; i++){
+//        printf("#");
+//        debug_check++;
+//    }
+//
+//    printf("\n\nSorry but OCTOTHORP RULES ALL!!!");
+//
+//    return debug_check;
+//}
+//
+//void display(char character_to_print, int rows, int columns) {
+//    for(int i=0; i<rows; i++){
+//        for(int j=0; j<columns; j++){
+//            putchar(character_to_print);
+//        }
+//        putchar('\n');
+//    }
+//    putchar('\n');
+//}
+//
+//void skip_to_next_line(void){
+//    while(getchar() != '\n') {
+//        continue;
+//    }
+//}
+//
+//void trace_memory_addresses(int sample_value) {
+//    printf("Level : %-3d Address: %p\n", sample_value, &sample_value);
+//    if(sample_value < 5) {
+//        trace_memory_addresses(sample_value + 1);
+//    }
+//}
