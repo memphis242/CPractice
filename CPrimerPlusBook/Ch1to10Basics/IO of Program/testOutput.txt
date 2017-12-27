@@ -1,5 +1,9 @@
-What float would you like to use? The float value: 7.52e+01
-The character represented by the first byte of the value address: h
-The character represented by the second byte of the value address: z
-The character represented by the third byte of the value address: –
-The character represented by the fourth byte of the value address: B
+Your characters: JKLS
+
+The corresponding float value when connecting the addresses of the characters together: 8.774365e+11
+
+The float value: 8.774365e+11
+The character represented by the first byte of the value address: J
+The character represented by the second byte of the value address: K
+The character represented by the third byte of the value address: L
+The character represented by the fourth byte of the value address: S

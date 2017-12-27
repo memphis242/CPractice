@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1514342301 source:/home/abdullah/git/CPractice/CPrimerPlusBook/Ch11Strings/src/ch1to10.c
+	<stdio.h>
+	<inttypes.h>
+	<string.h>
+	<limits.h>
+	<float.h>
+	<stdbool.h>
+	<iso646.h>
+

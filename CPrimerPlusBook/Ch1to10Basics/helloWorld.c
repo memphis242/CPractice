@@ -473,7 +473,54 @@ int main(void)
 //INTERPRETING CHARACTER BYTES AS FLOAT AND FLOAT BYTES AS CHARACTERS --> NEEDS WORK
 //    interpret_char_bytes_as_float();
 
+//DIFFERENCE BETWEEN PASSING AN ARRAY TO BE MODIFIED AND PASSING AN ARRAY PROTECTED
+//    double dip[5] = {1.0, 3.5, 17.2, 84.1, 20.0};
+//
+//    printf("The original array: ");
+//    print_array_double(dip, 5);
+//
+//    modify_array_double(dip, 5);
+//    printf("The array after modify_double_array: ");
+//    print_array_double(dip, 5);
 
+//2D ARRAYS - WHEN POINTERS GO MAD
+//    int zippo[4][2] = { {2, 4}, {1, 3}, {5, 10}, {0, 6} };  //just a quick recall, declaration states 4 arrays, each of two elements.
+//
+//    printf("   zippo = %p,    zippo + 1 = %p\n", zippo, zippo + 1);
+//    printf("zippo[0] = %p, zippo[0] + 1 = %p\n", zippo[0], zippo[0] + 1);
+//    printf("  *zippo = %p,   *zippo + 1 = %p\n", *zippo, *zippo + 1);
+//
+//    printf("\nzippo[0][0] = %d\n", zippo[0][0]);
+//    printf("*zippo[0] = %d\n", *zippo[0]);
+//    printf("**zippo = %d\n", **zippo);
+//    printf("zippo[2][1] = %d\n", zippo[2][1]);
+//    printf("*(*(zippo[2]) + 1) = %d\n", *(*(zippo + 2) + 1));
+
+//FUNCTIONS ON 2D ARRAYS
+//    int arr[ROWS][COLUMNS] = { {3, 2, 1, 5}, {1, 1, 1, 1}, {9, 2, 5, 2}, {50, 25, 101, 68} };
+//    printf("The 2D Array as declared: { {3, 2, 1, 5}, {1, 1, 1, 1}, {9, 2, 5, 2}, {50, 25, 101, 68} };\n\n");
+//
+//    print_2D_array_int(arr, ROWS);
+//    sum_rows_int(arr, ROWS);
+//    sum_columns_int(arr, ROWS);
+//
+//    int total = 0;
+//    sum_total_2D_int(arr, ROWS, &total);
+//    printf("Summed total of all elements: %d\n", total);
+
+//USING A 2D VLA ARRAY AND COMPOUND LITERAL --> CAN'T REALLY USE VLA TO MAKE A NEW ARRAY HERE. ALSO, COMPOUND LITERALS CAN'T BE VLAs.
+//    printf("What would you like the size of the 2D int VLA to be (enter more than 3 for each)? <rows> <columns> ");
+//    int rows, columns;
+//    scanf("%d %d", &rows, &columns);
+//    int arr[rows][columns];
+//
+//    printf("Initializing 2D array to { {5, 2, 3}, {1, 1, 1}, {2, 20, 17} }\n");
+//    arr = (int[rows][columns]) { {5, 2, 3}, {1, 1, 1}, {2, 20, 17} };
+//    printf("Sum of all elements in array: %d", sum_2D_vla_int(rows, columns, arr));
+
+//    int (*arr) [4] = (int [2][4]) { {5, 10, 16, 28}, {8, 8, 29, 101} };
+//    print_2D_array_int(arr, 2);
+//    printf("Sum of array: %d\n", sum_2D_vla_int(2, 4, arr));
 
     return 0;
 }
