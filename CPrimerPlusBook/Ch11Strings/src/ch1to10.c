@@ -154,13 +154,18 @@ void print_ASCII_vals_of_bytes(const char* arr, int arr_size) {
 }
 
 void print_array(const int arr[], int arr_size) {
+    printf("\nThe integer array as printed from %s: { ", __func__);
+
     for(int i=0; i<arr_size; i++) {
+
         if(i == (arr_size - 1)) {
-            printf("%d\n", arr[i]);
+            printf("%d", arr[i]);
         } else {
             printf("%d, ", arr[i]);
         }
     }
+
+    printf(" };\n\n");
 }
 
 void print_array_double(const double arr[], int arr_size) {
@@ -180,7 +185,7 @@ void modify_array_double(double* arr, int arr_size) {
 }
 
 void print_2D_array_int(const int (* arr) [COLUMNS], int rows) {
-    printf("The 2D Array as printed from function: { ");
+    printf("The 2D Array as printed from %s: { ", __func__);
 
     for(int i=0; i<rows; i++) {
 
@@ -196,7 +201,11 @@ void print_2D_array_int(const int (* arr) [COLUMNS], int rows) {
 
         }
 
-        printf(" }, ");
+        if(i == rows - 1) {
+            printf(" }");
+        } else {
+            printf(" }, ");
+        }
     }
 
     printf(" };\n\n");

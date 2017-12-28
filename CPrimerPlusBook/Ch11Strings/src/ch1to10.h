@@ -11,6 +11,8 @@
 #define LINE 80
 #define MSG "I am a symbolic string message."
 #define MAXLENGTH 81
+#define STR_LIM 50
+#define CHAR_ARR_LIM 4
 
 void print_example(int num);    //<-- This is the prototype of the function; this is in the form of ANSI C and beyond.
 

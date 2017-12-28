@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1514342301 source:/home/abdullah/git/CPractice/CPrimerPlusBook/Ch11Strings/src/ch1to10.c
+1514415010 source:/home/abdullah/git/CPractice/CPrimerPlusBook/Ch11Strings/src/ch1to10.c
 	<stdio.h>
 	<inttypes.h>
 	<string.h>
@@ -7,4 +7,20 @@
 	<float.h>
 	<stdbool.h>
 	<iso646.h>
+
+1514452272 source:/home/abdullah/git/CPractice/CPrimerPlusBook/Ch11Strings/src/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"ch1to10.h"
+	"ch11.h"
+
+1514407308 /home/abdullah/git/CPractice/CPrimerPlusBook/Ch11Strings/src/ch1to10.h
+
+1514452849 source:/home/abdullah/git/CPractice/CPrimerPlusBook/Ch11Strings/src/ch11.c
+	"ch1to10.h"
+	<stdio.h>
+	<string.h>
+
+1514452091 /home/abdullah/git/CPractice/CPrimerPlusBook/Ch11Strings/src/ch11.h
 
