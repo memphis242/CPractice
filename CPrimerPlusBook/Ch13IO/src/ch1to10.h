@@ -44,7 +44,7 @@ void interpret_char_bytes_as_float();
 
 void print_ASCII_vals_of_bytes(const char* arr, int arr_size);
 
-void print_array(const int arr[], int arr_size);
+void print_array_int(const int arr[], int arr_size);
 
 void print_array_double(const double arr[], int arr_size);
 
@@ -59,5 +59,11 @@ void sum_columns_int(int arr[][COLUMNS], int rows);
 void sum_total_2D_int(int (* arr) [COLUMNS], int rows, int* total);
 
 int sum_2D_vla_int(int rows, int columns, const int arr[rows][columns]);
+
+void fill_int_array(int *arr, int size, int min, int max);
+
+void fill_double_array(double *arr, int size, double min, double max, double diff);
+
+void fill_char_array(char *arr, int size);
 
 #endif // CH1TO10_H_INCLUDED

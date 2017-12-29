@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 #include <inttypes.h>   //Note that the stdint.h header file is included in the inttypes header.
 #include <string.h>
 #include <limits.h>
@@ -83,15 +85,15 @@ int sum_int_array(int * arr, int arr_size) {
     return sum;
 }
 
+void new_line() {
+    puts("");
+}
+
 void print_line() {
     for(int i=0; i<LINE; i++) {
         putchar('*');
     }
     new_line();
-}
-
-void new_line(void) {
-    puts("");
 }
 
 void print_title(const char* title) {
@@ -100,71 +102,73 @@ void print_title(const char* title) {
     print_line();
 }
 
-//Pass float pointer and function will interpret bytes as characters.
-//This makes use of the fact that the type of a pointer specifies the number of bytes that are hooked on to the address it is referring to
-void interpret_char_bytes_as_float() {
-    print_line();
-//    printf("In function: interpret_char_bytes_as_float()\n\n");
-    printf(__func__);       //CAN ALSO USE __FILE__, __LINE__, and __TIMESTAMP__
-    printf("\n");
+////Pass float pointer and function will interpret bytes as characters.
+////This makes use of the fact that the type of a pointer specifies the number of bytes that are hooked on to the address it is referring to
+//void interpret_char_bytes_as_float() {
+//    print_line();
+////    printf("In function: interpret_char_bytes_as_float()\n\n");
+//    printf(__func__);       //CAN ALSO USE __FILE__, __LINE__, and __TIMESTAMP__
+//    printf("\n");
+//
+//    char char_array[4];        //Is array so that we are guaranteed all char bytes are adjacent to each other.
+//    printf("Input characters: ");
+////    scanf("%c %c %c %c", char_array, char_array + 1, char_array + 2, char_array + 3);
+//    *char_array = getchar();
+//    *(char_array + 1) = getchar();
+//    *(char_array + 2) = getchar();
+//    *(char_array + 3) = getchar();  //More convenient to use scanf("%s", char_array);
+//
+//    printf("Charcaters you inputted: %c %c %c %c\n", char_array[0], char_array[1], char_array[2], char_array[3]);
+//
+//    float val;
+//    float* val_ptr = (float*) char_array;
+//    val = *val_ptr; //equivalent to doing val = * ( (float*) char_array)
+//
+//    printf("\nThe corresponding float value synthesized from adjacent char bytes: %e\n\n", val);
+//
+//    interpret_float_bytes_as_characters(val_ptr);   //equivalent to just doing &val
+//}
+//
+//void interpret_float_bytes_as_characters(float* val_ptr) {
+//    print_line();
+////    printf("In function: interpret_float_bytes_as_characters()\n\n");
+//    printf(__func__);
+//    printf("\n");
+//
+////    float val = *val_ptr;
+////    char* char1 = (char*) val_ptr;
+////    char* char2 = char1 + 1;
+////    char* char3 = char2 + 1;
+////    char* char4 = char3 + 1;
+//
+////ALL THAT CAN BE REDUCED TO THE FOLLOWING STATAMENT
+//    char* char_array = (char*) val_ptr;
+//
+//    printf("The float value: %e\nThe character represented by the first byte of the value address: %c\n"
+//            "The character represented by the second byte of the value address: %c\n"
+//            "The character represented by the third byte of the value address: %c\n"
+//            "The character represented by the fourth byte of the value address: %c\n", *val_ptr, char_array[0], char_array[1], char_array[2], char_array[3]);
+//
+//    print_ASCII_vals_of_bytes(char_array, 4);
+//}
+//
+//void print_ASCII_vals_of_bytes(const char* arr, int arr_size) {
+//    print_line();
+////    printf("In function: print_ASCII_vals_of_bytes()\n\n");
+//    printf(__func__);
+//    printf("\n");
+//
+//    for(int i=0; i<arr_size; i++) {
+//        printf("ASCII Value of Element %c: %d\n", arr[i], arr[i]);
+//    }
+//    printf("\n");
+//}
 
-    char char_array[4];        //Is array so that we are guaranteed all char bytes are adjacent to each other.
-    printf("Input characters: ");
-//    scanf("%c %c %c %c", char_array, char_array + 1, char_array + 2, char_array + 3);
-    *char_array = getchar();
-    *(char_array + 1) = getchar();
-    *(char_array + 2) = getchar();
-    *(char_array + 3) = getchar();  //More convenient to use scanf("%s", char_array);
+void print_array_int(const int arr[], int arr_size) {
+    //printf("\nThe integer array as printed from %s: { ", __func__);
 
-    printf("Charcaters you inputted: %c %c %c %c\n", char_array[0], char_array[1], char_array[2], char_array[3]);
-
-    float val;
-    float* val_ptr = (float*) char_array;
-    val = *val_ptr; //equivalent to doing val = * ( (float*) char_array)
-
-    printf("\nThe corresponding float value synthesized from adjacent char bytes: %e\n\n", val);
-
-    interpret_float_bytes_as_characters(val_ptr);   //equivalent to just doing &val
-}
-
-void interpret_float_bytes_as_characters(float* val_ptr) {
-    print_line();
-//    printf("In function: interpret_float_bytes_as_characters()\n\n");
-    printf(__func__);
-    printf("\n");
-
-//    float val = *val_ptr;
-//    char* char1 = (char*) val_ptr;
-//    char* char2 = char1 + 1;
-//    char* char3 = char2 + 1;
-//    char* char4 = char3 + 1;
-
-//ALL THAT CAN BE REDUCED TO THE FOLLOWING STATAMENT
-    char* char_array = (char*) val_ptr;
-
-    printf("The float value: %e\nThe character represented by the first byte of the value address: %c\n"
-            "The character represented by the second byte of the value address: %c\n"
-            "The character represented by the third byte of the value address: %c\n"
-            "The character represented by the fourth byte of the value address: %c\n", *val_ptr, char_array[0], char_array[1], char_array[2], char_array[3]);
-
-    print_ASCII_vals_of_bytes(char_array, 4);
-}
-
-void print_ASCII_vals_of_bytes(const char* arr, int arr_size) {
-    print_line();
-//    printf("In function: print_ASCII_vals_of_bytes()\n\n");
-    printf(__func__);
-    printf("\n");
-
-    for(int i=0; i<arr_size; i++) {
-        printf("ASCII Value of Element %c: %d\n", arr[i], arr[i]);
-    }
-    printf("\n");
-}
-
-void print_array(const int arr[], int arr_size) {
-    printf("\nThe integer array as printed from %s: { ", __func__);
-
+    printf("{ ");
+    
     for(int i=0; i<arr_size; i++) {
 
         if(i == (arr_size - 1)) {
@@ -174,17 +178,21 @@ void print_array(const int arr[], int arr_size) {
         }
     }
 
-    printf(" };\n\n");
+    puts(" };");
 }
 
 void print_array_double(const double arr[], int arr_size) {
-    for(int i=0; i<arr_size; i++) {
+    printf("{ ");
+    
+    for(int i=0; i<arr_size; i++) {        
         if(i == (arr_size - 1)) {
-            printf("%3.3f\n", arr[i]);
+            printf("%3.3f", arr[i]);
         } else {
             printf("%3.3f, ", arr[i]);
         }
     }
+    
+    puts(" };");
 }
 
 void modify_array_double(double* arr, int arr_size) {
@@ -270,4 +278,27 @@ int sum_2D_vla_int(int rows, int columns, const int arr[rows][columns]) {
         }
     }
     return sum;
+}
+
+void fill_int_array(int *arr, int size, int min, int max) {
+    int range = max - min;
+    
+    for(int i=0; i<size; i++) {
+        arr[i] = (rand() % range) + min;
+    }
+}
+
+void fill_double_array(double *arr, int size, double min, double max, double diff) {
+    int range = (int) (max - min);
+    int num_of_diff_in_range = (int) ( (max - min) / diff );
+    
+    for(int i=0; i<size; i++) {
+        arr[i] = ((rand() % num_of_diff_in_range ) * diff) + min;
+    }
+}
+
+void fill_char_array(char *arr, int size) {
+    for(int i=0; i<size; i++) {
+        arr[i] = (rand() % 94) + 32;    //32 is SPACE. 126, the max, is ~, after which is DEL.
+    }
 }

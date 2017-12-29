@@ -24,6 +24,14 @@ extern "C" {
 
 //    extern int get_file_name(char* file_str);
     extern char* fget_string_input(char* str, int size_of_str, FILE* file);
+    
+    extern void seek_file(FILE* file, long offset, int starting_position);
+    
+    extern void close_file(FILE* file);
+    
+    extern void set_start_end(FILE* file, fpos_t* file_start, fpos_t* file_end);
+    
+    extern void append(FILE* source, FILE* destination);
 
 
 #ifdef __cplusplus
