@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1514452849 source:/home/abdullah/git/CPractice/CPrimerPlusBook/Ch12Classes/src/ch11.c
+	"ch1to10.h"
+	<stdio.h>
+	<string.h>
+
+1514514109 /home/abdullah/git/CPractice/CPrimerPlusBook/Ch12Classes/src/ch1to10.h
+
+1514509553 source:/home/abdullah/git/CPractice/CPrimerPlusBook/Ch12Classes/src/ch12.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1514514101 source:/home/abdullah/git/CPractice/CPrimerPlusBook/Ch12Classes/src/ch1to10.c
+	<stdio.h>
+	<inttypes.h>
+	<string.h>
+	<limits.h>
+	<float.h>
+	<stdbool.h>
+	<iso646.h>
+
+1514504121 source:/home/abdullah/git/CPractice/CPrimerPlusBook/Ch12Classes/src/main.c
+	"ch12.h"
+
+1514496360 /home/abdullah/git/CPractice/CPrimerPlusBook/Ch12Classes/src/ch12.h
+	<stdio.h>
+	<stdlib.h>
+	"ch11.h"
+	"ch1to10.h"
+
+1514452091 /home/abdullah/git/CPractice/CPrimerPlusBook/Ch12Classes/src/ch11.h
+
