@@ -20,7 +20,13 @@
 extern "C" {
 #endif
 
-
+    extern char *itobs(int n, char *bitstring);
+    
+    extern void printbits(const char *bitstring);
+    
+    extern void setbit(int *mask, int index);
+    
+    extern void printbitsofint(int number);
 
 
 #ifdef __cplusplus

@@ -15,10 +15,17 @@
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
+#include <stddef.h>
 
 #include "src/ch1to10.h"
 #include "src/ch11.h"
 #include "src/ch14.h"
+
+//EXAMPLE USE OF FORCING PACKING TO ALIGN TO 1 BYTE OF WHATEVER IS IN BETWEEN THE PUSH AND POP.
+//THIS IS AVAILABLE ON MICROSOFT AND GNU COMPILERS
+//#pragma pack(push)
+//#pragma pack(1)
+//#pragma pack(pop)
 
 /*
  * 
@@ -165,186 +172,186 @@ int main(int argc, char** argv) {
 //    puts("Done.");
     
 //USING UNIONS AND ENUMERATIONS AND SAVING IN A FILE --> NEEDS A LOT OF WORK
-    FILE *file;
-    const char file_name[] = "schoolinv.dat";
-    SCHOOLITEMS inventory[MAXITEMS];   //Representing the school inventory of a student
-    int item_count = 0, book_count = 0, ut_count = 0;
-    
-    //OPEN FILE
-    if( (file = fopen(file_name, "a+")) == NULL ) {
-        puts("Failed to open/create schoolinv.dat.");
-        exit(EXIT_FAILURE);
-    }
-    
-    //READ CURRENT STATE OF FILE
-    //The following assumes that only book or utensil structures are stored in the inventory.
-    puts("Current inventory.");
-    while( (item_count < MAXITEMS) && (fread(&inventory[item_count], sizeof(SCHOOLITEMS), 1, file) == 1) ) {
-        //THE FOLLOWING METHOD OF TYPE CHECKING OF UNIONS IS CALLED UNION TAGGING
-        //If book
-        if( inventory[item_count].type == book ) {
-            book_count++;
-            
-            print_book(print_book_f0, &inventory[item_count].current_item.book_info);
-            
-            item_count++;
-        
-            //Else utensil
-        } else if( inventory[item_count].type == utensil ) {
-            ut_count++;
-            
-            print_utensil(&inventory[item_count].current_item.utensil_info);
-            
-            item_count++;
-            
-        } else {
-            puts("Corrupted file.");
-            exit(EXIT_FAILURE);
-        }
-    }
-    
-    if(item_count == 0) {
-        puts("Inventory was empty.");
-    } else if(item_count == MAXITEMS) {
-        puts("Inventory is full.");
-        goto exit;
-    }
-    new_line();
-    
-    
-    
-    //GET NEW ITEMS
-    int prev_item_count = item_count;   //Will use to check if new items added or not
-    
-    ITEMTYPE user_input_en;
-    int user_input = 2;  //Setting to a val that isn't 0 or 1 because need to check valid entry or not first
-    int fail_count = 0;  //fail_count is to limit number of invalid tries for first question.
-    char input_char;
-    
-    puts("Let's begin adding to the inventory.");
-    fputs("First new item. A book (0) or a utensil (1)? (q to quit) ", stdout);  //Just practicing with fputs() instead of printf();
-    while( item_count < MAXITEMS ) {
-        //While input is invalid. --> SEEMS TO WORK EXCEPT FOR JUST ENTER '\0'
-        while( (scanf("%d", &user_input) == 0) || (((user_input_en = user_input) != book) && (user_input_en != utensil)) ) {
-            
-            //Using this because using scanf() instead of get_string_input() because not string data input
-            //and if invalid entry, scanf() leaves input in stream. Need to clear first.
-            while( (input_char = getchar()) != '\n' ) {
-                if( input_char == 'q' ) {  //Exit case. Assumes user ONLY entered q but would work if q was anywhere in the input stream.
-                    goto exit;   //Using goto here because it would be more complicated to get out of the loops here.
-                }
-            }
-            
-            //Limiting amount of invalid tries.
-            fail_count++;
-            if( fail_count == MAXCOUNT ) {
-                puts("Too many invalid tries. Goodbye.");
-                exit(EXIT_FAILURE);
-            }            
-
-            //Try again.
-            puts("Invalid entry. Please enter again.");
-            fputs("Book (0) or Utensil (1)? ", stdout);
-        }
-        
-        //Clear line because of scanf()
-        while( getchar() != '\n' ) {
-            continue;
-        }
-
-        //If book
-        if( user_input_en == book ) {
-            inventory[item_count].type = book; //VERY IMPORTANT TO ENSURE TYPE CHECKING ACTUALLY WORKS!
-            
-            //Get info
-            printf("Book Title: ");
-            get_string_input(inventory[item_count].current_item.book_info.title, MAXTITL);
-            printf("Author: ");
-            get_string_input(inventory[item_count].current_item.book_info.author, MAXAUTH);
-            
-            //Since potential false entry type, extra lines of code for this one.
-            printf("Value: ");
-            int val_fail_count = 0; //Limit number of invalid tries.
-            while( (scanf("%f", &inventory[item_count].current_item.book_info.value) == 0) && (val_fail_count <= MAXCOUNT) ) {
-                //Limiting number of invalid tries here.
-                if( val_fail_count == MAXCOUNT ) {
-                    puts("Too many invalid tries. Goodbye.");
-                    exit(EXIT_FAILURE);
-                }
-                val_fail_count++;
-                
-                //Take up any invalid characters that scanf() left in input stream to reposition active position in input stream.
-                while( getchar() != '\n' ) {
-                    continue;
-                }
-                
-                //Try again.
-                puts("Invalid input. Try again.");
-                printf("Value: ");
-            }
-            
-            puts("Item successfully entered.");
-            book_count++;
-            item_count++;
-        }
-        
-        //Else utensil
-        else {
-            inventory[item_count].type = utensil;  //VERY IMPORTANT TO ENSURE TYPE CHECKING ACTUALLY WORKS!
-            
-            //Get info
-            printf("Utensil Name: ");
-            get_string_input(inventory[item_count].current_item.utensil_info.name, NAMEMAX);
-            
-            //Same as for book, since potential false entry type, extra lines of code to handle that.
-            printf("Utensil Value: ");
-            int val_fail_count = 0; //Limit number of invalid tries.
-            while( (scanf("%f", &inventory[item_count].current_item.utensil_info.value) == 0) && (val_fail_count <= MAXCOUNT) ) {
-                //Limiting number of invalid tries here.
-                if( val_fail_count == MAXCOUNT ) {
-                    puts("Too many invalid tries. Goodbye.");
-                    exit(EXIT_FAILURE);
-                }
-                val_fail_count++;
-                
-                //Take up any invalid characters that scanf() left in input stream to reposition active position in input stream.
-                while( getchar() != '\n' ) {
-                    continue;
-                }
-                
-                //Try again.
-                puts("Invalid input. Try again.");
-                printf("Value: ");
-            }
-            puts("Item successfully entered.");
-            ut_count++;
-            item_count++;
-        }
-        
-        new_line();
-        puts("Next item");
-        printf("Book (0) or Utensil (1)? (q to exit) ");
-    }
-    
-    exit: puts("Exited.");
-    
-    //WRITE NEW ITEMS TO FILE (APPEND)
-    if( item_count == prev_item_count ) {
-        puts("No new items added.");
-        return (EXIT_SUCCESS);
-    } else if( book_count + ut_count != item_count ) {
-        puts("Error state! Book counts and Utensil counts don't add up!");
-        exit(EXIT_FAILURE);
-    } else {
-        new_line();
-        puts("Appending new items to file...");
-        
-        while( (prev_item_count < item_count) && (fwrite(&inventory[prev_item_count], sizeof(SCHOOLITEMS), 1, file) == 1) ) {
-            prev_item_count++;
-        }
-    }
-    
-    puts("Done.");
+//    FILE *file;
+//    const char file_name[] = "schoolinv.dat";
+//    SCHOOLITEMS inventory[MAXITEMS];   //Representing the school inventory of a student
+//    int item_count = 0, book_count = 0, ut_count = 0;
+//    
+//    //OPEN FILE
+//    if( (file = fopen(file_name, "a+")) == NULL ) {
+//        puts("Failed to open/create schoolinv.dat.");
+//        exit(EXIT_FAILURE);
+//    }
+//    
+//    //READ CURRENT STATE OF FILE
+//    //The following assumes that only book or utensil structures are stored in the inventory.
+//    puts("Current inventory.");
+//    while( (item_count < MAXITEMS) && (fread(&inventory[item_count], sizeof(SCHOOLITEMS), 1, file) == 1) ) {
+//        //THE FOLLOWING METHOD OF TYPE CHECKING OF UNIONS IS CALLED UNION TAGGING
+//        //If book
+//        if( inventory[item_count].type == book ) {
+//            book_count++;
+//            
+//            print_book(print_book_f0, &inventory[item_count].current_item.book_info);
+//            
+//            item_count++;
+//        
+//            //Else utensil
+//        } else if( inventory[item_count].type == utensil ) {
+//            ut_count++;
+//            
+//            print_utensil(&inventory[item_count].current_item.utensil_info);
+//            
+//            item_count++;
+//            
+//        } else {
+//            puts("Corrupted file.");
+//            exit(EXIT_FAILURE);
+//        }
+//    }
+//    
+//    if(item_count == 0) {
+//        puts("Inventory was empty.");
+//    } else if(item_count == MAXITEMS) {
+//        puts("Inventory is full.");
+//        goto exit;
+//    }
+//    new_line();
+//    
+//    
+//    
+//    //GET NEW ITEMS
+//    int prev_item_count = item_count;   //Will use to check if new items added or not
+//    
+//    ITEMTYPE user_input_en;
+//    int user_input = 2;  //Setting to a val that isn't 0 or 1 because need to check valid entry or not first
+//    int fail_count = 0;  //fail_count is to limit number of invalid tries for first question.
+//    char input_char;
+//    
+//    puts("Let's begin adding to the inventory.");
+//    fputs("First new item. A book (0) or a utensil (1)? (q to quit) ", stdout);  //Just practicing with fputs() instead of printf();
+//    while( item_count < MAXITEMS ) {
+//        //While input is invalid. --> SEEMS TO WORK EXCEPT FOR JUST ENTER '\0'
+//        while( (scanf("%d", &user_input) == 0) || (((user_input_en = user_input) != book) && (user_input_en != utensil)) ) {
+//            
+//            //Using this because using scanf() instead of get_string_input() because not string data input
+//            //and if invalid entry, scanf() leaves input in stream. Need to clear first.
+//            while( (input_char = getchar()) != '\n' ) {
+//                if( input_char == 'q' ) {  //Exit case. Assumes user ONLY entered q but would work if q was anywhere in the input stream.
+//                    goto exit;   //Using goto here because it would be more complicated to get out of the loops here.
+//                }
+//            }
+//            
+//            //Limiting amount of invalid tries.
+//            fail_count++;
+//            if( fail_count == MAXCOUNT ) {
+//                puts("Too many invalid tries. Goodbye.");
+//                exit(EXIT_FAILURE);
+//            }            
+//
+//            //Try again.
+//            puts("Invalid entry. Please enter again.");
+//            fputs("Book (0) or Utensil (1)? ", stdout);
+//        }
+//        
+//        //Clear line because of scanf()
+//        while( getchar() != '\n' ) {
+//            continue;
+//        }
+//
+//        //If book
+//        if( user_input_en == book ) {
+//            inventory[item_count].type = book; //VERY IMPORTANT TO ENSURE TYPE CHECKING ACTUALLY WORKS!
+//            
+//            //Get info
+//            printf("Book Title: ");
+//            get_string_input(inventory[item_count].current_item.book_info.title, MAXTITL);
+//            printf("Author: ");
+//            get_string_input(inventory[item_count].current_item.book_info.author, MAXAUTH);
+//            
+//            //Since potential false entry type, extra lines of code for this one.
+//            printf("Value: ");
+//            int val_fail_count = 0; //Limit number of invalid tries.
+//            while( (scanf("%f", &inventory[item_count].current_item.book_info.value) == 0) && (val_fail_count <= MAXCOUNT) ) {
+//                //Limiting number of invalid tries here.
+//                if( val_fail_count == MAXCOUNT ) {
+//                    puts("Too many invalid tries. Goodbye.");
+//                    exit(EXIT_FAILURE);
+//                }
+//                val_fail_count++;
+//                
+//                //Take up any invalid characters that scanf() left in input stream to reposition active position in input stream.
+//                while( getchar() != '\n' ) {
+//                    continue;
+//                }
+//                
+//                //Try again.
+//                puts("Invalid input. Try again.");
+//                printf("Value: ");
+//            }
+//            
+//            puts("Item successfully entered.");
+//            book_count++;
+//            item_count++;
+//        }
+//        
+//        //Else utensil
+//        else {
+//            inventory[item_count].type = utensil;  //VERY IMPORTANT TO ENSURE TYPE CHECKING ACTUALLY WORKS!
+//            
+//            //Get info
+//            printf("Utensil Name: ");
+//            get_string_input(inventory[item_count].current_item.utensil_info.name, NAMEMAX);
+//            
+//            //Same as for book, since potential false entry type, extra lines of code to handle that.
+//            printf("Utensil Value: ");
+//            int val_fail_count = 0; //Limit number of invalid tries.
+//            while( (scanf("%f", &inventory[item_count].current_item.utensil_info.value) == 0) && (val_fail_count <= MAXCOUNT) ) {
+//                //Limiting number of invalid tries here.
+//                if( val_fail_count == MAXCOUNT ) {
+//                    puts("Too many invalid tries. Goodbye.");
+//                    exit(EXIT_FAILURE);
+//                }
+//                val_fail_count++;
+//                
+//                //Take up any invalid characters that scanf() left in input stream to reposition active position in input stream.
+//                while( getchar() != '\n' ) {
+//                    continue;
+//                }
+//                
+//                //Try again.
+//                puts("Invalid input. Try again.");
+//                printf("Value: ");
+//            }
+//            puts("Item successfully entered.");
+//            ut_count++;
+//            item_count++;
+//        }
+//        
+//        new_line();
+//        puts("Next item");
+//        printf("Book (0) or Utensil (1)? (q to exit) ");
+//    }
+//    
+//    exit: puts("Exited.");
+//    
+//    //WRITE NEW ITEMS TO FILE (APPEND)
+//    if( item_count == prev_item_count ) {
+//        puts("No new items added.");
+//        return (EXIT_SUCCESS);
+//    } else if( book_count + ut_count != item_count ) {
+//        puts("Error state! Book counts and Utensil counts don't add up!");
+//        exit(EXIT_FAILURE);
+//    } else {
+//        new_line();
+//        puts("Appending new items to file...");
+//        
+//        while( (prev_item_count < item_count) && (fwrite(&inventory[prev_item_count], sizeof(SCHOOLITEMS), 1, file) == 1) ) {
+//            prev_item_count++;
+//        }
+//    }
+//    
+//    puts("Done.");
     
 //USING FUNCTION POINTERS
 //    PBFORMAT format;
@@ -381,6 +388,66 @@ int main(int argc, char** argv) {
 //    
 //    BOOK book1 = { "aaaaaaaaa", "ccccccccc", 19.99 };
 //    print_book_f0(&book1);
+    
+//CONCERNING ALIGNMENT
+    typedef struct {
+        char charval;
+        double doubleval;
+        int intval;
+    } a;
+    typedef struct {
+        double doubleval;
+        char charval;
+        int intval;
+    } b;
+    typedef struct {
+        double doubleval;
+        int intval;
+        char charval;
+    } c;
+    
+    a s1 = { 'a', 1.0, 1 };
+    a *ptra = &s1;
+    b s2 = { 2.0, 'b', 2 };
+    b *ptrb = &s2;
+    c s3 = { 3.0, 3, 'c' };
+    c *ptrc = &s3;
+    
+    puts("Structure 1.");
+    printf("Address of s1: %p\n", ptra);
+    printf("Address of charval: %p\n", &s1.charval);
+    printf("Offset of charval: %d\n", offsetof(a, charval));
+    printf("Address of doubleval: %p\n", &s1.doubleval);
+    printf("Offset of doubleval: %d\n", offsetof(a, doubleval));
+    printf("Address of intval: %p\n", &s1.intval);
+    printf("Offset of intval: %d\n", offsetof(a, intval));
+    printf("Address of ptra + 1: %p\n", ptra + 1);
+    printf("Size of s1: %zd\n", sizeof(s1));
+    
+    new_line();
+    puts("Structure 2.");
+    printf("Address of s2: %p\n", ptrb);
+    printf("Address of doubleval: %p\n", &s2.doubleval);
+    printf("Offset of doubleval: %d\n", offsetof(b, doubleval));
+    printf("Address of charval: %p\n", &s2.charval);
+    printf("Offset of charval: %d\n", offsetof(b, charval));
+    printf("Address of intval: %p\n", &s2.intval);
+    printf("Offset of intval: %d\n", offsetof(b, intval));
+    printf("Address of ptrb + 1: %p\n", ptrb + 1);
+    printf("Size of s2: %zd\n", sizeof(s2));
+    
+    new_line();
+    puts("Structure 3.");
+    printf("Address of s3: %p\n", ptrc);
+    printf("Address of doubleval: %p\n", &s3.doubleval);
+    printf("Offset of doubleval: %d\n", offsetof(c, doubleval));
+    printf("Address of intval: %p\n", &s3.intval);
+    printf("Offset of intval: %d\n", offsetof(c, intval));
+    printf("Address of charval: %p\n", &s3.charval);
+    printf("Offset of charval: %d\n", offsetof(c, charval));
+    printf("Address of ptrc + 1: %p\n", ptrc + 1);
+    printf("Size of s3: %zd\n", sizeof(s3));
+    
     
     return (EXIT_SUCCESS);
 }
