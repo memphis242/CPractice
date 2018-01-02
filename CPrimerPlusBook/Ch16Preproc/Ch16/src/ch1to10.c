@@ -281,6 +281,24 @@ int sum_2D_vla_int(int rows, int columns, const int arr[rows][columns]) {
     return sum;
 }
 
+float sum_float_array(float arr[], int size) {
+    float sum = 0.0;
+    for(int i=0; i<size; i++) {
+        sum += arr[i];
+    }
+    
+    return sum;
+}
+
+double sum_double_array(double arr[], int size) {
+    double sum = 0.0;
+    for(int i=0; i<size; i++) {
+        sum += arr[i];
+    }
+    
+    return sum;
+}
+
 void fill_int_array(int *arr, int size, int min, int max) {
     //srand(time(NULL));
     int range = max - min;
@@ -296,7 +314,64 @@ void fill_double_array(double *arr, int size, double min, double max, double dif
     int num_of_diff_in_range = (int) ( (max - min) / diff );
     
     for(int i=0; i<size; i++) {
-        arr[i] = ((rand() % num_of_diff_in_range ) * diff) + min;
+        arr[i] =  min + ((rand() % num_of_diff_in_range ) * diff);   //the part before the * diff defines how many diff increments are made to min
+    }
+}
+
+//NEEDS WORK ON PARTITIONING
+void test_distribution_d(double arr[], int arrsize, const double minVal, const double maxVal) {
+    float partition_count[10] = { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
+    float partition_percentages[10];
+    double val, range = maxVal - minVal, increment = range / 10.0;
+    
+    if( arrsize > 10 ) {
+        
+        //Count how many values in the array are in each partition
+        for(int i=0; i<arrsize; i++) {
+            val = arr[i];   //Faster to access variable value than array value ??
+            if( (val >= minVal) && (val < (minVal + increment)) ) {
+                partition_count[0]++;
+            } else if( (val >= (minVal + increment) && (val < (minVal + (2 * increment)))) ) {
+                partition_count[1]++;
+            } else if( (val >= (minVal + (2 * increment)) && (val < (minVal + (3 * increment)))) ) {
+                partition_count[2]++;
+            } else if( (val >= (minVal + (3 * increment)) && (val < (minVal + (4 * increment)))) ) {
+                partition_count[3]++;
+            } else if( (val >= (minVal + (4* increment)) && (val < (minVal + (5 * increment)))) ) {
+                partition_count[4]++;
+            } else if( (val >= (minVal + (5 * increment)) && (val < (minVal + (6 * increment)))) ) {
+                partition_count[5]++;
+            } else if( (val >= (minVal + (6 * increment)) && (val < (minVal + (7 * increment)))) ) {
+                partition_count[6]++;
+            } else if( (val >= (minVal + (7 * increment)) && (val < (minVal + (8 * increment)))) ) {
+                partition_count[7]++;
+            } else if( (val >= (minVal + (8 * increment)) && (val < (minVal + (9 * increment)))) ) {
+                partition_count[8]++;
+            } else {
+                partition_count[9]++;
+            }
+        }
+        
+        //Calculate percentage of total elements in partition i
+        for(int i=0; i<10; i++) {
+            partition_percentages[i] = (partition_count[i] / ((float) arrsize)) * 100.0;
+        }
+        
+        //Print this out
+        puts("The Partition Distribution is as follows:");
+        for(int i=0; i<10; i++) {
+            printf("\tPartition %d: %.2f%%\n", (i + 1), partition_percentages[i]);
+        }
+        if( ( 100.0 - sum_float_array(partition_percentages, 10) ) < 0.01) { //Sum is within 0.01 percent from 100; the tolerance is to account for possible data loss.
+            puts("Sum is consistent.");
+        } else {
+            puts("Error state. Sum is inconsistent.");
+        }
+        newline();
+        
+    } else {
+        puts("Array size needs to be greater than 10 to test distribution.");
+        exit(EXIT_FAILURE);
     }
 }
 
@@ -306,3 +381,20 @@ void fill_char_array(char *arr, int size) {
         arr[i] = (rand() % 94) + 32;    //32 is SPACE. 126, the max, is ~, after which is DEL.
     }
 }
+
+//This function tests distribution by splitting the array into 10 partitions for which there is a total order defined
+//and prints out a statement that indicates the percentage of members in partition 1, 2, and so on, and accordingly,
+//the user concludes how well distributed members are.
+//NEEDS WORK ON PARTITIONING!
+//_Noreturn void test_distribution(void *arr, int sizeofarr, size_t sizeofmem, int (*comp)(void *val1, void *val2), void *maxVal, void *minVal) {
+//    if( sizeofarr > 10 ) {
+//        for(int i=0; i < (sizeofarr / sizeofmem); i++) {
+//            switch(arr[i]) {
+//                case 
+//            }
+//        }
+//    } else {
+//        puts("Array size needs to be greater than 10 to test distribution.");
+//        exit(EXIT_FAILURE);
+//    }
+//}

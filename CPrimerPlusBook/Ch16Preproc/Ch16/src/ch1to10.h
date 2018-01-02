@@ -60,9 +60,15 @@ void sum_total_2D_int(int (* arr) [COLUMNS], int rows, int* total);
 
 int sum_2D_vla_int(int rows, int columns, const int arr[rows][columns]);
 
+float sum_float_array(float arr[], int size);
+
+double sum_double_array(double arr[], int size);
+
 void fill_int_array(int *arr, int size, int min, int max);
 
 void fill_double_array(double *arr, int size, double min, double max, double diff);
+
+void test_distribution_d(double arr[], int arrsize, const double minVal, const double maxVal);
 
 void fill_char_array(char *arr, int size);
 
