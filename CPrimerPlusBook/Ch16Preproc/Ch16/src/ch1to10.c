@@ -8,6 +8,7 @@
 #include <stdbool.h>    //This includes bool as an alias for _Bool and true and false as symbolic constants for 1 and 0, resp.
 #include <iso646.h>
 #include <time.h>
+#include <stdarg.h>
 
 #define COLUMNS 4
 #define LINE 80
@@ -101,6 +102,13 @@ void print_title(const char* title) {
     print_line();
     puts(title);
     print_line();
+}
+
+//For when you use scanf()
+void eatline() {
+    while( getchar() != '\n' ) {
+        continue;
+    }
 }
 
 ////Pass float pointer and function will interpret bytes as characters.
@@ -398,3 +406,29 @@ void fill_char_array(char *arr, int size) {
 //        exit(EXIT_FAILURE);
 //    }
 //}
+
+int sumints(int num_of_items, ...) {
+    va_list arglist;
+    int sum = 0;
+    
+    va_start(arglist, num_of_items);
+    for(int i=0; i<num_of_items; i++) {
+        sum += va_arg(arglist, int);
+    }
+    
+    va_end(arglist);
+    return sum;
+}
+
+double sumdoubles(int num_of_items, ...) {
+    va_list arglist;
+    double sum = 0.0;
+    
+    va_start(arglist, num_of_items);
+    for(int i=0; i<num_of_items; i++) {
+        sum += va_arg(arglist, double);
+    }
+    
+    va_end(arglist);
+    return sum;
+}

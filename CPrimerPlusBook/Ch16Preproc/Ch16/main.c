@@ -16,6 +16,8 @@
 #include <math.h>
 #include <tgmath.h>
 #include <time.h>
+#include <assert.h>
+#include <stdarg.h>
 
 #include "src/ch1to10.h"
 #include "src/ch11.h"
@@ -212,28 +214,63 @@ int main(int argc, char** argv) {
 //    printf("%10s%.25Lf\n", "yyy = ", yyy);
     
 //USING THE QSORT() STANDARD FUNCTION OF STDLIB.H
-#define ARRSIZE 500000
+//#define ARRSIZE 500000
+//    
+//    srand( time(NULL) +  clock());
+//    
+//    double arrayd[ARRSIZE];
+//    fill_double_array(arrayd, ARRSIZE, 0.0, 150.0, 0.287);
+//    
+//    puts("The Double Array Before qsort(): ");
+//    print_array_double(arrayd, ARRSIZE);
+//    
+//    qsort(arrayd, ARRSIZE, sizeof(double), mycomp);
+//    
+//    newline();
+//    puts("The Double Array After qsort()");
+//    print_array_double(arrayd, ARRSIZE);
+//    
+//    newline();
+//    test_distribution_d(arrayd, ARRSIZE, arrayd[0], arrayd[ARRSIZE - 1]);
+//    
+//    newline();
+//    printf("Number of Items in Array: %d\n", ARRSIZE);
+//    printf("Number of Clock Ticks for Runtime: %ld\n", clock());
     
-    srand( time(NULL) +  clock());
+//USING ASSERT() AND _STATIC_ASSERT()
+//#define COMPCHECK 0
+//    assert(COMPCHECK);
+////    _Static_assert(COMPCHECK, "COMPCHECK is set to TRUE.");
     
-    double arrayd[ARRSIZE];
-    fill_double_array(arrayd, ARRSIZE, 0.0, 150.0, 0.287);
+//USING VARIADIC FUNCTIONS AND MAKING EFFICENT ARRAYS USING MEMCPY TO SUM UP INPUTS
+    puts("The following program adds up the numbers you input, up to a 100 numbers.");
+    puts("Entering invalid numbers stops input loop.");
     
-    puts("The Double Array Before qsort(): ");
-    print_array_double(arrayd, ARRSIZE);
+    int i = 0;
+    int numarr[100];
+    printf("Integer Number: ");
+    while( scanf("%d", &numarr[i]) == 1 ) {
+        i++;
+        
+        eatline();
+        
+        printf("Next number: ");
+    }
     
-    qsort(arrayd, ARRSIZE, sizeof(double), mycomp);
+    int *eff_numarr = (int *) calloc(i, sizeof(int));   //Allocate i elements of size sizeof(int) and type cast pointer to memory unit to int *
+    memcpy(eff_numarr, numarr, i * sizeof(int));        //Copy i elements from numarr, which is likely to be more than necessary, to the exactly sized  eff_numarr
     
     newline();
-    puts("The Double Array After qsort()");
-    print_array_double(arrayd, ARRSIZE);
-    
-    newline();
-    test_distribution_d(arrayd, ARRSIZE, arrayd[0], arrayd[ARRSIZE - 1]);
-    
-    newline();
-    printf("Number of Items in Array: %d\n", ARRSIZE);
-    printf("Number of Clock Ticks for Runtime: %ld\n", clock());
+    puts("Sums:");
+    if( i >= 2 ) {
+        printf("Sum of first two: %d\n", sumints(2, eff_numarr[0], eff_numarr[1]));
+    }
+    if( i >= 3) {
+        printf("Sum of first three: %d\n", sumints(3, eff_numarr[0], eff_numarr[1], eff_numarr[2]));
+    }
+    if( i >= 4 ) {
+        printf("Sum of the first four: %d\n", sumints(4, eff_numarr[0], eff_numarr[1], eff_numarr[2], eff_numarr[3]));
+    }
         
     return (EXIT_SUCCESS);
 }
