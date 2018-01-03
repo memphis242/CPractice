@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <logicalFolder name="include" displayName="include" projectFiles="true">
+        <logicalFolder name="vn" displayName="vn" projectFiles="true">
+          <logicalFolder name="math" displayName="math" projectFiles="true">
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/math/matrix.h</itemPath>
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/math/vector.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="protocol" displayName="protocol" projectFiles="true">
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/protocol/common.h</itemPath>
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/protocol/spi.h</itemPath>
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/protocol/upack.h</itemPath>
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/protocol/upackf.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="sensors" displayName="sensors" projectFiles="true">
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/sensors/compositedata.h</itemPath>
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/sensors/ezasyncdata.h</itemPath>
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/sensors/searcher.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="util" displayName="util" projectFiles="true">
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/util/compiler.h</itemPath>
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/util/export.h</itemPath>
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/util/port.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="xplat" displayName="xplat" projectFiles="true">
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/criticalsection.h</itemPath>
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/event.h</itemPath>
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/serialport.h</itemPath>
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/thread.h</itemPath>
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/time.h</itemPath>
+          </logicalFolder>
+          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/bool.h</itemPath>
+          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/const.h</itemPath>
+          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/conv.h</itemPath>
+          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/enum.h</itemPath>
+          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/error.h</itemPath>
+          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/error_detection.h</itemPath>
+          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/int.h</itemPath>
+          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/sensors.h</itemPath>
+          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/types.h</itemPath>
+          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/util.h</itemPath>
+          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/vectornav.h</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="src" displayName="src" projectFiles="true">
+        <logicalFolder name="vn" displayName="vn" projectFiles="true">
+          <logicalFolder name="math" displayName="math" projectFiles="true">
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/math/matrix.c</itemPath>
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/math/vector.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="protocol" displayName="protocol" projectFiles="true">
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/protocol/spi.c</itemPath>
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/protocol/upack.c</itemPath>
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/protocol/upackf.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="sensors" displayName="sensors" projectFiles="true">
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors/compositedata.c</itemPath>
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors/ezasyncdata.c</itemPath>
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors/searcher.c</itemPath>
+          </logicalFolder>
+          <logicalFolder name="xplat" displayName="xplat" projectFiles="true">
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/criticalsection.c</itemPath>
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/event.c</itemPath>
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/serialport.c</itemPath>
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/thread.c</itemPath>
+            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/time.c</itemPath>
+          </logicalFolder>
+          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/conv.c</itemPath>
+          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/error.c</itemPath>
+          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/error_detection.c</itemPath>
+          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors.c</itemPath>
+          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/util.c</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <itemPath>main.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include</Elem>
+    <Elem>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+      </compileType>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/bool.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/const.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/conv.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/enum.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/error.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/error_detection.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/int.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/math/matrix.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/math/vector.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/protocol/common.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/protocol/spi.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/protocol/upack.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/protocol/upackf.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/sensors.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/sensors/compositedata.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/sensors/ezasyncdata.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/sensors/searcher.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/types.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/util.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/util/compiler.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/util/export.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/util/port.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/vectornav.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/criticalsection.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/event.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/serialport.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/thread.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/time.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/conv.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/error.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/error_detection.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/math/matrix.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/math/vector.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/protocol/spi.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/protocol/upack.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/protocol/upackf.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors/compositedata.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors/ezasyncdata.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors/searcher.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/util.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/criticalsection.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/event.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/serialport.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/thread.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/time.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/bool.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/const.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/conv.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/enum.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/error.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/error_detection.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/int.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/math/matrix.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/math/vector.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/protocol/common.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/protocol/spi.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/protocol/upack.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/protocol/upackf.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/sensors.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/sensors/compositedata.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/sensors/ezasyncdata.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/sensors/searcher.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/types.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/util.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/util/compiler.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/util/export.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/util/port.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/vectornav.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/criticalsection.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/event.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/serialport.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/thread.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/time.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/conv.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/error.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/error_detection.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/math/matrix.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/math/vector.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/protocol/spi.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/protocol/upack.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/protocol/upackf.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors/compositedata.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors/ezasyncdata.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors/searcher.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/util.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/criticalsection.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/event.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/serialport.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/thread.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/time.c"
+            ex="false"
+            tool="0"
+            flavor2="0">
+      </item>
+      <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

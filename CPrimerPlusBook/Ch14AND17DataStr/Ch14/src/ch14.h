@@ -18,12 +18,15 @@
 extern "C" {
 #endif
     
+#include <stdalign.h>
+    
 #define MAXTITL 50
 #define MAXAUTH 50
 #define MAXBKS 20
 #define NAMEMAX 20
 #define MAXCOUNT 10
 #define MAXITEMS 10
+#define HIDDENLEN 6
     
 typedef struct {
     char title[MAXTITL];
@@ -64,6 +67,10 @@ typedef enum pbformat { format0, format1, format2, format3 } PBFORMAT;
 
 typedef void (*PRINTBOOKFUNC)(const BOOK *);
 
+typedef struct {
+    char charval;
+    alignas(8) int intval;
+} DATA;
 
     
     extern void print_utensil(const UTENSIL *ut_ptr);
@@ -81,6 +88,12 @@ typedef void (*PRINTBOOKFUNC)(const BOOK *);
     extern void print_book_f3(const BOOK *book_ptr);
     
     extern void print_book(PRINTBOOKFUNC, const BOOK *book_ptr);
+    
+    extern void sethidden(DATA *datastruct, char hidden_message[HIDDENLEN]);
+    
+    extern char * gethidden(const DATA *datastruct);
+    
+    extern void print_data_normal(const DATA *datastruct);
 
 #ifdef __cplusplus
 }

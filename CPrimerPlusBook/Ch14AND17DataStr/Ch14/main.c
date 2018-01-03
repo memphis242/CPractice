@@ -390,64 +390,71 @@ int main(int argc, char** argv) {
 //    print_book_f0(&book1);
     
 //CONCERNING ALIGNMENT
-    typedef struct {
-        char charval;
-        double doubleval;
-        int intval;
-    } a;
-    typedef struct {
-        double doubleval;
-        char charval;
-        int intval;
-    } b;
-    typedef struct {
-        double doubleval;
-        int intval;
-        char charval;
-    } c;
+//    typedef struct {
+//        char charval;
+//        double doubleval;
+//        int intval;
+//    } a;
+//    typedef struct {
+//        double doubleval;
+//        char charval;
+//        int intval;
+//    } b;
+//    typedef struct {
+//        double doubleval;
+//        int intval;
+//        char charval;
+//    } c;
+//    
+//    a s1 = { 'a', 1.0, 1 };
+//    a *ptra = &s1;
+//    b s2 = { 2.0, 'b', 2 };
+//    b *ptrb = &s2;
+//    c s3 = { 3.0, 3, 'c' };
+//    c *ptrc = &s3;
+//    
+//    puts("Structure 1.");
+//    printf("Address of s1: %p\n", ptra);
+//    printf("Address of charval: %p\n", &s1.charval);
+//    printf("Offset of charval: %d\n", offsetof(a, charval));
+//    printf("Address of doubleval: %p\n", &s1.doubleval);
+//    printf("Offset of doubleval: %d\n", offsetof(a, doubleval));
+//    printf("Address of intval: %p\n", &s1.intval);
+//    printf("Offset of intval: %d\n", offsetof(a, intval));
+//    printf("Address of ptra + 1: %p\n", ptra + 1);
+//    printf("Size of s1: %zd\n", sizeof(s1));
+//    
+//    new_line();
+//    puts("Structure 2.");
+//    printf("Address of s2: %p\n", ptrb);
+//    printf("Address of doubleval: %p\n", &s2.doubleval);
+//    printf("Offset of doubleval: %d\n", offsetof(b, doubleval));
+//    printf("Address of charval: %p\n", &s2.charval);
+//    printf("Offset of charval: %d\n", offsetof(b, charval));
+//    printf("Address of intval: %p\n", &s2.intval);
+//    printf("Offset of intval: %d\n", offsetof(b, intval));
+//    printf("Address of ptrb + 1: %p\n", ptrb + 1);
+//    printf("Size of s2: %zd\n", sizeof(s2));
+//    
+//    new_line();
+//    puts("Structure 3.");
+//    printf("Address of s3: %p\n", ptrc);
+//    printf("Address of doubleval: %p\n", &s3.doubleval);
+//    printf("Offset of doubleval: %d\n", offsetof(c, doubleval));
+//    printf("Address of intval: %p\n", &s3.intval);
+//    printf("Offset of intval: %d\n", offsetof(c, intval));
+//    printf("Address of charval: %p\n", &s3.charval);
+//    printf("Offset of charval: %d\n", offsetof(c, charval));
+//    printf("Address of ptrc + 1: %p\n", ptrc + 1);
+//    printf("Size of s3: %zd\n", sizeof(s3));
     
-    a s1 = { 'a', 1.0, 1 };
-    a *ptra = &s1;
-    b s2 = { 2.0, 'b', 2 };
-    b *ptrb = &s2;
-    c s3 = { 3.0, 3, 'c' };
-    c *ptrc = &s3;
+//GET HIDDEN DATA
+    DATA newdata = { 'a', 1 };
+    char hidden_message[HIDDENLEN] = "72:10";
     
-    puts("Structure 1.");
-    printf("Address of s1: %p\n", ptra);
-    printf("Address of charval: %p\n", &s1.charval);
-    printf("Offset of charval: %d\n", offsetof(a, charval));
-    printf("Address of doubleval: %p\n", &s1.doubleval);
-    printf("Offset of doubleval: %d\n", offsetof(a, doubleval));
-    printf("Address of intval: %p\n", &s1.intval);
-    printf("Offset of intval: %d\n", offsetof(a, intval));
-    printf("Address of ptra + 1: %p\n", ptra + 1);
-    printf("Size of s1: %zd\n", sizeof(s1));
-    
-    new_line();
-    puts("Structure 2.");
-    printf("Address of s2: %p\n", ptrb);
-    printf("Address of doubleval: %p\n", &s2.doubleval);
-    printf("Offset of doubleval: %d\n", offsetof(b, doubleval));
-    printf("Address of charval: %p\n", &s2.charval);
-    printf("Offset of charval: %d\n", offsetof(b, charval));
-    printf("Address of intval: %p\n", &s2.intval);
-    printf("Offset of intval: %d\n", offsetof(b, intval));
-    printf("Address of ptrb + 1: %p\n", ptrb + 1);
-    printf("Size of s2: %zd\n", sizeof(s2));
-    
-    new_line();
-    puts("Structure 3.");
-    printf("Address of s3: %p\n", ptrc);
-    printf("Address of doubleval: %p\n", &s3.doubleval);
-    printf("Offset of doubleval: %d\n", offsetof(c, doubleval));
-    printf("Address of intval: %p\n", &s3.intval);
-    printf("Offset of intval: %d\n", offsetof(c, intval));
-    printf("Address of charval: %p\n", &s3.charval);
-    printf("Offset of charval: %d\n", offsetof(c, charval));
-    printf("Address of ptrc + 1: %p\n", ptrc + 1);
-    printf("Size of s3: %zd\n", sizeof(s3));
-    
+    sethidden(&newdata, hidden_message);
+    print_data_normal(&newdata);
+    gethidden(&newdata);
     
     return (EXIT_SUCCESS);
 }
