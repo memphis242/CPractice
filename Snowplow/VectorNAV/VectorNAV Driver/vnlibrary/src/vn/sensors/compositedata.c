@@ -1,11 +1,16 @@
 #include <math.h>
 #include <string.h>
 
-#include "vn/sensors/compositedata.h"
-#include "vn/xplat/criticalsection.h"
-#include "vn/protocol/upack.h"
-#include "vn/math/vector.h"
-#include "vn/math/matrix.h"
+//#include "vn/sensors/compositedata.h"
+#include "../../../include/vn/sensors/compositedata.h"
+//#include "vn/xplat/criticalsection.h"
+#include "../../../include/vn/xplat/criticalsection.h"
+//#include "vn/protocol/upack.h"
+#include "../../../include/vn/protocol/upack.h"
+//#include "vn/math/vector.h"
+#include "../../../include/vn/math/vector.h"
+//#include "vn/math/matrix.h"
+#include "../../../include/vn/math/matrix.h"
 
 float VnCompositeData_calculateCourseOverGround(float velNedX, float velNedY);
 float VnCompositeData_calculateSpeedOverGround(float velNedX, float velNedY);

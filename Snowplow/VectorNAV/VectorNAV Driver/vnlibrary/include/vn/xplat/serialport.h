@@ -3,11 +3,16 @@
 
 /** Cross-platform access to serial ports. */
 
-#include "vn/int.h"
-#include "vn/error.h"
-#include "vn/bool.h"
-#include "vn/xplat/thread.h"
-#include "vn/xplat/criticalsection.h"
+//#include "vn/int.h"
+#include "../int.h"
+//#include "vn/error.h"
+#include "../error.h"
+//#include "vn/bool.h"
+#include "../bool.h"
+//#include "vn/xplat/thread.h"
+#include "../xplat/thread.h"
+//#include "vn/xplat/criticalsection.h"
+#include "../xplat/criticalsection.h"
 
 #if defined(_WIN32)
 

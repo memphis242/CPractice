@@ -1,7 +1,7 @@
 #ifndef VN_VECTOR_H_INCLUDED
 #define VN_VECTOR_H_INCLUDED
 
-#include "vn/util/compiler.h"
+#include "../util/compiler.h"
 
 /** \brief Various vector types and operations. */
 
@@ -13,7 +13,7 @@ extern "C" {
 *  <c>float</c>. */
 typedef union
 {
-	float c[3];		/**< Indexable. */And Joe, w
+	float c[3];		/**< Indexable. */
 
 	/* Check if the compiler supports anonymous unions. */
 	#if defined(__STDC_VERSION___) && (__STDC_VERSION__ >= 201112L) && defined(__GNUC__)

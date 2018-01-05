@@ -1,4 +1,4 @@
-#include "vn/math/vector.h"
+#include "../../../include/vn/math/vector.h"
 
 #include <stdio.h>
 

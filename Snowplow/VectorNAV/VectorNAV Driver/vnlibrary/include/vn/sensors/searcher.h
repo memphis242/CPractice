@@ -1,10 +1,14 @@
 #ifndef _SEARCHER_H_
 #define _SEARCHER_H_
 
-#include "vn/bool.h"
-#include "vn/int.h"
-#include "vn/xplat/serialport.h"
-#include "vn/xplat/thread.h"
+//#include "vn/bool.h"
+#include "../bool.h"
+//#include "vn/int.h"
+#include "../int.h"
+//#include "vn/xplat/serialport.h"
+#include "../xplat/serialport.h"
+//#include "vn/xplat/thread.h"
+#include "../xplat/thread.h"
 
 /* These defines are used to enable a single function name while implementing */
 /* different solutions given the OS. */

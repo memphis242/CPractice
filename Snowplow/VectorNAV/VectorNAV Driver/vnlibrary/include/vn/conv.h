@@ -1,7 +1,7 @@
 #ifndef __VNCONV_H__
 #define __VNCONV_H__
 
-#include "vn/math/vector.h"
+#include "math/vector.h"
 
 /** Converts ECEF coordinate to LLA frame.
  * \param[in] ecef Coordinate in ECEF frame.

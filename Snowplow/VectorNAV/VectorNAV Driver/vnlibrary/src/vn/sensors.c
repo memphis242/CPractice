@@ -1,9 +1,12 @@
-#include "vn/sensors.h"
-#include "vn/error.h"
+//#include "vn/sensors.h"
+#include "../../include/vn/sensors.h"
+//#include "vn/error.h"
+#include "../../include/vn/error.h"
 
 #include <string.h>
 
-#include "vn/xplat/time.h"
+//#include "vn/xplat/time.h"
+#include "../../include/vn/xplat/time.h"
 
 #define UNUSED(x) (void)(sizeof(x))
 

@@ -1,4 +1,4 @@
-#include "vn/error.h"
+#include "../../include/vn/error.h"
 
 #include <string.h>
 

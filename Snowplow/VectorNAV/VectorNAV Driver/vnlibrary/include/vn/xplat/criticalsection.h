@@ -7,7 +7,8 @@
 #ifndef _VN_CRITICALSECTION_H_
 #define _VN_CRITICALSECTION_H_
 
-#include "vn/error.h"
+//#include "vn/error.h"
+#include "../error.h"
 
 #ifdef _WIN32
 

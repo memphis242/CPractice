@@ -1,10 +1,12 @@
-#include "vn/protocol/upack.h"
+//#include "vn/protocol/upack.h"
+#include "../../../include/vn/protocol/upack.h"
 
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "vn/util.h"
+//#include "vn/util.h"
+#include "../../../include/vn/util.h"
 
 /*#define MAXIMUM_REGISTER_ID		255
 #define ASCII_START_CHAR		'$'

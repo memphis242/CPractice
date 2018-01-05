@@ -1,14 +1,20 @@
 #ifndef _VNCOMPOSITEDATA_H_
 #define _VNCOMPOSITEDATA_H_
 
-#include "vn/bool.h"
-#include "vn/xplat/criticalsection.h"
-#include "vn/enum.h"
-#include "vn/int.h"
-#include "vn/math/vector.h"
-#include "vn/math/matrix.h"
-#include "vn/protocol/upack.h"
-#include "vn/math/vector.h"
+//#include "vn/bool.h"
+#include "../bool.h"
+//#include "vn/xplat/criticalsection.h"
+#include "../xplat/criticalsection.h"
+//#include "vn/enum.h"
+#include "../enum.h"
+//#include "vn/int.h"
+#include "../int.h"
+//#include "vn/math/vector.h"
+#include "../math/vector.h"
+//#include "vn/math/matrix.h"
+#include "../math/matrix.h"
+//#include "vn/protocol/upack.h"
+#include "../protocol/upack.h"
 
 #ifdef __cplusplus
 extern "C" {

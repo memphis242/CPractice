@@ -9,14 +9,22 @@
 
 #include <stddef.h>
 
-#include "vn/int.h"
-#include "vn/error.h"
-#include "vn/enum.h"
-#include "vn/bool.h"
-#include "vn/protocol/upack.h"
-#include "vn/protocol/upackf.h"
-#include "vn/xplat/serialport.h"
-#include "vn/xplat/event.h"
+//#include "vn/int.h"
+#include "int.h"
+//#include "vn/error.h"
+#include "error.h"
+//#include "vn/enum.h"
+#include "enum.h"
+//#include "vn/bool.h"
+#include "bool.h"
+//#include "vn/protocol/upack.h"
+#include "protocol/upack.h"
+//#include "vn/protocol/upackf.h"
+#include "protocol/upackf.h"
+//#include "vn/xplat/serialport.h"
+#include "xplat/serialport.h"
+//#include "vn/xplat/event.h"
+#include "xplat/event.h"
 
 #ifdef __cplusplus
 extern "C" {

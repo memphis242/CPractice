@@ -1,6 +1,7 @@
 #define _BSD_SOURCE
 
-#include "vn/xplat/thread.h"
+//#include "vn/xplat/thread.h"
+#include "../../../include/vn/xplat/thread.h"
 
 #if (defined __linux__ || defined __APPLE__ || defined __CYGWIN__ || defined __QNXNTO__)
 	#include <stdlib.h>

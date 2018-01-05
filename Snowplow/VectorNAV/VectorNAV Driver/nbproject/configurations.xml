@@ -457,27 +457,6 @@
         <itemPath>vnlibrary/include/vectorNAVinterface.c</itemPath>
         <itemPath>vnlibrary/include/vectorNAVinterface.h</itemPath>
       </logicalFolder>
-      <logicalFolder name="projects" displayName="projects" projectFiles="true">
-        <logicalFolder name="vs2008" displayName="vs2008" projectFiles="true">
-          <itemPath>vnlibrary/projects/vs2008/libvnc.sln</itemPath>
-          <itemPath>vnlibrary/projects/vs2008/libvnc.vcproj</itemPath>
-        </logicalFolder>
-        <logicalFolder name="vs2010" displayName="vs2010" projectFiles="true">
-          <itemPath>vnlibrary/projects/vs2010/libvnc.sln</itemPath>
-          <itemPath>vnlibrary/projects/vs2010/libvnc.vcxproj</itemPath>
-          <itemPath>vnlibrary/projects/vs2010/libvnc.vcxproj.filters</itemPath>
-        </logicalFolder>
-        <logicalFolder name="vs2012" displayName="vs2012" projectFiles="true">
-          <itemPath>vnlibrary/projects/vs2012/libvnc.sln</itemPath>
-          <itemPath>vnlibrary/projects/vs2012/libvnc.vcxproj</itemPath>
-          <itemPath>vnlibrary/projects/vs2012/libvnc.vcxproj.filters</itemPath>
-        </logicalFolder>
-        <logicalFolder name="vs2013" displayName="vs2013" projectFiles="true">
-          <itemPath>vnlibrary/projects/vs2013/libvnc.sln</itemPath>
-          <itemPath>vnlibrary/projects/vs2013/libvnc.vcxproj</itemPath>
-          <itemPath>vnlibrary/projects/vs2013/libvnc.vcxproj.filters</itemPath>
-        </logicalFolder>
-      </logicalFolder>
       <logicalFolder name="src" displayName="src" projectFiles="true">
         <logicalFolder name="vn" displayName="vn" projectFiles="true">
           <logicalFolder name="math" displayName="math" projectFiles="true">
@@ -539,6 +518,12 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerLibStdlibItem>Mathematics</linkerLibStdlibItem>
+            <linkerLibStdlibItem>PosixThreads</linkerLibStdlibItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
       <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vectorNAVinterface.c"
             ex="false"
@@ -2024,61 +2009,6 @@
       <item path="vnlibrary/include/vn/xplat/time.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="vnlibrary/index.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vnlibrary/projects/vs2008/libvnc.sln"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="vnlibrary/projects/vs2008/libvnc.vcproj"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="vnlibrary/projects/vs2010/libvnc.sln"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="vnlibrary/projects/vs2010/libvnc.vcxproj"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="vnlibrary/projects/vs2010/libvnc.vcxproj.filters"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="vnlibrary/projects/vs2012/libvnc.sln"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="vnlibrary/projects/vs2012/libvnc.vcxproj"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="vnlibrary/projects/vs2012/libvnc.vcxproj.filters"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="vnlibrary/projects/vs2013/libvnc.sln"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="vnlibrary/projects/vs2013/libvnc.vcxproj"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="vnlibrary/projects/vs2013/libvnc.vcxproj.filters"
-            ex="false"
-            tool="3"
-            flavor2="0">
       </item>
       <item path="vnlibrary/src/vn/conv.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -3638,61 +3568,6 @@
       <item path="vnlibrary/include/vn/xplat/time.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="vnlibrary/index.html" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="vnlibrary/projects/vs2008/libvnc.sln"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="vnlibrary/projects/vs2008/libvnc.vcproj"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="vnlibrary/projects/vs2010/libvnc.sln"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="vnlibrary/projects/vs2010/libvnc.vcxproj"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="vnlibrary/projects/vs2010/libvnc.vcxproj.filters"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="vnlibrary/projects/vs2012/libvnc.sln"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="vnlibrary/projects/vs2012/libvnc.vcxproj"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="vnlibrary/projects/vs2012/libvnc.vcxproj.filters"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="vnlibrary/projects/vs2013/libvnc.sln"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="vnlibrary/projects/vs2013/libvnc.vcxproj"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="vnlibrary/projects/vs2013/libvnc.vcxproj.filters"
-            ex="false"
-            tool="3"
-            flavor2="0">
       </item>
       <item path="vnlibrary/src/vn/conv.c" ex="false" tool="0" flavor2="0">
       </item>

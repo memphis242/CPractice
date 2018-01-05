@@ -1,4 +1,5 @@
-#include "vn/xplat/criticalsection.h"
+//#include "vn/xplat/criticalsection.h"
+#include "../../../include/vn/xplat/criticalsection.h"
 
 VnError VnCriticalSection_initialize(VnCriticalSection *cs)
 {

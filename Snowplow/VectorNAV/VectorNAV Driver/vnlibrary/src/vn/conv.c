@@ -1,6 +1,6 @@
-#include "vn/conv.h"
+#include "../../include/vn/conv.h"
 #include <math.h>
-#include "vn/const.h"
+#include "../../include/vn/const.h"
 
 #define C_E2        (0.006694379990141)
 #define C_EPSILON   (0.996647189335253)

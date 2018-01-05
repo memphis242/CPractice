@@ -3,9 +3,9 @@
 
 /** \brief Error-detection capabilities. */
 
-#include "vn/enum.h"
-#include "vn/int.h"
-#include "vn/types.h"
+#include "enum.h"
+#include "int.h"
+#include "types.h"
 
 #ifdef __cplusplus
 extern "C" {

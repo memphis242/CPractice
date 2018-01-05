@@ -1,7 +1,7 @@
 #ifndef VN_ERROR_H_INCLUDED
 #define VN_ERROR_H_INCLUDED
 
-#include "vn/enum.h"
+#include "enum.h"
 
 /** \brief Unified error code system. */
 

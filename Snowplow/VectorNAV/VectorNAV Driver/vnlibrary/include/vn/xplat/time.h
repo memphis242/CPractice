@@ -7,9 +7,12 @@
 #ifndef _VNTIME_H_
 #define _VNTIME_H_
 
-#include "vn/int.h"
-#include "vn/error.h"
-#include "vn/enum.h"
+//#include "vn/int.h"
+#include "../int.h"
+//#include "vn/error.h"
+#include "../error.h"
+//#include "vn/enum.h"
+#include "../enum.h"
 
 #ifdef _WIN32
 

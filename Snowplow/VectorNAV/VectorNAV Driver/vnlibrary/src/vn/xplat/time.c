@@ -8,7 +8,8 @@
 	#define _POSIX_MONOTONIC_CLOCK		200112L
 #endif
 
-#include "vn/xplat/time.h"
+//#include "vn/xplat/time.h"
+#include "../../../include/vn/xplat/time.h"
 
 #if (defined __linux__ || defined __CYGWIN__ || defined __QNXNTO__)
 	#include <time.h>

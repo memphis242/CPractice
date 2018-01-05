@@ -1,7 +1,7 @@
 #ifndef VN_MATRIX_H_INCLUDED
 #define VN_MATRIX_H_INCLUDED
 
-#include "vn/util/compiler.h"
+#include "../util/compiler.h"
 
 #ifdef __cplusplus
 extern "C" {

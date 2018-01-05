@@ -3,14 +3,22 @@
 
 #include <stdarg.h>
 
-#include "vn/int.h"
-#include "vn/bool.h"
-#include "vn/enum.h"
-#include "vn/error.h"
-#include "vn/error_detection.h"
-#include "vn/math/matrix.h"
-#include "vn/math/vector.h"
-#include "vn/protocol/common.h"
+//#include "vn/int.h"
+#include "../int.h"
+//#include "vn/bool.h"
+#include "../bool.h"
+//#include "vn/enum.h"
+#include "../enum.h"
+//#include "vn/error.h"
+#include "../error.h"
+//#include "vn/error_detection.h"
+#include "../error_detection.h"
+//#include "vn/math/matrix.h"
+#include "../math/matrix.h"
+//#include "vn/math/vector.h"
+#include "../math/vector.h"
+//#include "vn/protocol/common.h"
+#include "common.h"
 
 #ifndef VNUART_PROTOCOL_BUFFER_SIZE
 	/** Default internal buffers size for handling received UART data. */

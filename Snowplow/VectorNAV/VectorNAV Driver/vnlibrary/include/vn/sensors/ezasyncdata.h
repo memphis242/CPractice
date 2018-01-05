@@ -1,10 +1,14 @@
 #ifndef _VNEZASYNCDATA_H_
 #define _VNEZASYNCDATA_H_
 
-#include "vn/int.h"
-#include "vn/error.h"
-#include "vn/sensors/compositedata.h"
-#include "vn/sensors.h"
+//#include "vn/int.h"
+#include "../int.h"
+//#include "vn/error.h"
+#include "../error.h"
+//#include "vn/sensors/compositedata.h"
+#include "../sensors/compositedata.h"
+//#include "vn/sensors.h"
+#include "../sensors.h"
 
 #ifdef __cplusplus
 extern "C" {

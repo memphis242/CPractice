@@ -7,7 +7,8 @@
 	#define _POSIX_TIMERS 	1
 #endif
 
-#include "vn/xplat/event.h"
+//#include "vn/xplat/event.h"
+#include "../../../include/vn/xplat/event.h"
 
 #if defined __linux__ || defined __APPLE__ || defined __CYGWIN__ || defined __QNXNTO__
 	#include <time.h>

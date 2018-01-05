@@ -1,6 +1,5 @@
-#include "vn/math/matrix.h"
-
-#include "vn/types.h"
+#include "../../../include/vn/math/matrix.h"
+#include "../../../include/vn/types.h"
 
 void vn_m3_init_fa(mat3f* m, const float* fa)
 {

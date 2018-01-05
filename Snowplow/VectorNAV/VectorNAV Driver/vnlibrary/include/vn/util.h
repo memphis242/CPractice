@@ -3,12 +3,18 @@
 
 #include <stddef.h>
 
-#include "vn/int.h"
-#include "vn/bool.h"
-#include "vn/error.h"
-#include "vn/math/matrix.h"
-#include "vn/math/vector.h"
-#include "vn/util/export.h"
+//#include "vn/int.h"
+#include "int.h"
+//#include "vn/bool.h"
+#include "bool.h"
+//#include "vn/error.h"
+#include "error.h"
+//#include "vn/math/matrix.h"
+#include "math/matrix.h"
+//#include "vn/math/vector.h"
+#include "math/vector.h"
+//#include "vn/util/export.h"
+#include "util/export.h"
 
 #ifdef __cplusplus
 extern "C" {

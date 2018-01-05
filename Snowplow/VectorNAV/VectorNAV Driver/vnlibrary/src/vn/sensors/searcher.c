@@ -1,7 +1,11 @@
-#include "vn/bool.h"
-#include "vn/sensors/searcher.h"
-#include "vn/xplat/serialport.h"
-#include "vn/xplat/thread.h"
+//#include "vn/bool.h"
+#include "../../../include/vn/bool.h"
+//#include "vn/sensors/searcher.h"
+#include "../../../include/vn/sensors/searcher.h"
+//#include "vn/xplat/serialport.h"
+#include "../../../include/vn/xplat/serialport.h"
+//#include "vn/xplat/thread.h"
+#include "../../../include/vn/xplat/thread.h"
 
 #include <ctype.h>
 #include <stdio.h>

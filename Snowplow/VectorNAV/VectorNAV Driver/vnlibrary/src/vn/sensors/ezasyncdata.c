@@ -1,12 +1,15 @@
-#include "vn/sensors.h"
-#include "vn/sensors/compositedata.h"
-#include "vn/sensors/ezasyncdata.h"
-#include "vn/xplat/criticalsection.h"
+//#include "vn/sensors.h"
+#include "../../../include/vn/sensors.h"
+//#include "vn/sensors/compositedata.h"
+#include "../../../include/vn/sensors/compositedata.h"
+//#include "vn/sensors/ezasyncdata.h"
+#include "../../../include/vn/sensors/ezasyncdata.h"
+//#include "vn/xplat/criticalsection.h"
+#include "../../../include/vn/xplat/criticalsection.h"
 
 #include <math.h>
 #include <stdlib.h>
 #include <string.h>
-#include <vn/sensors/ezasyncdata.h>
 
 void VnEzAsyncData_processReceivedAsyncPacket(void *userData, VnUartPacket *packet, size_t runningIndex);
 

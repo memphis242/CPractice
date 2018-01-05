@@ -7,8 +7,10 @@
 #ifndef _VN_THREAD_H_
 #define _VN_THREAD_H_
 
-#include "vn/error.h"
-#include "vn/int.h"
+//#include "vn/error.h"
+#include "../error.h"
+//#include "vn/int.h"
+#include "../int.h"
 
 #ifdef _WIN32
 

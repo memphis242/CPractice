@@ -1,4 +1,4 @@
-#include "vn/error_detection.h"
+#include "../../include/vn/error_detection.h"
 
 uint8_t VnChecksum8_compute(char const *data, size_t length)
 {

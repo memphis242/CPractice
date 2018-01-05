@@ -3,8 +3,10 @@
 
 /** \brief Boolean definition. */
 
-#include "vn/util/compiler.h"
-#include "vn/int.h"
+//#include "vn/util/compiler.h"
+#include "util/compiler.h"
+//#include "vn/int.h"
+#include "int.h"
 
 #if !defined(__cplusplus)
 

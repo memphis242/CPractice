@@ -1,7 +1,8 @@
 #ifndef VNUPACKF_H_INCLUDED
 #define VNUPACKF_H_INCLUDED
 
-#include "vn/protocol/upack.h"
+//#include "vn/protocol/upack.h"
+#include "upack.h"
 
 /*#include "vnint.h"*/
 /*#include "vnbool.h"*/

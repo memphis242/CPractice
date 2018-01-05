@@ -7,9 +7,12 @@
 #ifndef _VNEVENT_H_
 #define _VNEVENT_H_
 
-#include "vn/int.h"
-#include "vn/error.h"
-#include "vn/bool.h"
+//#include "vn/int.h"
+#include "../int.h"
+//#include "vn/error.h"
+#include "../error.h"
+//#include "vn/bool.h"
+#include "../bool.h"
 
 #ifdef _WIN32
 
