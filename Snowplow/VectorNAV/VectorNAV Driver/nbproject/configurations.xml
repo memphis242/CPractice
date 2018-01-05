@@ -4,48 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
-      <logicalFolder name="include" displayName="include" projectFiles="true">
-        <logicalFolder name="vn" displayName="vn" projectFiles="true">
-          <logicalFolder name="math" displayName="math" projectFiles="true">
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/math/matrix.h</itemPath>
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/math/vector.h</itemPath>
-          </logicalFolder>
-          <logicalFolder name="protocol" displayName="protocol" projectFiles="true">
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/protocol/common.h</itemPath>
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/protocol/spi.h</itemPath>
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/protocol/upack.h</itemPath>
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/protocol/upackf.h</itemPath>
-          </logicalFolder>
-          <logicalFolder name="sensors" displayName="sensors" projectFiles="true">
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/sensors/compositedata.h</itemPath>
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/sensors/ezasyncdata.h</itemPath>
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/sensors/searcher.h</itemPath>
-          </logicalFolder>
-          <logicalFolder name="util" displayName="util" projectFiles="true">
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/util/compiler.h</itemPath>
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/util/export.h</itemPath>
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/util/port.h</itemPath>
-          </logicalFolder>
-          <logicalFolder name="xplat" displayName="xplat" projectFiles="true">
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/criticalsection.h</itemPath>
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/event.h</itemPath>
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/serialport.h</itemPath>
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/thread.h</itemPath>
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/time.h</itemPath>
-          </logicalFolder>
-          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/bool.h</itemPath>
-          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/const.h</itemPath>
-          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/conv.h</itemPath>
-          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/enum.h</itemPath>
-          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/error.h</itemPath>
-          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/error_detection.h</itemPath>
-          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/int.h</itemPath>
-          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/sensors.h</itemPath>
-          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/types.h</itemPath>
-          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/util.h</itemPath>
-          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/vectornav.h</itemPath>
-        </logicalFolder>
-      </logicalFolder>
+      <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vectorNAVinterface.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -54,37 +13,504 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <logicalFolder name="RS-232" displayName="RS-232" projectFiles="true">
+        <itemPath>../../RS-232/demo_rx.c</itemPath>
+        <itemPath>../../RS-232/demo_tx.c</itemPath>
+        <itemPath>../../RS-232/rs232.c</itemPath>
+        <itemPath>../../RS-232/rs232.h</itemPath>
+        <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vectorNAVinterface.c</itemPath>
+      </logicalFolder>
+      <itemPath>vntest.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="vnlibrary" displayName="vnlibrary" projectFiles="true">
+      <logicalFolder name="examples" displayName="examples" projectFiles="true">
+        <logicalFolder name="ez_async_data"
+                       displayName="ez_async_data"
+                       projectFiles="true">
+          <itemPath>vnlibrary/examples/ez_async_data/CMakeLists.txt</itemPath>
+          <itemPath>vnlibrary/examples/ez_async_data/Makefile</itemPath>
+          <itemPath>vnlibrary/examples/ez_async_data/main.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="getting_started"
+                       displayName="getting_started"
+                       projectFiles="true">
+          <itemPath>vnlibrary/examples/getting_started/CMakeLists.txt</itemPath>
+          <itemPath>vnlibrary/examples/getting_started/Makefile</itemPath>
+          <itemPath>vnlibrary/examples/getting_started/uartpractice.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="sensor" displayName="sensor" projectFiles="true">
+          <itemPath>vnlibrary/examples/sensor/CMakeLists.txt</itemPath>
+          <itemPath>vnlibrary/examples/sensor/Makefile</itemPath>
+          <itemPath>vnlibrary/examples/sensor/generalpractice.c</itemPath>
+        </logicalFolder>
+        <logicalFolder name="spi" displayName="spi" projectFiles="true">
+          <itemPath>vnlibrary/examples/spi/CMakeLists.txt</itemPath>
+          <itemPath>vnlibrary/examples/spi/Makefile</itemPath>
+          <itemPath>vnlibrary/examples/spi/main.c</itemPath>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="help" displayName="help" projectFiles="true">
+        <logicalFolder name="search" displayName="search" projectFiles="true">
+          <itemPath>vnlibrary/help/search/all_0.html</itemPath>
+          <itemPath>vnlibrary/help/search/all_0.js</itemPath>
+          <itemPath>vnlibrary/help/search/all_1.html</itemPath>
+          <itemPath>vnlibrary/help/search/all_1.js</itemPath>
+          <itemPath>vnlibrary/help/search/all_10.html</itemPath>
+          <itemPath>vnlibrary/help/search/all_10.js</itemPath>
+          <itemPath>vnlibrary/help/search/all_11.html</itemPath>
+          <itemPath>vnlibrary/help/search/all_11.js</itemPath>
+          <itemPath>vnlibrary/help/search/all_12.html</itemPath>
+          <itemPath>vnlibrary/help/search/all_12.js</itemPath>
+          <itemPath>vnlibrary/help/search/all_13.html</itemPath>
+          <itemPath>vnlibrary/help/search/all_13.js</itemPath>
+          <itemPath>vnlibrary/help/search/all_14.html</itemPath>
+          <itemPath>vnlibrary/help/search/all_14.js</itemPath>
+          <itemPath>vnlibrary/help/search/all_15.html</itemPath>
+          <itemPath>vnlibrary/help/search/all_15.js</itemPath>
+          <itemPath>vnlibrary/help/search/all_16.html</itemPath>
+          <itemPath>vnlibrary/help/search/all_16.js</itemPath>
+          <itemPath>vnlibrary/help/search/all_17.html</itemPath>
+          <itemPath>vnlibrary/help/search/all_17.js</itemPath>
+          <itemPath>vnlibrary/help/search/all_2.html</itemPath>
+          <itemPath>vnlibrary/help/search/all_2.js</itemPath>
+          <itemPath>vnlibrary/help/search/all_3.html</itemPath>
+          <itemPath>vnlibrary/help/search/all_3.js</itemPath>
+          <itemPath>vnlibrary/help/search/all_4.html</itemPath>
+          <itemPath>vnlibrary/help/search/all_4.js</itemPath>
+          <itemPath>vnlibrary/help/search/all_5.html</itemPath>
+          <itemPath>vnlibrary/help/search/all_5.js</itemPath>
+          <itemPath>vnlibrary/help/search/all_6.html</itemPath>
+          <itemPath>vnlibrary/help/search/all_6.js</itemPath>
+          <itemPath>vnlibrary/help/search/all_7.html</itemPath>
+          <itemPath>vnlibrary/help/search/all_7.js</itemPath>
+          <itemPath>vnlibrary/help/search/all_8.html</itemPath>
+          <itemPath>vnlibrary/help/search/all_8.js</itemPath>
+          <itemPath>vnlibrary/help/search/all_9.html</itemPath>
+          <itemPath>vnlibrary/help/search/all_9.js</itemPath>
+          <itemPath>vnlibrary/help/search/all_a.html</itemPath>
+          <itemPath>vnlibrary/help/search/all_a.js</itemPath>
+          <itemPath>vnlibrary/help/search/all_b.html</itemPath>
+          <itemPath>vnlibrary/help/search/all_b.js</itemPath>
+          <itemPath>vnlibrary/help/search/all_c.html</itemPath>
+          <itemPath>vnlibrary/help/search/all_c.js</itemPath>
+          <itemPath>vnlibrary/help/search/all_d.html</itemPath>
+          <itemPath>vnlibrary/help/search/all_d.js</itemPath>
+          <itemPath>vnlibrary/help/search/all_e.html</itemPath>
+          <itemPath>vnlibrary/help/search/all_e.js</itemPath>
+          <itemPath>vnlibrary/help/search/all_f.html</itemPath>
+          <itemPath>vnlibrary/help/search/all_f.js</itemPath>
+          <itemPath>vnlibrary/help/search/classes_0.html</itemPath>
+          <itemPath>vnlibrary/help/search/classes_0.js</itemPath>
+          <itemPath>vnlibrary/help/search/classes_1.html</itemPath>
+          <itemPath>vnlibrary/help/search/classes_1.js</itemPath>
+          <itemPath>vnlibrary/help/search/classes_2.html</itemPath>
+          <itemPath>vnlibrary/help/search/classes_2.js</itemPath>
+          <itemPath>vnlibrary/help/search/classes_3.html</itemPath>
+          <itemPath>vnlibrary/help/search/classes_3.js</itemPath>
+          <itemPath>vnlibrary/help/search/classes_4.html</itemPath>
+          <itemPath>vnlibrary/help/search/classes_4.js</itemPath>
+          <itemPath>vnlibrary/help/search/classes_5.html</itemPath>
+          <itemPath>vnlibrary/help/search/classes_5.js</itemPath>
+          <itemPath>vnlibrary/help/search/classes_6.html</itemPath>
+          <itemPath>vnlibrary/help/search/classes_6.js</itemPath>
+          <itemPath>vnlibrary/help/search/classes_7.html</itemPath>
+          <itemPath>vnlibrary/help/search/classes_7.js</itemPath>
+          <itemPath>vnlibrary/help/search/classes_8.html</itemPath>
+          <itemPath>vnlibrary/help/search/classes_8.js</itemPath>
+          <itemPath>vnlibrary/help/search/classes_9.html</itemPath>
+          <itemPath>vnlibrary/help/search/classes_9.js</itemPath>
+          <itemPath>vnlibrary/help/search/classes_a.html</itemPath>
+          <itemPath>vnlibrary/help/search/classes_a.js</itemPath>
+          <itemPath>vnlibrary/help/search/classes_b.html</itemPath>
+          <itemPath>vnlibrary/help/search/classes_b.js</itemPath>
+          <itemPath>vnlibrary/help/search/classes_c.html</itemPath>
+          <itemPath>vnlibrary/help/search/classes_c.js</itemPath>
+          <itemPath>vnlibrary/help/search/close.png</itemPath>
+          <itemPath>vnlibrary/help/search/files_0.html</itemPath>
+          <itemPath>vnlibrary/help/search/files_0.js</itemPath>
+          <itemPath>vnlibrary/help/search/files_1.html</itemPath>
+          <itemPath>vnlibrary/help/search/files_1.js</itemPath>
+          <itemPath>vnlibrary/help/search/files_2.html</itemPath>
+          <itemPath>vnlibrary/help/search/files_2.js</itemPath>
+          <itemPath>vnlibrary/help/search/files_3.html</itemPath>
+          <itemPath>vnlibrary/help/search/files_3.js</itemPath>
+          <itemPath>vnlibrary/help/search/functions_0.html</itemPath>
+          <itemPath>vnlibrary/help/search/functions_0.js</itemPath>
+          <itemPath>vnlibrary/help/search/functions_1.html</itemPath>
+          <itemPath>vnlibrary/help/search/functions_1.js</itemPath>
+          <itemPath>vnlibrary/help/search/functions_2.html</itemPath>
+          <itemPath>vnlibrary/help/search/functions_2.js</itemPath>
+          <itemPath>vnlibrary/help/search/functions_3.html</itemPath>
+          <itemPath>vnlibrary/help/search/functions_3.js</itemPath>
+          <itemPath>vnlibrary/help/search/groups_0.html</itemPath>
+          <itemPath>vnlibrary/help/search/groups_0.js</itemPath>
+          <itemPath>vnlibrary/help/search/groups_1.html</itemPath>
+          <itemPath>vnlibrary/help/search/groups_1.js</itemPath>
+          <itemPath>vnlibrary/help/search/groups_2.html</itemPath>
+          <itemPath>vnlibrary/help/search/groups_2.js</itemPath>
+          <itemPath>vnlibrary/help/search/groups_3.html</itemPath>
+          <itemPath>vnlibrary/help/search/groups_3.js</itemPath>
+          <itemPath>vnlibrary/help/search/mag_sel.png</itemPath>
+          <itemPath>vnlibrary/help/search/nomatches.html</itemPath>
+          <itemPath>vnlibrary/help/search/pages_0.html</itemPath>
+          <itemPath>vnlibrary/help/search/pages_0.js</itemPath>
+          <itemPath>vnlibrary/help/search/pages_1.html</itemPath>
+          <itemPath>vnlibrary/help/search/pages_1.js</itemPath>
+          <itemPath>vnlibrary/help/search/pages_2.html</itemPath>
+          <itemPath>vnlibrary/help/search/pages_2.js</itemPath>
+          <itemPath>vnlibrary/help/search/search.css</itemPath>
+          <itemPath>vnlibrary/help/search/search.js</itemPath>
+          <itemPath>vnlibrary/help/search/search_l.png</itemPath>
+          <itemPath>vnlibrary/help/search/search_m.png</itemPath>
+          <itemPath>vnlibrary/help/search/search_r.png</itemPath>
+          <itemPath>vnlibrary/help/search/searchdata.js</itemPath>
+          <itemPath>vnlibrary/help/search/typedefs_0.html</itemPath>
+          <itemPath>vnlibrary/help/search/typedefs_0.js</itemPath>
+          <itemPath>vnlibrary/help/search/variables_0.html</itemPath>
+          <itemPath>vnlibrary/help/search/variables_0.js</itemPath>
+          <itemPath>vnlibrary/help/search/variables_1.html</itemPath>
+          <itemPath>vnlibrary/help/search/variables_1.js</itemPath>
+          <itemPath>vnlibrary/help/search/variables_10.html</itemPath>
+          <itemPath>vnlibrary/help/search/variables_10.js</itemPath>
+          <itemPath>vnlibrary/help/search/variables_11.html</itemPath>
+          <itemPath>vnlibrary/help/search/variables_11.js</itemPath>
+          <itemPath>vnlibrary/help/search/variables_12.html</itemPath>
+          <itemPath>vnlibrary/help/search/variables_12.js</itemPath>
+          <itemPath>vnlibrary/help/search/variables_13.html</itemPath>
+          <itemPath>vnlibrary/help/search/variables_13.js</itemPath>
+          <itemPath>vnlibrary/help/search/variables_14.html</itemPath>
+          <itemPath>vnlibrary/help/search/variables_14.js</itemPath>
+          <itemPath>vnlibrary/help/search/variables_15.html</itemPath>
+          <itemPath>vnlibrary/help/search/variables_15.js</itemPath>
+          <itemPath>vnlibrary/help/search/variables_16.html</itemPath>
+          <itemPath>vnlibrary/help/search/variables_16.js</itemPath>
+          <itemPath>vnlibrary/help/search/variables_2.html</itemPath>
+          <itemPath>vnlibrary/help/search/variables_2.js</itemPath>
+          <itemPath>vnlibrary/help/search/variables_3.html</itemPath>
+          <itemPath>vnlibrary/help/search/variables_3.js</itemPath>
+          <itemPath>vnlibrary/help/search/variables_4.html</itemPath>
+          <itemPath>vnlibrary/help/search/variables_4.js</itemPath>
+          <itemPath>vnlibrary/help/search/variables_5.html</itemPath>
+          <itemPath>vnlibrary/help/search/variables_5.js</itemPath>
+          <itemPath>vnlibrary/help/search/variables_6.html</itemPath>
+          <itemPath>vnlibrary/help/search/variables_6.js</itemPath>
+          <itemPath>vnlibrary/help/search/variables_7.html</itemPath>
+          <itemPath>vnlibrary/help/search/variables_7.js</itemPath>
+          <itemPath>vnlibrary/help/search/variables_8.html</itemPath>
+          <itemPath>vnlibrary/help/search/variables_8.js</itemPath>
+          <itemPath>vnlibrary/help/search/variables_9.html</itemPath>
+          <itemPath>vnlibrary/help/search/variables_9.js</itemPath>
+          <itemPath>vnlibrary/help/search/variables_a.html</itemPath>
+          <itemPath>vnlibrary/help/search/variables_a.js</itemPath>
+          <itemPath>vnlibrary/help/search/variables_b.html</itemPath>
+          <itemPath>vnlibrary/help/search/variables_b.js</itemPath>
+          <itemPath>vnlibrary/help/search/variables_c.html</itemPath>
+          <itemPath>vnlibrary/help/search/variables_c.js</itemPath>
+          <itemPath>vnlibrary/help/search/variables_d.html</itemPath>
+          <itemPath>vnlibrary/help/search/variables_d.js</itemPath>
+          <itemPath>vnlibrary/help/search/variables_e.html</itemPath>
+          <itemPath>vnlibrary/help/search/variables_e.js</itemPath>
+          <itemPath>vnlibrary/help/search/variables_f.html</itemPath>
+          <itemPath>vnlibrary/help/search/variables_f.js</itemPath>
+        </logicalFolder>
+        <itemPath>vnlibrary/help/annotated.html</itemPath>
+        <itemPath>vnlibrary/help/arrowdown.png</itemPath>
+        <itemPath>vnlibrary/help/arrowright.png</itemPath>
+        <itemPath>vnlibrary/help/bc_s.png</itemPath>
+        <itemPath>vnlibrary/help/bdwn.png</itemPath>
+        <itemPath>vnlibrary/help/bool_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/classes.html</itemPath>
+        <itemPath>vnlibrary/help/closed.png</itemPath>
+        <itemPath>vnlibrary/help/common_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/compiler_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/compositedata_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/const_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/conv_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/criticalsection_8h.html</itemPath>
+        <itemPath>vnlibrary/help/criticalsection_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/dir_027780aa32961d07c4d51557f73a7d30.html</itemPath>
+        <itemPath>vnlibrary/help/dir_31a68fee5b0aade5575fcd9899552a15.html</itemPath>
+        <itemPath>vnlibrary/help/dir_8bde4b85f1f8cd0faa87b91375e717e4.html</itemPath>
+        <itemPath>vnlibrary/help/dir_b8f3676ce45a2d9945f359024fabdbc0.html</itemPath>
+        <itemPath>vnlibrary/help/dir_c8e7966a7aa62365068a660868ad1d75.html</itemPath>
+        <itemPath>vnlibrary/help/dir_d44c64559bbebec7f509842c48db8b23.html</itemPath>
+        <itemPath>vnlibrary/help/dir_f40822c92baf324ecf3ea224d9a1e0b5.html</itemPath>
+        <itemPath>vnlibrary/help/doc.png</itemPath>
+        <itemPath>vnlibrary/help/doxygen.css</itemPath>
+        <itemPath>vnlibrary/help/doxygen.png</itemPath>
+        <itemPath>vnlibrary/help/dynsections.js</itemPath>
+        <itemPath>vnlibrary/help/enum_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/error_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/error__detection_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/event_8h.html</itemPath>
+        <itemPath>vnlibrary/help/event_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/examples.html</itemPath>
+        <itemPath>vnlibrary/help/export_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/ez_async_data_2main_8c-example.html</itemPath>
+        <itemPath>vnlibrary/help/ezasyncdata_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/files.html</itemPath>
+        <itemPath>vnlibrary/help/folderclosed.png</itemPath>
+        <itemPath>vnlibrary/help/folderopen.png</itemPath>
+        <itemPath>vnlibrary/help/functions.html</itemPath>
+        <itemPath>vnlibrary/help/functions_b.html</itemPath>
+        <itemPath>vnlibrary/help/functions_c.html</itemPath>
+        <itemPath>vnlibrary/help/functions_d.html</itemPath>
+        <itemPath>vnlibrary/help/functions_e.html</itemPath>
+        <itemPath>vnlibrary/help/functions_f.html</itemPath>
+        <itemPath>vnlibrary/help/functions_g.html</itemPath>
+        <itemPath>vnlibrary/help/functions_h.html</itemPath>
+        <itemPath>vnlibrary/help/functions_i.html</itemPath>
+        <itemPath>vnlibrary/help/functions_l.html</itemPath>
+        <itemPath>vnlibrary/help/functions_m.html</itemPath>
+        <itemPath>vnlibrary/help/functions_n.html</itemPath>
+        <itemPath>vnlibrary/help/functions_o.html</itemPath>
+        <itemPath>vnlibrary/help/functions_p.html</itemPath>
+        <itemPath>vnlibrary/help/functions_q.html</itemPath>
+        <itemPath>vnlibrary/help/functions_r.html</itemPath>
+        <itemPath>vnlibrary/help/functions_s.html</itemPath>
+        <itemPath>vnlibrary/help/functions_t.html</itemPath>
+        <itemPath>vnlibrary/help/functions_u.html</itemPath>
+        <itemPath>vnlibrary/help/functions_v.html</itemPath>
+        <itemPath>vnlibrary/help/functions_vars.html</itemPath>
+        <itemPath>vnlibrary/help/functions_vars_b.html</itemPath>
+        <itemPath>vnlibrary/help/functions_vars_c.html</itemPath>
+        <itemPath>vnlibrary/help/functions_vars_d.html</itemPath>
+        <itemPath>vnlibrary/help/functions_vars_e.html</itemPath>
+        <itemPath>vnlibrary/help/functions_vars_f.html</itemPath>
+        <itemPath>vnlibrary/help/functions_vars_g.html</itemPath>
+        <itemPath>vnlibrary/help/functions_vars_h.html</itemPath>
+        <itemPath>vnlibrary/help/functions_vars_i.html</itemPath>
+        <itemPath>vnlibrary/help/functions_vars_l.html</itemPath>
+        <itemPath>vnlibrary/help/functions_vars_m.html</itemPath>
+        <itemPath>vnlibrary/help/functions_vars_n.html</itemPath>
+        <itemPath>vnlibrary/help/functions_vars_o.html</itemPath>
+        <itemPath>vnlibrary/help/functions_vars_p.html</itemPath>
+        <itemPath>vnlibrary/help/functions_vars_q.html</itemPath>
+        <itemPath>vnlibrary/help/functions_vars_r.html</itemPath>
+        <itemPath>vnlibrary/help/functions_vars_s.html</itemPath>
+        <itemPath>vnlibrary/help/functions_vars_t.html</itemPath>
+        <itemPath>vnlibrary/help/functions_vars_u.html</itemPath>
+        <itemPath>vnlibrary/help/functions_vars_v.html</itemPath>
+        <itemPath>vnlibrary/help/functions_vars_w.html</itemPath>
+        <itemPath>vnlibrary/help/functions_vars_x.html</itemPath>
+        <itemPath>vnlibrary/help/functions_vars_y.html</itemPath>
+        <itemPath>vnlibrary/help/functions_w.html</itemPath>
+        <itemPath>vnlibrary/help/functions_x.html</itemPath>
+        <itemPath>vnlibrary/help/functions_y.html</itemPath>
+        <itemPath>vnlibrary/help/getting_started_2main_8c-example.html</itemPath>
+        <itemPath>vnlibrary/help/globals.html</itemPath>
+        <itemPath>vnlibrary/help/globals_func.html</itemPath>
+        <itemPath>vnlibrary/help/globals_type.html</itemPath>
+        <itemPath>vnlibrary/help/group__byte_orderers.html</itemPath>
+        <itemPath>vnlibrary/help/group__register_access_methods.html</itemPath>
+        <itemPath>vnlibrary/help/group__register_structures.html</itemPath>
+        <itemPath>vnlibrary/help/group__sensor_value_extractors.html</itemPath>
+        <itemPath>vnlibrary/help/group__spi__genread__functions.html</itemPath>
+        <itemPath>vnlibrary/help/group__spi__genwrite__functions.html</itemPath>
+        <itemPath>vnlibrary/help/group__uart__genread__functions.html</itemPath>
+        <itemPath>vnlibrary/help/group__uart__genwrite__functions.html</itemPath>
+        <itemPath>vnlibrary/help/group__uart_packet_ascii_async_parsers.html</itemPath>
+        <itemPath>vnlibrary/help/group__uart_packet_binary_extractors.html</itemPath>
+        <itemPath>vnlibrary/help/index.html</itemPath>
+        <itemPath>vnlibrary/help/int_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/jquery.js</itemPath>
+        <itemPath>vnlibrary/help/known_issues.html</itemPath>
+        <itemPath>vnlibrary/help/matrix_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/modules.html</itemPath>
+        <itemPath>vnlibrary/help/nav_f.png</itemPath>
+        <itemPath>vnlibrary/help/nav_g.png</itemPath>
+        <itemPath>vnlibrary/help/nav_h.png</itemPath>
+        <itemPath>vnlibrary/help/open.png</itemPath>
+        <itemPath>vnlibrary/help/pages.html</itemPath>
+        <itemPath>vnlibrary/help/port_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/proglib.png</itemPath>
+        <itemPath>vnlibrary/help/requirements.html</itemPath>
+        <itemPath>vnlibrary/help/searcher_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/sensor_2main_8c-example.html</itemPath>
+        <itemPath>vnlibrary/help/sensors_8h.html</itemPath>
+        <itemPath>vnlibrary/help/sensors_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/serialport_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/spi_2main_8c-example.html</itemPath>
+        <itemPath>vnlibrary/help/spi_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/splitbar.png</itemPath>
+        <itemPath>vnlibrary/help/struct_acceleration_compensation_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_binary_output_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_calculated_magnetometer_calibration_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_communication_protocol_control_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_delta_theta_and_delta_velocity_configuration_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_delta_theta_and_delta_velocity_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_filter_active_tuning_parameters_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_filter_basic_control_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_filter_measurements_variance_parameters_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_gps_compass_baseline_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_gps_compass_estimated_baseline_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_gps_configuration_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_gps_solution_ecef_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_gps_solution_lla_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_gyro_compensation_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_imu_filtering_configuration_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_imu_measurements_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_imu_rate_configuration_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_ins_advanced_configuration_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_ins_basic_configuration_register_vn200.html</itemPath>
+        <itemPath>vnlibrary/help/struct_ins_basic_configuration_register_vn300.html</itemPath>
+        <itemPath>vnlibrary/help/struct_ins_solution_ecef_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_ins_solution_lla_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_ins_state_ecef_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_ins_state_lla_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_magnetic_acceleration_and_angular_rates_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_magnetic_and_gravity_reference_vectors_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_magnetometer_calibration_control_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_magnetometer_compensation_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_quaternion_magnetic_acceleration_and_angular_rates_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_reference_vector_configuration_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_startup_filter_bias_estimate_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_synchronization_control_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_synchronization_status_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_velocity_compensation_control_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_velocity_compensation_status_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_vn_composite_data.html</itemPath>
+        <itemPath>vnlibrary/help/struct_vn_critical_section.html</itemPath>
+        <itemPath>vnlibrary/help/struct_vn_event.html</itemPath>
+        <itemPath>vnlibrary/help/struct_vn_ez_async_data.html</itemPath>
+        <itemPath>vnlibrary/help/struct_vn_port_info.html</itemPath>
+        <itemPath>vnlibrary/help/struct_vn_sensor.html</itemPath>
+        <itemPath>vnlibrary/help/struct_vn_serial_port.html</itemPath>
+        <itemPath>vnlibrary/help/struct_vn_stopwatch.html</itemPath>
+        <itemPath>vnlibrary/help/struct_vn_thread.html</itemPath>
+        <itemPath>vnlibrary/help/struct_vn_uart_packet.html</itemPath>
+        <itemPath>vnlibrary/help/struct_vn_uart_packet_finder.html</itemPath>
+        <itemPath>vnlibrary/help/struct_vpe_accelerometer_advanced_tuning_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_vpe_accelerometer_basic_tuning_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_vpe_basic_control_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_vpe_gyro_basic_tuning_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_vpe_magnetometer_advanced_tuning_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_vpe_magnetometer_basic_tuning_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_yaw_pitch_roll_magnetic_acceleration_and_angular_rates_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_yaw_pitch_roll_true_body_acceleration_and_angular_rates_register.html</itemPath>
+        <itemPath>vnlibrary/help/struct_yaw_pitch_roll_true_inertial_acceleration_and_angular_rates_register.html</itemPath>
+        <itemPath>vnlibrary/help/sync_off.png</itemPath>
+        <itemPath>vnlibrary/help/sync_on.png</itemPath>
+        <itemPath>vnlibrary/help/tab_a.png</itemPath>
+        <itemPath>vnlibrary/help/tab_b.png</itemPath>
+        <itemPath>vnlibrary/help/tab_h.png</itemPath>
+        <itemPath>vnlibrary/help/tab_s.png</itemPath>
+        <itemPath>vnlibrary/help/tabs.css</itemPath>
+        <itemPath>vnlibrary/help/thread_8h.html</itemPath>
+        <itemPath>vnlibrary/help/thread_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/time_8h.html</itemPath>
+        <itemPath>vnlibrary/help/time_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/types_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/unionmat3f.html</itemPath>
+        <itemPath>vnlibrary/help/unionquatf.html</itemPath>
+        <itemPath>vnlibrary/help/unionvec3d.html</itemPath>
+        <itemPath>vnlibrary/help/unionvec3f.html</itemPath>
+        <itemPath>vnlibrary/help/unionvec4f.html</itemPath>
+        <itemPath>vnlibrary/help/upack_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/upackf_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/util_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/vector_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/vectornav_8h_source.html</itemPath>
+        <itemPath>vnlibrary/help/version_history.html</itemPath>
+      </logicalFolder>
+      <logicalFolder name="include" displayName="include" projectFiles="true">
+        <logicalFolder name="vn" displayName="vn" projectFiles="true">
+          <logicalFolder name="math" displayName="math" projectFiles="true">
+            <itemPath>vnlibrary/include/vn/math/matrix.h</itemPath>
+            <itemPath>vnlibrary/include/vn/math/vector.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="protocol" displayName="protocol" projectFiles="true">
+            <itemPath>vnlibrary/include/vn/protocol/common.h</itemPath>
+            <itemPath>vnlibrary/include/vn/protocol/spi.h</itemPath>
+            <itemPath>vnlibrary/include/vn/protocol/upack.h</itemPath>
+            <itemPath>vnlibrary/include/vn/protocol/upackf.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="sensors" displayName="sensors" projectFiles="true">
+            <itemPath>vnlibrary/include/vn/sensors/compositedata.h</itemPath>
+            <itemPath>vnlibrary/include/vn/sensors/ezasyncdata.h</itemPath>
+            <itemPath>vnlibrary/include/vn/sensors/searcher.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="util" displayName="util" projectFiles="true">
+            <itemPath>vnlibrary/include/vn/util/compiler.h</itemPath>
+            <itemPath>vnlibrary/include/vn/util/export.h</itemPath>
+            <itemPath>vnlibrary/include/vn/util/port.h</itemPath>
+          </logicalFolder>
+          <logicalFolder name="xplat" displayName="xplat" projectFiles="true">
+            <itemPath>vnlibrary/include/vn/xplat/criticalsection.h</itemPath>
+            <itemPath>vnlibrary/include/vn/xplat/event.h</itemPath>
+            <itemPath>vnlibrary/include/vn/xplat/serialport.h</itemPath>
+            <itemPath>vnlibrary/include/vn/xplat/thread.h</itemPath>
+            <itemPath>vnlibrary/include/vn/xplat/time.h</itemPath>
+          </logicalFolder>
+          <itemPath>vnlibrary/include/vn/bool.h</itemPath>
+          <itemPath>vnlibrary/include/vn/const.h</itemPath>
+          <itemPath>vnlibrary/include/vn/conv.h</itemPath>
+          <itemPath>vnlibrary/include/vn/enum.h</itemPath>
+          <itemPath>vnlibrary/include/vn/error.h</itemPath>
+          <itemPath>vnlibrary/include/vn/error_detection.h</itemPath>
+          <itemPath>vnlibrary/include/vn/int.h</itemPath>
+          <itemPath>vnlibrary/include/vn/sensors.h</itemPath>
+          <itemPath>vnlibrary/include/vn/types.h</itemPath>
+          <itemPath>vnlibrary/include/vn/util.h</itemPath>
+          <itemPath>vnlibrary/include/vn/vectornav.h</itemPath>
+        </logicalFolder>
+        <itemPath>vnlibrary/include/vectorNAVinterface.c</itemPath>
+        <itemPath>vnlibrary/include/vectorNAVinterface.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="projects" displayName="projects" projectFiles="true">
+        <logicalFolder name="vs2008" displayName="vs2008" projectFiles="true">
+          <itemPath>vnlibrary/projects/vs2008/libvnc.sln</itemPath>
+          <itemPath>vnlibrary/projects/vs2008/libvnc.vcproj</itemPath>
+        </logicalFolder>
+        <logicalFolder name="vs2010" displayName="vs2010" projectFiles="true">
+          <itemPath>vnlibrary/projects/vs2010/libvnc.sln</itemPath>
+          <itemPath>vnlibrary/projects/vs2010/libvnc.vcxproj</itemPath>
+          <itemPath>vnlibrary/projects/vs2010/libvnc.vcxproj.filters</itemPath>
+        </logicalFolder>
+        <logicalFolder name="vs2012" displayName="vs2012" projectFiles="true">
+          <itemPath>vnlibrary/projects/vs2012/libvnc.sln</itemPath>
+          <itemPath>vnlibrary/projects/vs2012/libvnc.vcxproj</itemPath>
+          <itemPath>vnlibrary/projects/vs2012/libvnc.vcxproj.filters</itemPath>
+        </logicalFolder>
+        <logicalFolder name="vs2013" displayName="vs2013" projectFiles="true">
+          <itemPath>vnlibrary/projects/vs2013/libvnc.sln</itemPath>
+          <itemPath>vnlibrary/projects/vs2013/libvnc.vcxproj</itemPath>
+          <itemPath>vnlibrary/projects/vs2013/libvnc.vcxproj.filters</itemPath>
+        </logicalFolder>
+      </logicalFolder>
       <logicalFolder name="src" displayName="src" projectFiles="true">
         <logicalFolder name="vn" displayName="vn" projectFiles="true">
           <logicalFolder name="math" displayName="math" projectFiles="true">
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/math/matrix.c</itemPath>
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/math/vector.c</itemPath>
+            <itemPath>vnlibrary/src/vn/math/matrix.c</itemPath>
+            <itemPath>vnlibrary/src/vn/math/vector.c</itemPath>
           </logicalFolder>
           <logicalFolder name="protocol" displayName="protocol" projectFiles="true">
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/protocol/spi.c</itemPath>
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/protocol/upack.c</itemPath>
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/protocol/upackf.c</itemPath>
+            <itemPath>vnlibrary/src/vn/protocol/spi.c</itemPath>
+            <itemPath>vnlibrary/src/vn/protocol/upack.c</itemPath>
+            <itemPath>vnlibrary/src/vn/protocol/upackf.c</itemPath>
           </logicalFolder>
           <logicalFolder name="sensors" displayName="sensors" projectFiles="true">
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors/compositedata.c</itemPath>
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors/ezasyncdata.c</itemPath>
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors/searcher.c</itemPath>
+            <itemPath>vnlibrary/src/vn/sensors/compositedata.c</itemPath>
+            <itemPath>vnlibrary/src/vn/sensors/ezasyncdata.c</itemPath>
+            <itemPath>vnlibrary/src/vn/sensors/searcher.c</itemPath>
           </logicalFolder>
           <logicalFolder name="xplat" displayName="xplat" projectFiles="true">
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/criticalsection.c</itemPath>
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/event.c</itemPath>
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/serialport.c</itemPath>
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/thread.c</itemPath>
-            <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/time.c</itemPath>
+            <itemPath>vnlibrary/src/vn/xplat/criticalsection.c</itemPath>
+            <itemPath>vnlibrary/src/vn/xplat/event.c</itemPath>
+            <itemPath>vnlibrary/src/vn/xplat/serialport.c</itemPath>
+            <itemPath>vnlibrary/src/vn/xplat/thread.c</itemPath>
+            <itemPath>vnlibrary/src/vn/xplat/time.c</itemPath>
           </logicalFolder>
-          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/conv.c</itemPath>
-          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/error.c</itemPath>
-          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/error_detection.c</itemPath>
-          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors.c</itemPath>
-          <itemPath>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/util.c</itemPath>
+          <itemPath>vnlibrary/src/vn/conv.c</itemPath>
+          <itemPath>vnlibrary/src/vn/error.c</itemPath>
+          <itemPath>vnlibrary/src/vn/error_detection.c</itemPath>
+          <itemPath>vnlibrary/src/vn/sensors.c</itemPath>
+          <itemPath>vnlibrary/src/vn/util.c</itemPath>
         </logicalFolder>
       </logicalFolder>
-      <itemPath>main.c</itemPath>
+      <itemPath>vnlibrary/CMakeLists.txt</itemPath>
+      <itemPath>vnlibrary/Makefile</itemPath>
+      <itemPath>vnlibrary/index.html</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -101,6 +527,8 @@
   <sourceRootList>
     <Elem>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include</Elem>
     <Elem>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src</Elem>
+    <Elem>../../RS-232</Elem>
+    <Elem>vnlibrary</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -112,237 +540,1598 @@
       </toolsSet>
       <compileType>
       </compileType>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/bool.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/const.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/conv.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/enum.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/error.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/error_detection.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/int.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/math/matrix.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/math/vector.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/protocol/common.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/protocol/spi.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/protocol/upack.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/protocol/upackf.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/sensors.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/sensors/compositedata.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/sensors/ezasyncdata.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/sensors/searcher.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/types.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/util.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/util/compiler.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/util/export.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/util/port.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/vectornav.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/criticalsection.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/event.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/serialport.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/thread.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/time.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/conv.c"
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vectorNAVinterface.c"
             ex="false"
             tool="0"
             flavor2="0">
       </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/error.c"
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vectorNAVinterface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../RS-232/demo_rx.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../../RS-232/demo_tx.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../../RS-232/rs232.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../../RS-232/rs232.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/CMakeLists.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/Makefile" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/examples/ez_async_data/CMakeLists.txt"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/examples/ez_async_data/Makefile"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/examples/ez_async_data/main.c"
             ex="false"
             tool="0"
             flavor2="0">
       </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/error_detection.c"
+      <item path="vnlibrary/examples/getting_started/CMakeLists.txt"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/examples/getting_started/Makefile"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/examples/getting_started/uartpractice.c"
             ex="false"
             tool="0"
             flavor2="0">
       </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/math/matrix.c"
+      <item path="vnlibrary/examples/sensor/CMakeLists.txt"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/examples/sensor/Makefile" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/examples/sensor/generalpractice.c"
             ex="false"
             tool="0"
             flavor2="0">
       </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/math/vector.c"
+      <item path="vnlibrary/examples/spi/CMakeLists.txt"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/examples/spi/Makefile" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/examples/spi/main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/annotated.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/arrowdown.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/arrowright.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/bc_s.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/bdwn.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/bool_8h_source.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/classes.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/closed.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/common_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/compiler_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/compositedata_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/const_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/conv_8h_source.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/criticalsection_8h.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/criticalsection_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/dir_027780aa32961d07c4d51557f73a7d30.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/dir_31a68fee5b0aade5575fcd9899552a15.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/dir_8bde4b85f1f8cd0faa87b91375e717e4.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/dir_b8f3676ce45a2d9945f359024fabdbc0.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/dir_c8e7966a7aa62365068a660868ad1d75.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/dir_d44c64559bbebec7f509842c48db8b23.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/dir_f40822c92baf324ecf3ea224d9a1e0b5.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/doc.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/doxygen.css" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/doxygen.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/dynsections.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/enum_8h_source.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/error_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/error__detection_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/event_8h.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/event_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/examples.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/export_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/ez_async_data_2main_8c-example.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/ezasyncdata_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/files.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/folderclosed.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/folderopen.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_b.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_c.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_d.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_e.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_f.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_g.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_h.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_i.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_l.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_m.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_n.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_o.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_p.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_q.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_r.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_s.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_t.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_u.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_v.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_b.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_c.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_d.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_e.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_f.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_g.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_h.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_i.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_l.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_m.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_n.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_o.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_p.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_q.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_r.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_s.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_t.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_u.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_v.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_w.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_x.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_y.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_w.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_x.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_y.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/getting_started_2main_8c-example.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/globals.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/globals_func.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/globals_type.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/group__byte_orderers.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/group__register_access_methods.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/group__register_structures.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/group__sensor_value_extractors.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/group__spi__genread__functions.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/group__spi__genwrite__functions.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/group__uart__genread__functions.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/group__uart__genwrite__functions.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/group__uart_packet_ascii_async_parsers.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/group__uart_packet_binary_extractors.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/index.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/int_8h_source.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/jquery.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/known_issues.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/matrix_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/modules.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/nav_f.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/nav_g.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/nav_h.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/open.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/pages.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/port_8h_source.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/proglib.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/requirements.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_0.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_0.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_1.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_1.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_10.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_10.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_11.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_11.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_12.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_12.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_13.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_13.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_14.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_14.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_15.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_15.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_16.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_16.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_17.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_17.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_2.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_2.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_3.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_3.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_4.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_4.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_5.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_5.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_6.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_6.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_7.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_7.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_8.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_8.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_9.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_9.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_a.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_a.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_b.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_b.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_c.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_c.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_d.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_d.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_e.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_e.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_f.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_f.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_0.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_0.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_1.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_1.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_2.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_2.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_3.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_3.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_4.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_4.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_5.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_5.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_6.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_6.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_7.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_7.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_8.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_8.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_9.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_9.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_a.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_a.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_b.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_b.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_c.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_c.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/close.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/files_0.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/files_0.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/files_1.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/files_1.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/files_2.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/files_2.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/files_3.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/files_3.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/functions_0.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/functions_0.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/functions_1.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/functions_1.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/functions_2.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/functions_2.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/functions_3.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/functions_3.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/groups_0.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/groups_0.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/groups_1.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/groups_1.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/groups_2.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/groups_2.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/groups_3.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/groups_3.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/mag_sel.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/nomatches.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/pages_0.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/pages_0.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/pages_1.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/pages_1.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/pages_2.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/pages_2.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/search.css" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/search.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/search_l.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/search_m.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/search_r.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/searchdata.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/typedefs_0.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/typedefs_0.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_0.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_0.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_1.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_1.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_10.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_10.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_11.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_11.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_12.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_12.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_13.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_13.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_14.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_14.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_15.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_15.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_16.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_16.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_2.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_2.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_3.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_3.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_4.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_4.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_5.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_5.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_6.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_6.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_7.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_7.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_8.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_8.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_9.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_9.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_a.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_a.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_b.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_b.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_c.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_c.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_d.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_d.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_e.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_e.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_f.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_f.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/searcher_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/sensor_2main_8c-example.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/sensors_8h.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/sensors_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/serialport_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/spi_2main_8c-example.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/spi_8h_source.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/splitbar.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_acceleration_compensation_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_binary_output_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_calculated_magnetometer_calibration_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_communication_protocol_control_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_delta_theta_and_delta_velocity_configuration_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_delta_theta_and_delta_velocity_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_filter_active_tuning_parameters_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_filter_basic_control_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_filter_measurements_variance_parameters_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_gps_compass_baseline_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_gps_compass_estimated_baseline_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_gps_configuration_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_gps_solution_ecef_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_gps_solution_lla_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_gyro_compensation_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_imu_filtering_configuration_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_imu_measurements_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_imu_rate_configuration_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_ins_advanced_configuration_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_ins_basic_configuration_register_vn200.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_ins_basic_configuration_register_vn300.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_ins_solution_ecef_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_ins_solution_lla_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_ins_state_ecef_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_ins_state_lla_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_magnetic_acceleration_and_angular_rates_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_magnetic_and_gravity_reference_vectors_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_magnetometer_calibration_control_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_magnetometer_compensation_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_quaternion_magnetic_acceleration_and_angular_rates_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_reference_vector_configuration_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_startup_filter_bias_estimate_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_synchronization_control_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_synchronization_status_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_velocity_compensation_control_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_velocity_compensation_status_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vn_composite_data.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vn_critical_section.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vn_event.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vn_ez_async_data.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vn_port_info.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vn_sensor.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vn_serial_port.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vn_stopwatch.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vn_thread.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vn_uart_packet.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vn_uart_packet_finder.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vpe_accelerometer_advanced_tuning_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vpe_accelerometer_basic_tuning_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vpe_basic_control_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vpe_gyro_basic_tuning_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vpe_magnetometer_advanced_tuning_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vpe_magnetometer_basic_tuning_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_yaw_pitch_roll_magnetic_acceleration_and_angular_rates_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_yaw_pitch_roll_true_body_acceleration_and_angular_rates_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_yaw_pitch_roll_true_inertial_acceleration_and_angular_rates_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/sync_off.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/sync_on.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/tab_a.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/tab_b.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/tab_h.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/tab_s.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/tabs.css" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/thread_8h.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/thread_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/time_8h.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/time_8h_source.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/types_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/unionmat3f.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/unionquatf.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/unionvec3d.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/unionvec3f.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/unionvec4f.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/upack_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/upackf_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/util_8h_source.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/vector_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/vectornav_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/version_history.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vectorNAVinterface.c"
             ex="false"
             tool="0"
             flavor2="0">
       </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/protocol/spi.c"
+      <item path="vnlibrary/include/vectorNAVinterface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/bool.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/const.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/conv.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/enum.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/error.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/error_detection.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/int.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/math/matrix.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/math/vector.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/protocol/common.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/protocol/spi.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/protocol/upack.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/protocol/upackf.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/sensors.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/sensors/compositedata.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/sensors/ezasyncdata.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/sensors/searcher.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/types.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/util.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/util/compiler.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/util/export.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/util/port.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/vectornav.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/xplat/criticalsection.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/xplat/event.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/xplat/serialport.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/xplat/thread.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/xplat/time.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/index.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/projects/vs2008/libvnc.sln"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/projects/vs2008/libvnc.vcproj"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/projects/vs2010/libvnc.sln"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/projects/vs2010/libvnc.vcxproj"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/projects/vs2010/libvnc.vcxproj.filters"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/projects/vs2012/libvnc.sln"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/projects/vs2012/libvnc.vcxproj"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/projects/vs2012/libvnc.vcxproj.filters"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/projects/vs2013/libvnc.sln"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/projects/vs2013/libvnc.vcxproj"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/projects/vs2013/libvnc.vcxproj.filters"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/src/vn/conv.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="vnlibrary/src/vn/error.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="vnlibrary/src/vn/error_detection.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="vnlibrary/src/vn/math/matrix.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="vnlibrary/src/vn/math/vector.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="vnlibrary/src/vn/protocol/spi.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="vnlibrary/src/vn/protocol/upack.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="vnlibrary/src/vn/protocol/upackf.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="vnlibrary/src/vn/sensors.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="vnlibrary/src/vn/sensors/compositedata.c"
             ex="false"
             tool="0"
             flavor2="0">
       </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/protocol/upack.c"
+      <item path="vnlibrary/src/vn/sensors/ezasyncdata.c"
             ex="false"
             tool="0"
             flavor2="0">
       </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/protocol/upackf.c"
+      <item path="vnlibrary/src/vn/sensors/searcher.c"
             ex="false"
             tool="0"
             flavor2="0">
       </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors.c"
+      <item path="vnlibrary/src/vn/util.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="vnlibrary/src/vn/xplat/criticalsection.c"
             ex="false"
             tool="0"
             flavor2="0">
       </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors/compositedata.c"
+      <item path="vnlibrary/src/vn/xplat/event.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="vnlibrary/src/vn/xplat/serialport.c"
             ex="false"
             tool="0"
             flavor2="0">
       </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors/ezasyncdata.c"
-            ex="false"
-            tool="0"
-            flavor2="0">
+      <item path="vnlibrary/src/vn/xplat/thread.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors/searcher.c"
-            ex="false"
-            tool="0"
-            flavor2="0">
+      <item path="vnlibrary/src/vn/xplat/time.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/util.c"
-            ex="false"
-            tool="0"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/criticalsection.c"
-            ex="false"
-            tool="0"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/event.c"
-            ex="false"
-            tool="0"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/serialport.c"
-            ex="false"
-            tool="0"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/thread.c"
-            ex="false"
-            tool="0"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/time.c"
-            ex="false"
-            tool="0"
-            flavor2="0">
-      </item>
-      <item path="main.c" ex="false" tool="0" flavor2="0">
+      <item path="vntest.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -365,237 +2154,1598 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/bool.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/const.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/conv.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/enum.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/error.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/error_detection.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/int.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/math/matrix.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/math/vector.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/protocol/common.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/protocol/spi.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/protocol/upack.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/protocol/upackf.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/sensors.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/sensors/compositedata.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/sensors/ezasyncdata.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/sensors/searcher.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/types.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/util.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/util/compiler.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/util/export.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/util/port.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/vectornav.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/criticalsection.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/event.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/serialport.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/thread.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vn/xplat/time.h"
-            ex="false"
-            tool="3"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/conv.c"
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vectorNAVinterface.c"
             ex="false"
             tool="0"
             flavor2="0">
       </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/error.c"
+      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vectorNAVinterface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../RS-232/demo_rx.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../../RS-232/demo_tx.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../../RS-232/rs232.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="../../RS-232/rs232.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/CMakeLists.txt" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/Makefile" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/examples/ez_async_data/CMakeLists.txt"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/examples/ez_async_data/Makefile"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/examples/ez_async_data/main.c"
             ex="false"
             tool="0"
             flavor2="0">
       </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/error_detection.c"
+      <item path="vnlibrary/examples/getting_started/CMakeLists.txt"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/examples/getting_started/Makefile"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/examples/getting_started/uartpractice.c"
             ex="false"
             tool="0"
             flavor2="0">
       </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/math/matrix.c"
+      <item path="vnlibrary/examples/sensor/CMakeLists.txt"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/examples/sensor/Makefile" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/examples/sensor/generalpractice.c"
             ex="false"
             tool="0"
             flavor2="0">
       </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/math/vector.c"
+      <item path="vnlibrary/examples/spi/CMakeLists.txt"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/examples/spi/Makefile" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/examples/spi/main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/annotated.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/arrowdown.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/arrowright.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/bc_s.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/bdwn.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/bool_8h_source.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/classes.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/closed.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/common_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/compiler_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/compositedata_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/const_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/conv_8h_source.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/criticalsection_8h.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/criticalsection_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/dir_027780aa32961d07c4d51557f73a7d30.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/dir_31a68fee5b0aade5575fcd9899552a15.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/dir_8bde4b85f1f8cd0faa87b91375e717e4.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/dir_b8f3676ce45a2d9945f359024fabdbc0.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/dir_c8e7966a7aa62365068a660868ad1d75.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/dir_d44c64559bbebec7f509842c48db8b23.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/dir_f40822c92baf324ecf3ea224d9a1e0b5.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/doc.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/doxygen.css" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/doxygen.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/dynsections.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/enum_8h_source.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/error_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/error__detection_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/event_8h.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/event_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/examples.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/export_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/ez_async_data_2main_8c-example.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/ezasyncdata_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/files.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/folderclosed.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/folderopen.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_b.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_c.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_d.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_e.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_f.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_g.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_h.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_i.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_l.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_m.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_n.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_o.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_p.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_q.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_r.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_s.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_t.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_u.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_v.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_b.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_c.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_d.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_e.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_f.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_g.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_h.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_i.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_l.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_m.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_n.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_o.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_p.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_q.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_r.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_s.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_t.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_u.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_v.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_w.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_x.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_vars_y.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_w.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_x.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/functions_y.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/getting_started_2main_8c-example.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/globals.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/globals_func.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/globals_type.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/group__byte_orderers.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/group__register_access_methods.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/group__register_structures.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/group__sensor_value_extractors.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/group__spi__genread__functions.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/group__spi__genwrite__functions.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/group__uart__genread__functions.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/group__uart__genwrite__functions.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/group__uart_packet_ascii_async_parsers.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/group__uart_packet_binary_extractors.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/index.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/int_8h_source.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/jquery.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/known_issues.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/matrix_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/modules.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/nav_f.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/nav_g.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/nav_h.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/open.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/pages.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/port_8h_source.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/proglib.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/requirements.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_0.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_0.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_1.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_1.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_10.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_10.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_11.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_11.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_12.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_12.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_13.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_13.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_14.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_14.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_15.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_15.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_16.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_16.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_17.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_17.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_2.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_2.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_3.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_3.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_4.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_4.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_5.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_5.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_6.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_6.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_7.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_7.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_8.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_8.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_9.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_9.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_a.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_a.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_b.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_b.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_c.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_c.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_d.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_d.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_e.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_e.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_f.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/all_f.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_0.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_0.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_1.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_1.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_2.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_2.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_3.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_3.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_4.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_4.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_5.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_5.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_6.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_6.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_7.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_7.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_8.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_8.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_9.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_9.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_a.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_a.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_b.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_b.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_c.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/classes_c.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/close.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/files_0.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/files_0.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/files_1.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/files_1.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/files_2.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/files_2.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/files_3.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/files_3.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/functions_0.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/functions_0.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/functions_1.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/functions_1.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/functions_2.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/functions_2.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/functions_3.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/functions_3.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/groups_0.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/groups_0.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/groups_1.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/groups_1.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/groups_2.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/groups_2.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/groups_3.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/groups_3.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/mag_sel.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/nomatches.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/pages_0.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/pages_0.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/pages_1.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/pages_1.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/pages_2.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/pages_2.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/search.css" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/search.js" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/search_l.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/search_m.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/search_r.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/searchdata.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/typedefs_0.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/typedefs_0.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_0.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_0.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_1.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_1.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_10.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_10.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_11.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_11.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_12.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_12.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_13.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_13.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_14.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_14.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_15.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_15.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_16.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_16.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_2.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_2.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_3.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_3.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_4.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_4.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_5.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_5.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_6.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_6.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_7.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_7.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_8.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_8.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_9.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_9.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_a.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_a.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_b.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_b.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_c.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_c.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_d.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_d.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_e.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_e.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_f.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/search/variables_f.js"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/searcher_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/sensor_2main_8c-example.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/sensors_8h.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/sensors_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/serialport_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/spi_2main_8c-example.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/spi_8h_source.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/splitbar.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_acceleration_compensation_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_binary_output_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_calculated_magnetometer_calibration_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_communication_protocol_control_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_delta_theta_and_delta_velocity_configuration_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_delta_theta_and_delta_velocity_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_filter_active_tuning_parameters_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_filter_basic_control_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_filter_measurements_variance_parameters_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_gps_compass_baseline_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_gps_compass_estimated_baseline_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_gps_configuration_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_gps_solution_ecef_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_gps_solution_lla_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_gyro_compensation_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_imu_filtering_configuration_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_imu_measurements_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_imu_rate_configuration_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_ins_advanced_configuration_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_ins_basic_configuration_register_vn200.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_ins_basic_configuration_register_vn300.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_ins_solution_ecef_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_ins_solution_lla_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_ins_state_ecef_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_ins_state_lla_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_magnetic_acceleration_and_angular_rates_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_magnetic_and_gravity_reference_vectors_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_magnetometer_calibration_control_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_magnetometer_compensation_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_quaternion_magnetic_acceleration_and_angular_rates_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_reference_vector_configuration_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_startup_filter_bias_estimate_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_synchronization_control_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_synchronization_status_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_velocity_compensation_control_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_velocity_compensation_status_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vn_composite_data.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vn_critical_section.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vn_event.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vn_ez_async_data.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vn_port_info.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vn_sensor.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vn_serial_port.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vn_stopwatch.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vn_thread.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vn_uart_packet.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vn_uart_packet_finder.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vpe_accelerometer_advanced_tuning_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vpe_accelerometer_basic_tuning_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vpe_basic_control_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vpe_gyro_basic_tuning_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vpe_magnetometer_advanced_tuning_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_vpe_magnetometer_basic_tuning_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_yaw_pitch_roll_magnetic_acceleration_and_angular_rates_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_yaw_pitch_roll_true_body_acceleration_and_angular_rates_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/struct_yaw_pitch_roll_true_inertial_acceleration_and_angular_rates_register.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/sync_off.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/sync_on.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/tab_a.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/tab_b.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/tab_h.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/tab_s.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/tabs.css" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/thread_8h.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/thread_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/time_8h.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/time_8h_source.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/types_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/unionmat3f.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/unionquatf.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/unionvec3d.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/unionvec3f.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/unionvec4f.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/upack_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/upackf_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/util_8h_source.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/help/vector_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/vectornav_8h_source.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/help/version_history.html"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vectorNAVinterface.c"
             ex="false"
             tool="0"
             flavor2="0">
       </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/protocol/spi.c"
+      <item path="vnlibrary/include/vectorNAVinterface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/bool.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/const.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/conv.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/enum.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/error.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/error_detection.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/int.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/math/matrix.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/math/vector.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/protocol/common.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/protocol/spi.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/protocol/upack.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/protocol/upackf.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/sensors.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/sensors/compositedata.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/sensors/ezasyncdata.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/sensors/searcher.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/types.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/util.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/util/compiler.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/util/export.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/util/port.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/vectornav.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/xplat/criticalsection.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/xplat/event.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/xplat/serialport.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/xplat/thread.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/include/vn/xplat/time.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/index.html" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="vnlibrary/projects/vs2008/libvnc.sln"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/projects/vs2008/libvnc.vcproj"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/projects/vs2010/libvnc.sln"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/projects/vs2010/libvnc.vcxproj"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/projects/vs2010/libvnc.vcxproj.filters"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/projects/vs2012/libvnc.sln"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/projects/vs2012/libvnc.vcxproj"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/projects/vs2012/libvnc.vcxproj.filters"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/projects/vs2013/libvnc.sln"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/projects/vs2013/libvnc.vcxproj"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/projects/vs2013/libvnc.vcxproj.filters"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="vnlibrary/src/vn/conv.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="vnlibrary/src/vn/error.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="vnlibrary/src/vn/error_detection.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="vnlibrary/src/vn/math/matrix.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="vnlibrary/src/vn/math/vector.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="vnlibrary/src/vn/protocol/spi.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="vnlibrary/src/vn/protocol/upack.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="vnlibrary/src/vn/protocol/upackf.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="vnlibrary/src/vn/sensors.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="vnlibrary/src/vn/sensors/compositedata.c"
             ex="false"
             tool="0"
             flavor2="0">
       </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/protocol/upack.c"
+      <item path="vnlibrary/src/vn/sensors/ezasyncdata.c"
             ex="false"
             tool="0"
             flavor2="0">
       </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/protocol/upackf.c"
+      <item path="vnlibrary/src/vn/sensors/searcher.c"
             ex="false"
             tool="0"
             flavor2="0">
       </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors.c"
+      <item path="vnlibrary/src/vn/util.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="vnlibrary/src/vn/xplat/criticalsection.c"
             ex="false"
             tool="0"
             flavor2="0">
       </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors/compositedata.c"
+      <item path="vnlibrary/src/vn/xplat/event.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="vnlibrary/src/vn/xplat/serialport.c"
             ex="false"
             tool="0"
             flavor2="0">
       </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors/ezasyncdata.c"
-            ex="false"
-            tool="0"
-            flavor2="0">
+      <item path="vnlibrary/src/vn/xplat/thread.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors/searcher.c"
-            ex="false"
-            tool="0"
-            flavor2="0">
+      <item path="vnlibrary/src/vn/xplat/time.c" ex="false" tool="0" flavor2="0">
       </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/util.c"
-            ex="false"
-            tool="0"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/criticalsection.c"
-            ex="false"
-            tool="0"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/event.c"
-            ex="false"
-            tool="0"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/serialport.c"
-            ex="false"
-            tool="0"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/thread.c"
-            ex="false"
-            tool="0"
-            flavor2="0">
-      </item>
-      <item path="../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/time.c"
-            ex="false"
-            tool="0"
-            flavor2="0">
-      </item>
-      <item path="main.c" ex="false" tool="0" flavor2="0">
+      <item path="vntest.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>
   </confs>

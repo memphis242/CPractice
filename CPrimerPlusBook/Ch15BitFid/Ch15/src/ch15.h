@@ -19,12 +19,21 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+    
+#include <stdbool.h>
 
     extern char *itobs(int n, char *bitstring);
     
+    //Prints in big-endian form
     extern void printbits(const char *bitstring);
     
     extern void setbit(int *mask, int index);
+    
+    //Assumes boolean array is little-endian!
+    extern int set_onebyte_mask(bool bits[]);
+    
+    //Assumes boolean array is little-endian!
+    extern int set_twobyte_mask(bool bits[]);
     
     extern void printbitsofint(int number);
 

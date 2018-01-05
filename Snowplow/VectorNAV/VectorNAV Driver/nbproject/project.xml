@@ -12,6 +12,8 @@
             <sourceRootList>
                 <sourceRootElem>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include</sourceRootElem>
                 <sourceRootElem>../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src</sourceRootElem>
+                <sourceRootElem>../../RS-232</sourceRootElem>
+                <sourceRootElem>vnlibrary</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

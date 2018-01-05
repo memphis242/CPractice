@@ -117,6 +117,46 @@ int main(int argc, char** argv) {
 //    puts("MODIFIED NEWBOX SETTINGS:");
 //    showconfig(&newbox);
     
+//SAVING MULTIPLE BYTES OF A DATUM IN A CHAR BUFFER ARRAY AND THEN REVERSING THE PROCESS
+//    int16_t val = 16;   //2-byte integer
+//    char valparts[2];
+//    
+//    valparts[0] = (val & 0xFF);     //Get first 8 bits (Bit 0 through 7)
+//    valparts[1] = ( (val >> 8) & 0xFF );    //Get next 7 bits (Bit 8 through 15)
+//    
+//    int16_t retrievedVal = *((int16_t *)(&valparts[0]));    //Retrieve value through pointer magic
+//    printf("Retrieved Value: %d", retrievedVal);
+    
+//SETTING BITS OF MASK THROUGH BOOLEAN ARRAY
+    int mask8 = 0;
+    int mask16 = 0;
+    
+    //Desired bit layout in LITTLE-ENDIAN FORM
+    bool bits8[8] = { 1, 0, 0, 1, 0, 1, 1, 0 };
+    bool bits16[16] = { 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 0 };
+    
+    //Print boolean arrays for check IN BIG-ENDIAN form, as would be printed later on
+    for(int i=7; i>=0; i--) {
+        printf("%d", bits8[i]);
+    }
+    new_line();
+    for(int i=15; i>=0; i--) {
+        printf("%d", bits16[i]);
+    }
+    new_line();
+    new_line();
+    
+    //Setting single byte and double byte values to corresponding bit layouts above
+    mask8 = set_onebyte_mask(bits8);
+    mask16 = set_twobyte_mask(bits16);
+    
+    //Print those out   
+    printbitsofint((int) mask8);
+    printbitsofint((int) mask16);
+    
+//    new_line();
+//    printf("%zd", sizeof(bool));
+    
     return (EXIT_SUCCESS);
 }
 

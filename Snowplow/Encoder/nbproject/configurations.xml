@@ -1,0 +1,974 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <logicalFolder name="include" displayName="include" projectFiles="true">
+        <itemPath>../../../snowplow/drivers/include/EncoderInterface.h</itemPath>
+        <itemPath>../../../snowplow/drivers/include/GpsInterface.h</itemPath>
+        <itemPath>../../../snowplow/drivers/include/LidarInterface.h</itemPath>
+        <itemPath>../../../snowplow/drivers/include/RS232_GenericController.h</itemPath>
+        <itemPath>../../../snowplow/drivers/include/RoboteQ.h</itemPath>
+        <itemPath>../../../snowplow/drivers/include/TCP_Connection.h</itemPath>
+        <itemPath>../../../snowplow/drivers/include/XboxControllerInterface.h</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <logicalFolder name="old" displayName="old" projectFiles="true">
+        <logicalFolder name="Encoders" displayName="Encoders" projectFiles="true">
+          <logicalFolder name="encoderReading"
+                         displayName="encoderReading"
+                         projectFiles="true">
+            <itemPath>../../../snowplow/drivers/old/Encoders/encoderReading/encoderReading.ino</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="GPS" displayName="GPS" projectFiles="true">
+          <itemPath>../../../snowplow/drivers/old/GPS/CFG_MSG_NAVPOSECEF.sh</itemPath>
+          <itemPath>../../../snowplow/drivers/old/GPS/CFG_MSG_noNMEA.sh</itemPath>
+          <itemPath>../../../snowplow/drivers/old/GPS/README.txt</itemPath>
+          <itemPath>../../../snowplow/drivers/old/GPS/data.txt</itemPath>
+          <itemPath>../../../snowplow/drivers/old/GPS/getGPSdataHex.sh</itemPath>
+          <itemPath>../../../snowplow/drivers/old/GPS/gpsDataCat</itemPath>
+          <itemPath>../../../snowplow/drivers/old/GPS/gpsReader</itemPath>
+          <itemPath>../../../snowplow/drivers/old/GPS/main.cpp</itemPath>
+          <itemPath>../../../snowplow/drivers/old/GPS/p</itemPath>
+        </logicalFolder>
+        <logicalFolder name="MotorController"
+                       displayName="MotorController"
+                       projectFiles="true">
+          <itemPath>../../../snowplow/drivers/old/MotorController/NamedPipeUtility.h</itemPath>
+          <itemPath>../../../snowplow/drivers/old/MotorController/RS232_Serial.hpp</itemPath>
+          <itemPath>../../../snowplow/drivers/old/MotorController/main.cpp</itemPath>
+          <itemPath>../../../snowplow/drivers/old/MotorController/simpleCommand</itemPath>
+        </logicalFolder>
+        <logicalFolder name="SICK" displayName="SICK" projectFiles="true">
+          <logicalFolder name="login" displayName="login" projectFiles="true">
+            <itemPath>../../../snowplow/drivers/old/SICK/login/feedback.hex</itemPath>
+            <itemPath>../../../snowplow/drivers/old/SICK/login/loginClient.sh</itemPath>
+            <itemPath>../../../snowplow/drivers/old/SICK/login/loginMaintenance.sh</itemPath>
+            <itemPath>../../../snowplow/drivers/old/SICK/login/loginService.sh</itemPath>
+          </logicalFolder>
+          <logicalFolder name="scanConfig" displayName="scanConfig" projectFiles="true">
+            <itemPath>../../../snowplow/drivers/old/SICK/scanConfig/feedback.hex</itemPath>
+            <itemPath>../../../snowplow/drivers/old/SICK/scanConfig/setScanConfig.sh</itemPath>
+            <itemPath>../../../snowplow/drivers/old/SICK/scanConfig/setScanConfiguration.txt</itemPath>
+          </logicalFolder>
+        </logicalFolder>
+      </logicalFolder>
+      <logicalFolder name="src" displayName="src" projectFiles="true">
+        <logicalFolder name="imu-libs" displayName="imu-libs" projectFiles="true">
+          <logicalFolder name="include" displayName="include" projectFiles="true">
+            <logicalFolder name="vn" displayName="vn" projectFiles="true">
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/attitude.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/boostpython.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/compiler.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/compositedata.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/consts.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/conversions.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/criticalsection.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/dllvalidator.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/error_detection.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/event.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/exceptions.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/export.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/ezasyncdata.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/int.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/matrix.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/memoryport.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/mock.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/nocopy.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/packet.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/packetfinder.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/port.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/position.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/registers.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/searcher.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/sensors.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/serialport.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/signal.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/thread.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/types.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/util.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/utilities.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/vector.h</itemPath>
+              <itemPath>../../../snowplow/drivers/src/imu-libs/include/vn/vntime.h</itemPath>
+            </logicalFolder>
+          </logicalFolder>
+        </logicalFolder>
+        <logicalFolder name="misc-libs" displayName="misc-libs" projectFiles="true">
+          <itemPath>../../../snowplow/drivers/src/misc-libs/3D_Render.h</itemPath>
+          <itemPath>../../../snowplow/drivers/src/misc-libs/Colors.cpp</itemPath>
+          <itemPath>../../../snowplow/drivers/src/misc-libs/Colors.h</itemPath>
+          <itemPath>../../../snowplow/drivers/src/misc-libs/LineDraw.hpp</itemPath>
+          <itemPath>../../../snowplow/drivers/src/misc-libs/LineObj.hpp</itemPath>
+          <itemPath>../../../snowplow/drivers/src/misc-libs/SDL_Primitives.hpp</itemPath>
+        </logicalFolder>
+        <logicalFolder name="test" displayName="test" projectFiles="true">
+          <itemPath>../../../snowplow/drivers/src/test/encoderTest.cpp</itemPath>
+          <itemPath>../../../snowplow/drivers/src/test/rs232.cpp</itemPath>
+          <itemPath>../../../snowplow/drivers/src/test/sickSensor.cpp</itemPath>
+          <itemPath>../../../snowplow/drivers/src/test/xboxMotorBridge.cpp</itemPath>
+          <itemPath>../../../snowplow/drivers/src/test/xboxcontroller.cpp</itemPath>
+        </logicalFolder>
+        <itemPath>../../../snowplow/drivers/src/EncoderInterface.cpp</itemPath>
+        <itemPath>../../../snowplow/drivers/src/GpsInterface.cpp</itemPath>
+        <itemPath>../../../snowplow/drivers/src/LidarInterface.cpp</itemPath>
+        <itemPath>../../../snowplow/drivers/src/RS232_GenericController.cpp</itemPath>
+        <itemPath>../../../snowplow/drivers/src/RoboteQ.cpp</itemPath>
+        <itemPath>../../../snowplow/drivers/src/TCP_Connection.cpp</itemPath>
+        <itemPath>../../../snowplow/drivers/src/XboxControllerInterface.cpp</itemPath>
+      </logicalFolder>
+      <itemPath>main.c</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>../../../snowplow/drivers/src</Elem>
+    <Elem>../../../snowplow/drivers/old</Elem>
+    <Elem>../../../snowplow/drivers/include</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+      </compileType>
+      <item path="../../../snowplow/drivers/include/EncoderInterface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/include/GpsInterface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/include/LidarInterface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/include/RS232_GenericController.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/include/RoboteQ.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/include/TCP_Connection.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/include/XboxControllerInterface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/Encoders/encoderReading/encoderReading.ino"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/GPS/CFG_MSG_NAVPOSECEF.sh"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/GPS/CFG_MSG_noNMEA.sh"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/GPS/README.txt"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/GPS/data.txt"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/GPS/getGPSdataHex.sh"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/GPS/gpsDataCat"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/GPS/gpsReader"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/GPS/main.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/GPS/p"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/MotorController/NamedPipeUtility.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/MotorController/RS232_Serial.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/MotorController/main.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/MotorController/simpleCommand"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/SICK/login/feedback.hex"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/SICK/login/loginClient.sh"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/SICK/login/loginMaintenance.sh"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/SICK/login/loginService.sh"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/SICK/scanConfig/feedback.hex"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/SICK/scanConfig/setScanConfig.sh"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/SICK/scanConfig/setScanConfiguration.txt"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/EncoderInterface.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/GpsInterface.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/LidarInterface.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/RS232_GenericController.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/RoboteQ.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/TCP_Connection.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/XboxControllerInterface.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/attitude.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/boostpython.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/compiler.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/compositedata.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/consts.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/conversions.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/criticalsection.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/dllvalidator.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/error_detection.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/event.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/exceptions.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/export.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/ezasyncdata.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/int.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/matrix.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/memoryport.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/mock.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/nocopy.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/packet.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/packetfinder.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/port.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/position.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/registers.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/searcher.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/sensors.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/serialport.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/signal.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/thread.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/types.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/util.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/utilities.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/vector.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/vntime.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/misc-libs/3D_Render.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/misc-libs/Colors.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/misc-libs/Colors.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/misc-libs/LineDraw.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/misc-libs/LineObj.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/misc-libs/SDL_Primitives.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/test/encoderTest.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/test/rs232.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/test/sickSensor.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/test/xboxMotorBridge.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/test/xboxcontroller.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="../../../snowplow/drivers/include/EncoderInterface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/include/GpsInterface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/include/LidarInterface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/include/RS232_GenericController.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/include/RoboteQ.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/include/TCP_Connection.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/include/XboxControllerInterface.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/Encoders/encoderReading/encoderReading.ino"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/GPS/CFG_MSG_NAVPOSECEF.sh"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/GPS/CFG_MSG_noNMEA.sh"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/GPS/README.txt"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/GPS/data.txt"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/GPS/getGPSdataHex.sh"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/GPS/gpsDataCat"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/GPS/gpsReader"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/GPS/main.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/GPS/p"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/MotorController/NamedPipeUtility.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/MotorController/RS232_Serial.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/MotorController/main.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/MotorController/simpleCommand"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/SICK/login/feedback.hex"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/SICK/login/loginClient.sh"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/SICK/login/loginMaintenance.sh"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/SICK/login/loginService.sh"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/SICK/scanConfig/feedback.hex"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/SICK/scanConfig/setScanConfig.sh"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/old/SICK/scanConfig/setScanConfiguration.txt"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/EncoderInterface.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/GpsInterface.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/LidarInterface.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/RS232_GenericController.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/RoboteQ.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/TCP_Connection.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/XboxControllerInterface.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/attitude.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/boostpython.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/compiler.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/compositedata.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/consts.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/conversions.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/criticalsection.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/dllvalidator.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/error_detection.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/event.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/exceptions.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/export.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/ezasyncdata.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/int.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/matrix.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/memoryport.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/mock.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/nocopy.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/packet.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/packetfinder.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/port.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/position.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/registers.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/searcher.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/sensors.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/serialport.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/signal.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/thread.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/types.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/util.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/utilities.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/vector.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/imu-libs/include/vn/vntime.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/misc-libs/3D_Render.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/misc-libs/Colors.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/misc-libs/Colors.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/misc-libs/LineDraw.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/misc-libs/LineObj.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/misc-libs/SDL_Primitives.hpp"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/test/encoderTest.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/test/rs232.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/test/sickSensor.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/test/xboxMotorBridge.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="../../../snowplow/drivers/src/test/xboxcontroller.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="main.c" ex="false" tool="0" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

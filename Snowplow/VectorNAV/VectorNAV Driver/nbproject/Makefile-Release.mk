@@ -35,25 +35,34 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/1e281a3c/conv.o \
-	${OBJECTDIR}/_ext/1e281a3c/error.o \
-	${OBJECTDIR}/_ext/1e281a3c/error_detection.o \
-	${OBJECTDIR}/_ext/420442fb/matrix.o \
-	${OBJECTDIR}/_ext/420442fb/vector.o \
-	${OBJECTDIR}/_ext/326990b/spi.o \
-	${OBJECTDIR}/_ext/326990b/upack.o \
-	${OBJECTDIR}/_ext/326990b/upackf.o \
-	${OBJECTDIR}/_ext/1e281a3c/sensors.o \
-	${OBJECTDIR}/_ext/b1d97f26/compositedata.o \
-	${OBJECTDIR}/_ext/b1d97f26/ezasyncdata.o \
-	${OBJECTDIR}/_ext/b1d97f26/searcher.o \
-	${OBJECTDIR}/_ext/1e281a3c/util.o \
-	${OBJECTDIR}/_ext/ff25d214/criticalsection.o \
-	${OBJECTDIR}/_ext/ff25d214/event.o \
-	${OBJECTDIR}/_ext/ff25d214/serialport.o \
-	${OBJECTDIR}/_ext/ff25d214/thread.o \
-	${OBJECTDIR}/_ext/ff25d214/time.o \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/_ext/8f25304f/vectorNAVinterface.o \
+	${OBJECTDIR}/_ext/921ab625/demo_rx.o \
+	${OBJECTDIR}/_ext/921ab625/demo_tx.o \
+	${OBJECTDIR}/_ext/921ab625/rs232.o \
+	${OBJECTDIR}/vnlibrary/examples/ez_async_data/main.o \
+	${OBJECTDIR}/vnlibrary/examples/getting_started/uartpractice.o \
+	${OBJECTDIR}/vnlibrary/examples/sensor/generalpractice.o \
+	${OBJECTDIR}/vnlibrary/examples/spi/main.o \
+	${OBJECTDIR}/vnlibrary/include/vectorNAVinterface.o \
+	${OBJECTDIR}/vnlibrary/src/vn/conv.o \
+	${OBJECTDIR}/vnlibrary/src/vn/error.o \
+	${OBJECTDIR}/vnlibrary/src/vn/error_detection.o \
+	${OBJECTDIR}/vnlibrary/src/vn/math/matrix.o \
+	${OBJECTDIR}/vnlibrary/src/vn/math/vector.o \
+	${OBJECTDIR}/vnlibrary/src/vn/protocol/spi.o \
+	${OBJECTDIR}/vnlibrary/src/vn/protocol/upack.o \
+	${OBJECTDIR}/vnlibrary/src/vn/protocol/upackf.o \
+	${OBJECTDIR}/vnlibrary/src/vn/sensors.o \
+	${OBJECTDIR}/vnlibrary/src/vn/sensors/compositedata.o \
+	${OBJECTDIR}/vnlibrary/src/vn/sensors/ezasyncdata.o \
+	${OBJECTDIR}/vnlibrary/src/vn/sensors/searcher.o \
+	${OBJECTDIR}/vnlibrary/src/vn/util.o \
+	${OBJECTDIR}/vnlibrary/src/vn/xplat/criticalsection.o \
+	${OBJECTDIR}/vnlibrary/src/vn/xplat/event.o \
+	${OBJECTDIR}/vnlibrary/src/vn/xplat/serialport.o \
+	${OBJECTDIR}/vnlibrary/src/vn/xplat/thread.o \
+	${OBJECTDIR}/vnlibrary/src/vn/xplat/time.o \
+	${OBJECTDIR}/vntest.o
 
 
 # C Compiler Flags
@@ -80,100 +89,145 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/vectornav_driver: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/vectornav_driver ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/_ext/1e281a3c/conv.o: ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/conv.c
-	${MKDIR} -p ${OBJECTDIR}/_ext/1e281a3c
+${OBJECTDIR}/_ext/8f25304f/vectorNAVinterface.o: ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vectorNAVinterface.c
+	${MKDIR} -p ${OBJECTDIR}/_ext/8f25304f
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1e281a3c/conv.o ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/conv.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/8f25304f/vectorNAVinterface.o ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/include/vectorNAVinterface.c
 
-${OBJECTDIR}/_ext/1e281a3c/error.o: ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/error.c
-	${MKDIR} -p ${OBJECTDIR}/_ext/1e281a3c
+${OBJECTDIR}/_ext/921ab625/demo_rx.o: ../../RS-232/demo_rx.c
+	${MKDIR} -p ${OBJECTDIR}/_ext/921ab625
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1e281a3c/error.o ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/error.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/921ab625/demo_rx.o ../../RS-232/demo_rx.c
 
-${OBJECTDIR}/_ext/1e281a3c/error_detection.o: ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/error_detection.c
-	${MKDIR} -p ${OBJECTDIR}/_ext/1e281a3c
+${OBJECTDIR}/_ext/921ab625/demo_tx.o: ../../RS-232/demo_tx.c
+	${MKDIR} -p ${OBJECTDIR}/_ext/921ab625
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1e281a3c/error_detection.o ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/error_detection.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/921ab625/demo_tx.o ../../RS-232/demo_tx.c
 
-${OBJECTDIR}/_ext/420442fb/matrix.o: ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/math/matrix.c
-	${MKDIR} -p ${OBJECTDIR}/_ext/420442fb
+${OBJECTDIR}/_ext/921ab625/rs232.o: ../../RS-232/rs232.c
+	${MKDIR} -p ${OBJECTDIR}/_ext/921ab625
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/420442fb/matrix.o ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/math/matrix.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/921ab625/rs232.o ../../RS-232/rs232.c
 
-${OBJECTDIR}/_ext/420442fb/vector.o: ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/math/vector.c
-	${MKDIR} -p ${OBJECTDIR}/_ext/420442fb
+${OBJECTDIR}/vnlibrary/examples/ez_async_data/main.o: vnlibrary/examples/ez_async_data/main.c
+	${MKDIR} -p ${OBJECTDIR}/vnlibrary/examples/ez_async_data
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/420442fb/vector.o ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/math/vector.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vnlibrary/examples/ez_async_data/main.o vnlibrary/examples/ez_async_data/main.c
 
-${OBJECTDIR}/_ext/326990b/spi.o: ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/protocol/spi.c
-	${MKDIR} -p ${OBJECTDIR}/_ext/326990b
+${OBJECTDIR}/vnlibrary/examples/getting_started/uartpractice.o: vnlibrary/examples/getting_started/uartpractice.c
+	${MKDIR} -p ${OBJECTDIR}/vnlibrary/examples/getting_started
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/326990b/spi.o ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/protocol/spi.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vnlibrary/examples/getting_started/uartpractice.o vnlibrary/examples/getting_started/uartpractice.c
 
-${OBJECTDIR}/_ext/326990b/upack.o: ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/protocol/upack.c
-	${MKDIR} -p ${OBJECTDIR}/_ext/326990b
+${OBJECTDIR}/vnlibrary/examples/sensor/generalpractice.o: vnlibrary/examples/sensor/generalpractice.c
+	${MKDIR} -p ${OBJECTDIR}/vnlibrary/examples/sensor
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/326990b/upack.o ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/protocol/upack.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vnlibrary/examples/sensor/generalpractice.o vnlibrary/examples/sensor/generalpractice.c
 
-${OBJECTDIR}/_ext/326990b/upackf.o: ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/protocol/upackf.c
-	${MKDIR} -p ${OBJECTDIR}/_ext/326990b
+${OBJECTDIR}/vnlibrary/examples/spi/main.o: vnlibrary/examples/spi/main.c
+	${MKDIR} -p ${OBJECTDIR}/vnlibrary/examples/spi
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/326990b/upackf.o ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/protocol/upackf.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vnlibrary/examples/spi/main.o vnlibrary/examples/spi/main.c
 
-${OBJECTDIR}/_ext/1e281a3c/sensors.o: ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors.c
-	${MKDIR} -p ${OBJECTDIR}/_ext/1e281a3c
+${OBJECTDIR}/vnlibrary/include/vectorNAVinterface.o: vnlibrary/include/vectorNAVinterface.c
+	${MKDIR} -p ${OBJECTDIR}/vnlibrary/include
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1e281a3c/sensors.o ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vnlibrary/include/vectorNAVinterface.o vnlibrary/include/vectorNAVinterface.c
 
-${OBJECTDIR}/_ext/b1d97f26/compositedata.o: ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors/compositedata.c
-	${MKDIR} -p ${OBJECTDIR}/_ext/b1d97f26
+${OBJECTDIR}/vnlibrary/src/vn/conv.o: vnlibrary/src/vn/conv.c
+	${MKDIR} -p ${OBJECTDIR}/vnlibrary/src/vn
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/b1d97f26/compositedata.o ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors/compositedata.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vnlibrary/src/vn/conv.o vnlibrary/src/vn/conv.c
 
-${OBJECTDIR}/_ext/b1d97f26/ezasyncdata.o: ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors/ezasyncdata.c
-	${MKDIR} -p ${OBJECTDIR}/_ext/b1d97f26
+${OBJECTDIR}/vnlibrary/src/vn/error.o: vnlibrary/src/vn/error.c
+	${MKDIR} -p ${OBJECTDIR}/vnlibrary/src/vn
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/b1d97f26/ezasyncdata.o ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors/ezasyncdata.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vnlibrary/src/vn/error.o vnlibrary/src/vn/error.c
 
-${OBJECTDIR}/_ext/b1d97f26/searcher.o: ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors/searcher.c
-	${MKDIR} -p ${OBJECTDIR}/_ext/b1d97f26
+${OBJECTDIR}/vnlibrary/src/vn/error_detection.o: vnlibrary/src/vn/error_detection.c
+	${MKDIR} -p ${OBJECTDIR}/vnlibrary/src/vn
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/b1d97f26/searcher.o ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/sensors/searcher.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vnlibrary/src/vn/error_detection.o vnlibrary/src/vn/error_detection.c
 
-${OBJECTDIR}/_ext/1e281a3c/util.o: ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/util.c
-	${MKDIR} -p ${OBJECTDIR}/_ext/1e281a3c
+${OBJECTDIR}/vnlibrary/src/vn/math/matrix.o: vnlibrary/src/vn/math/matrix.c
+	${MKDIR} -p ${OBJECTDIR}/vnlibrary/src/vn/math
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/1e281a3c/util.o ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/util.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vnlibrary/src/vn/math/matrix.o vnlibrary/src/vn/math/matrix.c
 
-${OBJECTDIR}/_ext/ff25d214/criticalsection.o: ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/criticalsection.c
-	${MKDIR} -p ${OBJECTDIR}/_ext/ff25d214
+${OBJECTDIR}/vnlibrary/src/vn/math/vector.o: vnlibrary/src/vn/math/vector.c
+	${MKDIR} -p ${OBJECTDIR}/vnlibrary/src/vn/math
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/ff25d214/criticalsection.o ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/criticalsection.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vnlibrary/src/vn/math/vector.o vnlibrary/src/vn/math/vector.c
 
-${OBJECTDIR}/_ext/ff25d214/event.o: ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/event.c
-	${MKDIR} -p ${OBJECTDIR}/_ext/ff25d214
+${OBJECTDIR}/vnlibrary/src/vn/protocol/spi.o: vnlibrary/src/vn/protocol/spi.c
+	${MKDIR} -p ${OBJECTDIR}/vnlibrary/src/vn/protocol
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/ff25d214/event.o ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/event.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vnlibrary/src/vn/protocol/spi.o vnlibrary/src/vn/protocol/spi.c
 
-${OBJECTDIR}/_ext/ff25d214/serialport.o: ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/serialport.c
-	${MKDIR} -p ${OBJECTDIR}/_ext/ff25d214
+${OBJECTDIR}/vnlibrary/src/vn/protocol/upack.o: vnlibrary/src/vn/protocol/upack.c
+	${MKDIR} -p ${OBJECTDIR}/vnlibrary/src/vn/protocol
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/ff25d214/serialport.o ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/serialport.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vnlibrary/src/vn/protocol/upack.o vnlibrary/src/vn/protocol/upack.c
 
-${OBJECTDIR}/_ext/ff25d214/thread.o: ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/thread.c
-	${MKDIR} -p ${OBJECTDIR}/_ext/ff25d214
+${OBJECTDIR}/vnlibrary/src/vn/protocol/upackf.o: vnlibrary/src/vn/protocol/upackf.c
+	${MKDIR} -p ${OBJECTDIR}/vnlibrary/src/vn/protocol
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/ff25d214/thread.o ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/thread.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vnlibrary/src/vn/protocol/upackf.o vnlibrary/src/vn/protocol/upackf.c
 
-${OBJECTDIR}/_ext/ff25d214/time.o: ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/time.c
-	${MKDIR} -p ${OBJECTDIR}/_ext/ff25d214
+${OBJECTDIR}/vnlibrary/src/vn/sensors.o: vnlibrary/src/vn/sensors.c
+	${MKDIR} -p ${OBJECTDIR}/vnlibrary/src/vn
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/ff25d214/time.o ../../../../../Downloads/Snowplow/Sensors/IMU/VectorNAV/vnproglib-1.1/c/src/vn/xplat/time.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vnlibrary/src/vn/sensors.o vnlibrary/src/vn/sensors.c
 
-${OBJECTDIR}/main.o: main.c
+${OBJECTDIR}/vnlibrary/src/vn/sensors/compositedata.o: vnlibrary/src/vn/sensors/compositedata.c
+	${MKDIR} -p ${OBJECTDIR}/vnlibrary/src/vn/sensors
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vnlibrary/src/vn/sensors/compositedata.o vnlibrary/src/vn/sensors/compositedata.c
+
+${OBJECTDIR}/vnlibrary/src/vn/sensors/ezasyncdata.o: vnlibrary/src/vn/sensors/ezasyncdata.c
+	${MKDIR} -p ${OBJECTDIR}/vnlibrary/src/vn/sensors
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vnlibrary/src/vn/sensors/ezasyncdata.o vnlibrary/src/vn/sensors/ezasyncdata.c
+
+${OBJECTDIR}/vnlibrary/src/vn/sensors/searcher.o: vnlibrary/src/vn/sensors/searcher.c
+	${MKDIR} -p ${OBJECTDIR}/vnlibrary/src/vn/sensors
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vnlibrary/src/vn/sensors/searcher.o vnlibrary/src/vn/sensors/searcher.c
+
+${OBJECTDIR}/vnlibrary/src/vn/util.o: vnlibrary/src/vn/util.c
+	${MKDIR} -p ${OBJECTDIR}/vnlibrary/src/vn
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vnlibrary/src/vn/util.o vnlibrary/src/vn/util.c
+
+${OBJECTDIR}/vnlibrary/src/vn/xplat/criticalsection.o: vnlibrary/src/vn/xplat/criticalsection.c
+	${MKDIR} -p ${OBJECTDIR}/vnlibrary/src/vn/xplat
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vnlibrary/src/vn/xplat/criticalsection.o vnlibrary/src/vn/xplat/criticalsection.c
+
+${OBJECTDIR}/vnlibrary/src/vn/xplat/event.o: vnlibrary/src/vn/xplat/event.c
+	${MKDIR} -p ${OBJECTDIR}/vnlibrary/src/vn/xplat
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vnlibrary/src/vn/xplat/event.o vnlibrary/src/vn/xplat/event.c
+
+${OBJECTDIR}/vnlibrary/src/vn/xplat/serialport.o: vnlibrary/src/vn/xplat/serialport.c
+	${MKDIR} -p ${OBJECTDIR}/vnlibrary/src/vn/xplat
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vnlibrary/src/vn/xplat/serialport.o vnlibrary/src/vn/xplat/serialport.c
+
+${OBJECTDIR}/vnlibrary/src/vn/xplat/thread.o: vnlibrary/src/vn/xplat/thread.c
+	${MKDIR} -p ${OBJECTDIR}/vnlibrary/src/vn/xplat
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vnlibrary/src/vn/xplat/thread.o vnlibrary/src/vn/xplat/thread.c
+
+${OBJECTDIR}/vnlibrary/src/vn/xplat/time.o: vnlibrary/src/vn/xplat/time.c
+	${MKDIR} -p ${OBJECTDIR}/vnlibrary/src/vn/xplat
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vnlibrary/src/vn/xplat/time.o vnlibrary/src/vn/xplat/time.c
+
+${OBJECTDIR}/vntest.o: vntest.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/vntest.o vntest.c
 
 # Subprojects
 .build-subprojects:

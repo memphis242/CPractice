@@ -243,34 +243,34 @@ int main(int argc, char** argv) {
 ////    _Static_assert(COMPCHECK, "COMPCHECK is set to TRUE.");
     
 //USING VARIADIC FUNCTIONS AND MAKING EFFICENT ARRAYS USING MEMCPY TO SUM UP INPUTS
-    puts("The following program adds up the numbers you input, up to a 100 numbers.");
-    puts("Entering invalid numbers stops input loop.");
-    
-    int i = 0;
-    int numarr[100];
-    printf("Integer Number: ");
-    while( scanf("%d", &numarr[i]) == 1 ) {
-        i++;
-        
-        eatline();
-        
-        printf("Next number: ");
-    }
-    
-    int *eff_numarr = (int *) calloc(i, sizeof(int));   //Allocate i elements of size sizeof(int) and type cast pointer to memory unit to int *
-    memcpy(eff_numarr, numarr, i * sizeof(int));        //Copy i elements from numarr, which is likely to be more than necessary, to the exactly sized  eff_numarr
-    
-    newline();
-    puts("Sums:");
-    if( i >= 2 ) {
-        printf("Sum of first two: %d\n", sumints(2, eff_numarr[0], eff_numarr[1]));
-    }
-    if( i >= 3) {
-        printf("Sum of first three: %d\n", sumints(3, eff_numarr[0], eff_numarr[1], eff_numarr[2]));
-    }
-    if( i >= 4 ) {
-        printf("Sum of the first four: %d\n", sumints(4, eff_numarr[0], eff_numarr[1], eff_numarr[2], eff_numarr[3]));
-    }
+//    puts("The following program adds up the numbers you input, up to a 100 numbers.");
+//    puts("Entering invalid numbers stops input loop.");
+//    
+//    int i = 0;
+//    int numarr[100];
+//    printf("Integer Number: ");
+//    while( scanf("%d", &numarr[i]) == 1 ) {
+//        i++;
+//        
+//        eatline();
+//        
+//        printf("Next number: ");
+//    }
+//    
+//    int *eff_numarr = (int *) calloc(i, sizeof(int));   //Allocate i elements of size sizeof(int) and type cast pointer to memory unit to int *
+//    memcpy(eff_numarr, numarr, i * sizeof(int));        //Copy i elements from numarr, which is likely to be more than necessary, to the exactly sized  eff_numarr
+//    
+//    newline();
+//    puts("Sums:");
+//    if( i >= 2 ) {
+//        printf("Sum of first two: %d\n", sumints(2, eff_numarr[0], eff_numarr[1]));
+//    }
+//    if( i >= 3) {
+//        printf("Sum of first three: %d\n", sumints(3, eff_numarr[0], eff_numarr[1], eff_numarr[2]));
+//    }
+//    if( i >= 4 ) {
+//        printf("Sum of the first four: %d\n", sumints(4, eff_numarr[0], eff_numarr[1], eff_numarr[2], eff_numarr[3]));
+//    }
         
     return (EXIT_SUCCESS);
 }

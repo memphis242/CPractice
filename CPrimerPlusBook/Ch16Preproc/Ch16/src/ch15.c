@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <stdbool.h>
 
 #include "ch1to10.h"
 #include "ch11.h"
@@ -33,11 +34,36 @@ void printbits(const char *bitstring) {
         }
         putchar(bitstring[i]);
     }
+    newline();
 }
 
 void setbit(int *mask, int index) {
     int onebit = 1 << index;
     *mask |= onebit;
+}
+
+int set_onebyte_mask(bool bits[]) {
+    int mask;
+    
+    for(int i=0; i<8; i++) {
+        if( bits[i] == 1 ) {
+            setbit(&mask, i);
+        }
+    }
+    
+    return mask;
+}
+
+int set_twobyte_mask(bool bits[]) {
+    int mask;
+    
+    for(int i=0; i<16; i++) {
+        if( bits[i] == 1 ) {
+            setbit(&mask, i);
+        }
+    }
+    
+    return mask;
 }
 
 void printbitsofint(int number) {
