@@ -23,6 +23,9 @@
  *************************
  * Improve main() by simplifying/modulating it through functions.
  * Account for sensor data being skewed by orientation.
+    * Try out all the different acceleration registers
+    * Try to cancel out the effects of gravity by including orientation measurements in calculations as part of calibration.
+    * Put a recalibration process every time orientation is changed.
  * Possible scaling factor for acceleration and positioning needed.
  */
 
