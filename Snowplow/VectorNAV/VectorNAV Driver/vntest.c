@@ -20,7 +20,9 @@
  * Implement integration using trapezoid --> DONE --> CAN IMPROVE
     * Main improvement factor here is the timeinterval - the smaller, the better.
     * Another factory may be using an integration technique less error-prone than trapezoid.
+ *************************
  * Improve main() by simplifying/modulating it through functions.
+ * Account for sensor data being skewed by orientation.
  */
 
 #include <stdio.h>
