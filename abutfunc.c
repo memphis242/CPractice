@@ -587,4 +587,31 @@ void printbitsofint(int number) {
     printbits(bitstring);
 }
 
-
+/*
+//    TIME t;
+//    gettimeofday(&t, NULL);
+//    
+//    double elapsed;
+//    
+//    time_t ts0 = t.tv_sec;
+//    suseconds_t tn0 = t.tv_usec;
+//    double initialTime = (t.tv_sec * 1000) + (t.tv_usec / 1000);
+//    
+//    
+//    while(1) {
+//        gettimeofday(&t, NULL);
+//        elapsed = ( (t.tv_sec * 1000) + (t.tv_usec / 1000) ) - initialTime;
+//        printf("Elapsed Milliseconds: %lf\n", elapsed);
+//    }
+//    
+/*NEVER FREAKEN USE CLOCKS_PER_SEC. ABSOLUTELY DISAPPOINTING.*/
+//    clock_t t0 = clock();
+//    clock_t t1;
+//    double tElapsed;
+//    
+//    while(1) {
+//        tElapsed = ( ((double)( clock() - t0 )) / CLOCKS_PER_SEC) ;
+//        printf("Elapsed Time: %lf seconds\n", tElapsed);
+////        printf("clock(): %ld\tCLOCKS_PER_SEC: %ld\tTime elapsed: %lf\n", clock(), (CLOCKS_PER_SEC / 100), ((double) (clock() - t0) / (CLOCKS_PER_SEC / 100) ));
+//    }
+*/

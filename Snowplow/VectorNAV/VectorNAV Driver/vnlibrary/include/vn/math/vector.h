@@ -98,6 +98,13 @@ typedef union
   * \param[in] fa float array a 3-componet vector */
 void vn_v3_init_fa(vec3f* v, const float* fa);
 
+/** Creates a vec3f initialized with provided values.
+ * \param[in] x x-component
+ * \param[in] y y-component
+ * \param[in] z z-component
+ * \return The initialized vec3f. */
+vec3f create_v3f(float x, float y, float z);
+
 /** Creates a vec3d initialized with provided values.
  * \param[in] x x-component.
  * \param[in] y y-component.

@@ -2,6 +2,17 @@
 
 #include <stdio.h>
 
+vec3f create_v3f(float x, float y, float z) {
+    
+        vec3f v;
+    
+    v.c[0] = x;
+    v.c[1] = y;
+    v.c[2] = z;
+
+    return v;
+}
+
 vec3d create_v3d(double x, double y, double z)
 {
 	vec3d v;

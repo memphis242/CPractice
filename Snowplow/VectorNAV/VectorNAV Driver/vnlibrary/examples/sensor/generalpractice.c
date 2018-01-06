@@ -75,6 +75,7 @@
 //	printf("Current Angular Rates: %s\n", strConversions);
 //
 //        
+//
 //	/* Let's do some simple reconfiguration of the sensor. As it comes from the
 //	 * factory, the sensor outputs asynchronous data at 40 Hz. We will change
 //	 * this to 2 Hz for demonstration purposes. */
@@ -103,6 +104,8 @@
 //		return processErrorReceived("Error reading VPE basic control.", error);
 //	strFromHeadingMode(strConversions, vpeReg.headingMode);
 //	printf("New Heading Mode: %s\n", strConversions);
+//
+//
 //
 //	/* Up to now, we have shown some examples of how to configure the sensor
 //	 * and query for the latest measurements. However, this querying is a
@@ -136,6 +139,8 @@
 //
 //	/* Unregister our callback method. */
 //	VnSensor_unregisterAsyncPacketReceivedHandler(&vs);
+//
+//
 //
 //	/* As an alternative to receiving notifications of new ASCII asynchronous
 //	 * messages, the binary output configuration of the sensor is another
@@ -175,6 +180,8 @@
 //
 //	return 0;
 //}
+//
+//
 //
 ///* This is our basic callback handler for notifications of new asynchronous
 // * data packets received. The userData parameter is a pointer to the data we
