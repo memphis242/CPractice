@@ -23,6 +23,7 @@
  *************************
  * Improve main() by simplifying/modulating it through functions.
  * Account for sensor data being skewed by orientation.
+ * Possible scaling factor for acceleration and positioning needed.
  */
 
 #include <stdio.h>
