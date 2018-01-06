@@ -29,18 +29,20 @@
 
 
 
-#define TIMEINTERVAL 100.0F    //In milliseconds
-#define CALNUM 1000           //Number of times to run the calibration loop
-#define FILTNUM 20
+#define TIMEINTERVAL 50.0F    /*In milliseconds*/
+#define CALNUM 1000             /*Number of times to run the calibration loop*/
+#define FILTNUM 0              /*Number of times filter runs on acc measurement values*/
 
 
 
 typedef struct timeval TIME;
 
 
-
+/* Method for processing errors. */
 int processErrorReceived(char* errorMessage, VnError errorCode);
+/* Method for multipling a vector by a scalar. */
 vec3f scaleVector(vec3f vector, float scalar);
+/* Method for reset values of a vector to 0. */
 void resetVector(vec3f *vector);
 
 
@@ -52,6 +54,7 @@ int main(int argc, char** argv) {
     vec3f calacc;
     vec3f *acc0ptr = &acc0, *acc1ptr = &acc1, *vel0ptr = &vel0, *vel1ptr = &vel1, *pos0ptr = &pos0, *pos1ptr = &pos1;
     char yprstr[50], acc0str[50], acc1str[50], vel0str[50], vel1str[50], pos0str[50], pos1str[50];
+    char calaccstr[50];
     VnError error;
     VnStopwatch timer;
 
@@ -75,6 +78,9 @@ int main(int argc, char** argv) {
     /* SET INITIAL VALUES
      * Assume initial velocity and position are 0 and initialize accordingly
      * ACTUALLY. Scratch that. Need to CALIBRATE first.
+     *********************************************************************/
+    /*
+     * Calibration of acceleration measurements
      */
     vec3f tempacc;    
     calacc = create_v3f(0.0F, 0.0F, 0.0F);
@@ -83,11 +89,13 @@ int main(int argc, char** argv) {
         calacc = add_v3f_v3f(calacc, tempacc);
     }
     calacc = scaleVector(calacc, (1.0F / CALNUM));
-       
+    str_vec3f(calaccstr, calacc);
+    printf("Calibration Value for Acceleration: %s\n\n", calaccstr);
     
+    
+    /* First acc0 value before going into loop. */
     VnSensor_readAccelerationMeasurements(&imu, acc0ptr);
     *acc0ptr = sub_v3f_v3f(*acc0ptr, calacc);
-    
     
     while(1) {
         
@@ -100,26 +108,41 @@ int main(int argc, char** argv) {
         
         
         /* READ CURRENT VALUES
+         * 
          * Reason for all the pointer mania is because current loop's final value
          * becomes the next loops initial value. And the current loop's initial
-         * value needs to go somewhere. Works easiest if you're using pointers
-         * or some recursive function perhaps.
+         * value needs to go somewhere. The approach I'm using uses pointers;
+         * perhaps a recursive function might work as well, or some other structure.
          * 
          * ALSO! Before using acceleration value, am applying filter.
-        */
-        resetVector(&tempacc);
-        for(int i=0; i < FILTNUM; i++) {
-            VnSensor_readAccelerationMeasurements(&imu, &tempacc);
-            *acc1ptr = add_v3f_v3f(*acc1ptr, tempacc);
-        }
-        *acc1ptr = scaleVector(*acc1ptr, (1.0F / FILTNUM));
+         * Filter seems to take heavy time, though. Need to adjust FILTNUM
+         * and TIMEINTERVAL accordingly.
+        ***********************************************************************/
+        
+        /* Applying filter
+         * Reseting tempacc because this is used as incrementation value every loop
+         */
+//        resetVector(&tempacc);
+//        for(int i=0; i < FILTNUM; i++) {
+//            VnSensor_readAccelerationMeasurements(&imu, &tempacc);
+//            *acc1ptr = add_v3f_v3f(*acc1ptr, tempacc);
+//        }
+//        *acc1ptr = scaleVector(*acc1ptr, (1.0F / FILTNUM));
+//        *acc1ptr = sub_v3f_v3f(*acc1ptr, calacc);
+        
+        VnSensor_readAccelerationMeasurements(&imu, acc1ptr);
         *acc1ptr = sub_v3f_v3f(*acc1ptr, calacc);
         
-        /*Get velocity by integrating acceleration*/
-        *vel1ptr = add_v3f_v3f(*vel0ptr, scaleVector(add_v3f_v3f(*acc1ptr, acc0), (0.5F * TIMEINTERVAL)));
+        /* Get velocity by integrating acceleration.
+         * Need to convert TIMEINTERVAL into seconds cuz measurement units
+         * are in SI units (i.e., m/s^2, m/s, m)
+         */
+        *vel1ptr = add_v3f_v3f(*vel0ptr, scaleVector(add_v3f_v3f(*acc1ptr, acc0), (0.5F * (TIMEINTERVAL / 1000.0F))));
         
-        /*Get position by integrating velocity*/
-        *pos1ptr = add_v3f_v3f(*pos0ptr, scaleVector(add_v3f_v3f(*vel1ptr, vel0), (0.5F * TIMEINTERVAL)));
+        /* Get position by integrating velocity.
+         * Same conversion for TIMEINTERVAL
+         */
+        *pos1ptr = add_v3f_v3f(*pos0ptr, scaleVector(add_v3f_v3f(*vel1ptr, vel0), (0.5F * (TIMEINTERVAL / 1000.0F))));
         
         /*Reset new initials*/
         VnStopwatch_elapsedMs(&timer, &timeInitial);
