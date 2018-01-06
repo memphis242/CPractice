@@ -6,13 +6,15 @@
             <name>Encoder</name>
             <c-extensions>c</c-extensions>
             <cpp-extensions>cpp</cpp-extensions>
-            <header-extensions>h,hpp</header-extensions>
+            <header-extensions>h</header-extensions>
             <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>../../../snowplow/drivers/src</sourceRootElem>
                 <sourceRootElem>../../../snowplow/drivers/old</sourceRootElem>
                 <sourceRootElem>../../../snowplow/drivers/include</sourceRootElem>
+                <sourceRootElem>src</sourceRootElem>
+                <sourceRootElem>include</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

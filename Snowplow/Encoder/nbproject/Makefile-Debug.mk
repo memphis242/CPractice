@@ -35,22 +35,11 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/_ext/8055285/main.o \
-	${OBJECTDIR}/_ext/7f3eff4c/main.o \
-	${OBJECTDIR}/_ext/a5b8c547/EncoderInterface.o \
-	${OBJECTDIR}/_ext/a5b8c547/GpsInterface.o \
-	${OBJECTDIR}/_ext/a5b8c547/LidarInterface.o \
-	${OBJECTDIR}/_ext/a5b8c547/RS232_GenericController.o \
-	${OBJECTDIR}/_ext/a5b8c547/RoboteQ.o \
-	${OBJECTDIR}/_ext/a5b8c547/TCP_Connection.o \
-	${OBJECTDIR}/_ext/a5b8c547/XboxControllerInterface.o \
-	${OBJECTDIR}/_ext/2db7bc07/Colors.o \
-	${OBJECTDIR}/_ext/d3ef045a/encoderTest.o \
-	${OBJECTDIR}/_ext/d3ef045a/rs232.o \
-	${OBJECTDIR}/_ext/d3ef045a/sickSensor.o \
-	${OBJECTDIR}/_ext/d3ef045a/xboxMotorBridge.o \
-	${OBJECTDIR}/_ext/d3ef045a/xboxcontroller.o \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/src/EncoderInterface.o \
+	${OBJECTDIR}/src/RS232_GenericController.o \
+	${OBJECTDIR}/src/encoderTest.o \
+	${OBJECTDIR}/src/rs232.o
 
 
 # C Compiler Flags
@@ -77,85 +66,30 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/encoder: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/encoder ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/_ext/8055285/main.o: ../../../snowplow/drivers/old/GPS/main.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/8055285
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/8055285/main.o ../../../snowplow/drivers/old/GPS/main.cpp
-
-${OBJECTDIR}/_ext/7f3eff4c/main.o: ../../../snowplow/drivers/old/MotorController/main.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/7f3eff4c
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/7f3eff4c/main.o ../../../snowplow/drivers/old/MotorController/main.cpp
-
-${OBJECTDIR}/_ext/a5b8c547/EncoderInterface.o: ../../../snowplow/drivers/src/EncoderInterface.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/a5b8c547
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/a5b8c547/EncoderInterface.o ../../../snowplow/drivers/src/EncoderInterface.cpp
-
-${OBJECTDIR}/_ext/a5b8c547/GpsInterface.o: ../../../snowplow/drivers/src/GpsInterface.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/a5b8c547
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/a5b8c547/GpsInterface.o ../../../snowplow/drivers/src/GpsInterface.cpp
-
-${OBJECTDIR}/_ext/a5b8c547/LidarInterface.o: ../../../snowplow/drivers/src/LidarInterface.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/a5b8c547
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/a5b8c547/LidarInterface.o ../../../snowplow/drivers/src/LidarInterface.cpp
-
-${OBJECTDIR}/_ext/a5b8c547/RS232_GenericController.o: ../../../snowplow/drivers/src/RS232_GenericController.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/a5b8c547
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/a5b8c547/RS232_GenericController.o ../../../snowplow/drivers/src/RS232_GenericController.cpp
-
-${OBJECTDIR}/_ext/a5b8c547/RoboteQ.o: ../../../snowplow/drivers/src/RoboteQ.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/a5b8c547
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/a5b8c547/RoboteQ.o ../../../snowplow/drivers/src/RoboteQ.cpp
-
-${OBJECTDIR}/_ext/a5b8c547/TCP_Connection.o: ../../../snowplow/drivers/src/TCP_Connection.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/a5b8c547
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/a5b8c547/TCP_Connection.o ../../../snowplow/drivers/src/TCP_Connection.cpp
-
-${OBJECTDIR}/_ext/a5b8c547/XboxControllerInterface.o: ../../../snowplow/drivers/src/XboxControllerInterface.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/a5b8c547
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/a5b8c547/XboxControllerInterface.o ../../../snowplow/drivers/src/XboxControllerInterface.cpp
-
-${OBJECTDIR}/_ext/2db7bc07/Colors.o: ../../../snowplow/drivers/src/misc-libs/Colors.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/2db7bc07
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/2db7bc07/Colors.o ../../../snowplow/drivers/src/misc-libs/Colors.cpp
-
-${OBJECTDIR}/_ext/d3ef045a/encoderTest.o: ../../../snowplow/drivers/src/test/encoderTest.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/d3ef045a
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/d3ef045a/encoderTest.o ../../../snowplow/drivers/src/test/encoderTest.cpp
-
-${OBJECTDIR}/_ext/d3ef045a/rs232.o: ../../../snowplow/drivers/src/test/rs232.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/d3ef045a
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/d3ef045a/rs232.o ../../../snowplow/drivers/src/test/rs232.cpp
-
-${OBJECTDIR}/_ext/d3ef045a/sickSensor.o: ../../../snowplow/drivers/src/test/sickSensor.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/d3ef045a
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/d3ef045a/sickSensor.o ../../../snowplow/drivers/src/test/sickSensor.cpp
-
-${OBJECTDIR}/_ext/d3ef045a/xboxMotorBridge.o: ../../../snowplow/drivers/src/test/xboxMotorBridge.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/d3ef045a
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/d3ef045a/xboxMotorBridge.o ../../../snowplow/drivers/src/test/xboxMotorBridge.cpp
-
-${OBJECTDIR}/_ext/d3ef045a/xboxcontroller.o: ../../../snowplow/drivers/src/test/xboxcontroller.cpp
-	${MKDIR} -p ${OBJECTDIR}/_ext/d3ef045a
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/_ext/d3ef045a/xboxcontroller.o ../../../snowplow/drivers/src/test/xboxcontroller.cpp
-
 ${OBJECTDIR}/main.o: main.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.c
+
+${OBJECTDIR}/src/EncoderInterface.o: src/EncoderInterface.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/EncoderInterface.o src/EncoderInterface.cpp
+
+${OBJECTDIR}/src/RS232_GenericController.o: src/RS232_GenericController.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/RS232_GenericController.o src/RS232_GenericController.cpp
+
+${OBJECTDIR}/src/encoderTest.o: src/encoderTest.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/encoderTest.o src/encoderTest.cpp
+
+${OBJECTDIR}/src/rs232.o: src/rs232.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/rs232.o src/rs232.cpp
 
 # Subprojects
 .build-subprojects:

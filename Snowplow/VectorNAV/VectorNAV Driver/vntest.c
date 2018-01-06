@@ -19,9 +19,6 @@
 #include <sys/time.h>
 #include <bits/time.h>
 
-//#undef CLOCKS_PER_SEC
-//#define CLOCKS_PER_SEC 10000
-
 #include "vnlibrary/include/vn/sensors.h"
 #include "vnlibrary/include/vn/util.h"
 #include "vnlibrary/include/vn/math/vector.h"
@@ -29,9 +26,9 @@
 
 
 
-#define TIMEINTERVAL 50.0F    /*In milliseconds*/
-#define CALNUM 1000             /*Number of times to run the calibration loop*/
-#define FILTNUM 0              /*Number of times filter runs on acc measurement values*/
+#define TIMEINTERVAL 50.0F      /*In milliseconds*/
+#define CALNUM 1000             /*Number of times to run the calibration loop. DON'T MAKE LESS THAN 1!*/
+#define FILTNUM 5               /*Number of times filter runs on acc measurement values. DON'T MAKE IT 0!*/
 
 
 
@@ -53,7 +50,7 @@ int main(int argc, char** argv) {
     vec3f acc0, acc1, vel0, vel1, pos0, pos1;
     vec3f calacc;
     vec3f *acc0ptr = &acc0, *acc1ptr = &acc1, *vel0ptr = &vel0, *vel1ptr = &vel1, *pos0ptr = &pos0, *pos1ptr = &pos1;
-    char yprstr[50], acc0str[50], acc1str[50], vel0str[50], vel1str[50], pos0str[50], pos1str[50];
+    char acc1str[50], vel1str[50], pos1str[50];
     char calaccstr[50];
     VnError error;
     VnStopwatch timer;
@@ -122,13 +119,16 @@ int main(int argc, char** argv) {
         /* Applying filter
          * Reseting tempacc because this is used as incrementation value every loop
          */
-//        resetVector(&tempacc);
-//        for(int i=0; i < FILTNUM; i++) {
-//            VnSensor_readAccelerationMeasurements(&imu, &tempacc);
-//            *acc1ptr = add_v3f_v3f(*acc1ptr, tempacc);
-//        }
-//        *acc1ptr = scaleVector(*acc1ptr, (1.0F / FILTNUM));
-//        *acc1ptr = sub_v3f_v3f(*acc1ptr, calacc);
+        resetVector(&tempacc);
+        
+        if( FILTNUM > 1) {
+            for(int i=0; i < FILTNUM; i++) {
+                VnSensor_readAccelerationMeasurements(&imu, &tempacc);
+                *acc1ptr = add_v3f_v3f(*acc1ptr, tempacc);
+            }
+            *acc1ptr = scaleVector(*acc1ptr, (1.0F / FILTNUM));
+        }
+        *acc1ptr = sub_v3f_v3f(*acc1ptr, calacc);
         
         VnSensor_readAccelerationMeasurements(&imu, acc1ptr);
         *acc1ptr = sub_v3f_v3f(*acc1ptr, calacc);
