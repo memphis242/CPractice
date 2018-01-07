@@ -27,6 +27,11 @@
     * Try to cancel out the effects of gravity by including orientation measurements in calculations as part of calibration.
     * Put a recalibration process every time orientation is changed.
  * Possible scaling factor for acceleration and positioning needed.
+ * Given the simplified motion of the robot, all you really need to know is
+    * When the robot starts up, how long does it take before it reaches a constant velocity (i.e., when does acceleration hit 0 again)
+    * When the robot stops, how long does it take before it reaches 0 velocity (i.e., when acceleration hits 0 again).
+    * JUST NEED TO KNOW THE ACCELERATION'S 0 POINTS TO DETERMINE TRANSITIONS BETWEEN START, CONSTANT VELOCITY, AND STOP!
+    * USE ENCODERS TO DETERMINE ASSUMPTIONS TO BE MADE FOR WHAT POSITIONING IS LIKE FOR STARTING, CONSTANT VELOCITY, AND STOPING.
  */
 
 #include <stdio.h>
