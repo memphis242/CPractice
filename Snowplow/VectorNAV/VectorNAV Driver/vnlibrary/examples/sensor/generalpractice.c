@@ -5,7 +5,7 @@
 ////#include "vn/sensors.h"
 //#include "../../include/vn/sensors.h"
 //
-//void asciiAsyncMessageReceived(void *userData, VnUartPacket *packet, size_t runningIndex);
+//void AsciiAsyncHandlerDeltaV(void *userData, VnUartPacket *packet, size_t runningIndex);
 //void asciiOrBinaryAsyncMessageReceived(void *userData, VnUartPacket *packet, size_t runningIndex);
 //int processErrorReceived(char* errorMessage, VnError errorCode);
 //
@@ -130,7 +130,7 @@
 //	 * signature for receiving notifications. This is implemented with the
 //	 * method asciiAsyncMessageReceived. Now we register the method with the
 //	 * VnSensor structure. */
-//	VnSensor_registerAsyncPacketReceivedHandler(&vs, asciiAsyncMessageReceived, NULL);
+//	VnSensor_registerAsyncPacketReceivedHandler(&vs, AsciiAsyncHandlerDeltaV, NULL);
 //
 //	/* Now sleep for 5 seconds so that our asynchronous callback method can
 //	 * receive and display receive yaw, pitch, roll packets. */
@@ -195,7 +195,7 @@
 // * user side to make sure it is the right type of asynchronous message type so
 // * we can parse it correctly. The index parameter is an advanced usage item and
 // * can be safely ignored for now. */
-//void asciiAsyncMessageReceived(void *userData, VnUartPacket *packet, size_t runningIndex)
+//void AsciiAsyncHandlerDeltaV(void *userData, VnUartPacket *packet, size_t runningIndex)
 //{
 //	vec3f ypr;
 //	char strConversions[50];

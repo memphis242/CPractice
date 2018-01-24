@@ -216,8 +216,8 @@ typedef enum
 	/** Indicates an event was signaled. */
 	E_SIGNALED,
 
-    /** Indicates either not enough memory is available or no memory was allocated */
-    E_MEMORY_NOT_ALLOCATED,
+        /** Indicates either not enough memory is available or no memory was allocated */
+        E_MEMORY_NOT_ALLOCATED,
 
 	/** VectorNav sensor hard fault (Code 1). */
 	E_SENSOR_HARD_FAULT = 1001,
