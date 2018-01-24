@@ -60,14 +60,14 @@
 
 
 #define ASYNCFREQ 100                                       /*Frequency of asynchronous output. THIS NEEDS TO BE VALID - 1, 2, 4, 5, 10, 20, 25, 40, 50, 100, 200*/
+#define ASYNCTIMEMS ( 1 / (ASYNCFREQ / 1000.0) )            /*Time it takes for a single measuremnt to come in ms*/
 #define ASYNCDIVISOR 800 / ASYNCFREQ                        /*Divisor used command to configure async output - 800, 400, 200, 160, 80, 40, 32, 20, 16, 8, 4*/
 #define TIMEOFLOOP 30                                       /*Approximate amount of time for main loop to run*/
-#define TIMEINTERVAL (1000.0 / ASYNCFREQ) + TIMEOFLOOP      /*Time between measurements in milliseconds. Should be atleast greater than time to execute while(1) + do-while loops once each.*/
-#define CALDESIREDNUM 10000                                 /*Number of measurements you want to run calibration over*/
-#define CALNUM CALDESIREDNUM*ASYNCFREQ                      /*Number of times to run the calibration loop. DON'T MAKE LESS THAN 1!*/
-#define CALLOOPTIME 5                                       /*Amount of time it takes for a single calibration loop*/
+#define TIMEINTERVAL (ASYNCTIMEMS + TIMEOFLOOP)             /*Time between measurements in milliseconds. Should be atleast greater than time to execute while(1) + do-while loops once each.*/
+#define CALNUM 100                                          /*Number of times to run the calibration loop. DON'T MAKE LESS THAN 1!*/
+#define CALLOOPTIME 5                                       /*Amount of time it takes for a single calibration loop. NEEDS TO BE LESS THAN 1000.0/ASYNCFREQ!*/
 #define FILTNUM 5                                           /*Number of times filter runs on acc measurement values. DON'T MAKE IT 0!*/
-#define FILTLOOPTIME (CALLOOPTIME / 2)                      /*Amount of time it takes for single filter loop*/
+#define FILTLOOPTIME (CALLOOPTIME / 2)                      /*Amount of time it takes for single filter loop. NEEDS TO BE LESS THAN 1000.0/ASYNCFREQ!*/
 #define RANGEDEVIATIONS 1                                   /*This will determine how far from calibration point will we still acept as = 0. Should be atleast 1*/
 
 
@@ -255,11 +255,12 @@ int main(int argc, char** argv) {
      * Calibration of acceleration measurements
      * Obtaining error range
      */
-    vec3d tempacc;                          /*Vector to hold temporary calibration point for acceleration measurements.*/
+    vec3d tempacc;                          /*Vector to hold temporary acceleration measurements.*/
     double tempx, tempy, tempz;
     vec3d errorRange;
     double errmaxx = 0.0, errmaxy = 0.0, errmaxz = 0.0;    /*Values to be used to get error range*/
     calacc = create_v3d(0.0, 0.0, 0.0);
+    char accstr[50];
     
     for(int i = 0; i < CALNUM; i++) {
         getCurrentAccel(&imu, &linearAcc, &tempacc);
@@ -280,6 +281,8 @@ int main(int argc, char** argv) {
         
         calacc = add_v3d_v3d(calacc, tempacc);
         
+//        str_vec3f(accstr, linearAcc);
+//        printf("Acceleration: %s\n", accstr);
         
         
         /*Wait some time for next output update*/
@@ -288,7 +291,7 @@ int main(int argc, char** argv) {
 
             VnStopwatch_elapsedMs(&timer, &currentTime);
 
-        } while( (currentTime - timeInitial) < ((1000.0 / ASYNCFREQ) - CALLOOPTIME) );
+        } while( (currentTime - timeInitial) < ((ASYNCTIMEMS) - CALLOOPTIME) );
     }
     
     calacc = scaleVector(calacc, (1.0 / CALNUM));  /*Average it out*/
@@ -396,7 +399,7 @@ int main(int argc, char** argv) {
 
                     VnStopwatch_elapsedMs(&timer, &currentTime);
 
-                } while( (currentTime - timeInitial) < ((1000.0 / ASYNCFREQ) - FILTLOOPTIME) );
+                } while( (currentTime - timeInitial) < (ASYNCTIMEMS - FILTLOOPTIME) );
             }
             *accCurrentptr = scaleVector(*accCurrentptr, (1.0 / FILTNUM));  /*Average it out.*/
             *accCurrentptr = sub_v3d_v3d(*accCurrentptr, calacc);           /*Calibrate --> Calibration means calibratedValue = obtainedValue - calibrationReference*/
