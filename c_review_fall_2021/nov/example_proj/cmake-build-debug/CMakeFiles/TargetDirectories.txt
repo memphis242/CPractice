@@ -1,0 +1,3 @@
+C:/git/CPractice/c_review_fall_2021/nov/example_proj/cmake-build-debug/CMakeFiles/example_proj.dir
+C:/git/CPractice/c_review_fall_2021/nov/example_proj/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/git/CPractice/c_review_fall_2021/nov/example_proj/cmake-build-debug/CMakeFiles/rebuild_cache.dir
