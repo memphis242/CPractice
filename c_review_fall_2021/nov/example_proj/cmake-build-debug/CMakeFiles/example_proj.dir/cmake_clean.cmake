@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/example_proj.dir/main.c.obj"
+  "CMakeFiles/example_proj.dir/dyn_mem_alloc_2d_arr.c.obj"
+  "CMakeFiles/example_proj.dir/dyn_mem_alloc_examples.c.obj"
   "example_proj.exe"
   "example_proj.exe.manifest"
   "example_proj.pdb"

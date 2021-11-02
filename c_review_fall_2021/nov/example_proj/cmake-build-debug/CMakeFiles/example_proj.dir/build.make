@@ -65,32 +65,47 @@ include CMakeFiles/example_proj.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/example_proj.dir/flags.make
 
-CMakeFiles/example_proj.dir/main.c.obj: CMakeFiles/example_proj.dir/flags.make
-CMakeFiles/example_proj.dir/main.c.obj: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\git\CPractice\c_review_fall_2021\nov\example_proj\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/example_proj.dir/main.c.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\example_proj.dir\main.c.obj -c C:\git\CPractice\c_review_fall_2021\nov\example_proj\main.c
+CMakeFiles/example_proj.dir/dyn_mem_alloc_examples.c.obj: CMakeFiles/example_proj.dir/flags.make
+CMakeFiles/example_proj.dir/dyn_mem_alloc_examples.c.obj: ../dyn_mem_alloc_examples.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\git\CPractice\c_review_fall_2021\nov\example_proj\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/example_proj.dir/dyn_mem_alloc_examples.c.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\example_proj.dir\dyn_mem_alloc_examples.c.obj -c C:\git\CPractice\c_review_fall_2021\nov\example_proj\dyn_mem_alloc_examples.c
 
-CMakeFiles/example_proj.dir/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/example_proj.dir/main.c.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\git\CPractice\c_review_fall_2021\nov\example_proj\main.c > CMakeFiles\example_proj.dir\main.c.i
+CMakeFiles/example_proj.dir/dyn_mem_alloc_examples.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/example_proj.dir/dyn_mem_alloc_examples.c.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\git\CPractice\c_review_fall_2021\nov\example_proj\dyn_mem_alloc_examples.c > CMakeFiles\example_proj.dir\dyn_mem_alloc_examples.c.i
 
-CMakeFiles/example_proj.dir/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/example_proj.dir/main.c.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\git\CPractice\c_review_fall_2021\nov\example_proj\main.c -o CMakeFiles\example_proj.dir\main.c.s
+CMakeFiles/example_proj.dir/dyn_mem_alloc_examples.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/example_proj.dir/dyn_mem_alloc_examples.c.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\git\CPractice\c_review_fall_2021\nov\example_proj\dyn_mem_alloc_examples.c -o CMakeFiles\example_proj.dir\dyn_mem_alloc_examples.c.s
+
+CMakeFiles/example_proj.dir/dyn_mem_alloc_2d_arr.c.obj: CMakeFiles/example_proj.dir/flags.make
+CMakeFiles/example_proj.dir/dyn_mem_alloc_2d_arr.c.obj: ../dyn_mem_alloc_2d_arr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\git\CPractice\c_review_fall_2021\nov\example_proj\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/example_proj.dir/dyn_mem_alloc_2d_arr.c.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\example_proj.dir\dyn_mem_alloc_2d_arr.c.obj -c C:\git\CPractice\c_review_fall_2021\nov\example_proj\dyn_mem_alloc_2d_arr.c
+
+CMakeFiles/example_proj.dir/dyn_mem_alloc_2d_arr.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/example_proj.dir/dyn_mem_alloc_2d_arr.c.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\git\CPractice\c_review_fall_2021\nov\example_proj\dyn_mem_alloc_2d_arr.c > CMakeFiles\example_proj.dir\dyn_mem_alloc_2d_arr.c.i
+
+CMakeFiles/example_proj.dir/dyn_mem_alloc_2d_arr.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/example_proj.dir/dyn_mem_alloc_2d_arr.c.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\git\CPractice\c_review_fall_2021\nov\example_proj\dyn_mem_alloc_2d_arr.c -o CMakeFiles\example_proj.dir\dyn_mem_alloc_2d_arr.c.s
 
 # Object files for target example_proj
 example_proj_OBJECTS = \
-"CMakeFiles/example_proj.dir/main.c.obj"
+"CMakeFiles/example_proj.dir/dyn_mem_alloc_examples.c.obj" \
+"CMakeFiles/example_proj.dir/dyn_mem_alloc_2d_arr.c.obj"
 
 # External object files for target example_proj
 example_proj_EXTERNAL_OBJECTS =
 
-example_proj.exe: CMakeFiles/example_proj.dir/main.c.obj
+example_proj.exe: CMakeFiles/example_proj.dir/dyn_mem_alloc_examples.c.obj
+example_proj.exe: CMakeFiles/example_proj.dir/dyn_mem_alloc_2d_arr.c.obj
 example_proj.exe: CMakeFiles/example_proj.dir/build.make
 example_proj.exe: CMakeFiles/example_proj.dir/linklibs.rsp
 example_proj.exe: CMakeFiles/example_proj.dir/objects1.rsp
 example_proj.exe: CMakeFiles/example_proj.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\git\CPractice\c_review_fall_2021\nov\example_proj\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C executable example_proj.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\git\CPractice\c_review_fall_2021\nov\example_proj\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable example_proj.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\example_proj.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

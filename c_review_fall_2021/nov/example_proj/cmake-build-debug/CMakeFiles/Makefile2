@@ -80,12 +80,12 @@ clean: CMakeFiles/example_proj.dir/clean
 CMakeFiles/example_proj.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\git\CPractice\c_review_fall_2021\nov\example_proj\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target example_proj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\git\CPractice\c_review_fall_2021\nov\example_proj\cmake-build-debug\CMakeFiles --progress-num=1,2,3 "Built target example_proj"
 .PHONY : CMakeFiles/example_proj.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/example_proj.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\git\CPractice\c_review_fall_2021\nov\example_proj\cmake-build-debug\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\git\CPractice\c_review_fall_2021\nov\example_proj\cmake-build-debug\CMakeFiles 3
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/example_proj.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\git\CPractice\c_review_fall_2021\nov\example_proj\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/example_proj.dir/rule

@@ -128,29 +128,53 @@ example_proj/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/build
 .PHONY : example_proj/fast
 
-main.obj: main.c.obj
-.PHONY : main.obj
+dyn_mem_alloc_2d_arr.obj: dyn_mem_alloc_2d_arr.c.obj
+.PHONY : dyn_mem_alloc_2d_arr.obj
 
 # target to build an object file
-main.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/main.c.obj
-.PHONY : main.c.obj
+dyn_mem_alloc_2d_arr.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/dyn_mem_alloc_2d_arr.c.obj
+.PHONY : dyn_mem_alloc_2d_arr.c.obj
 
-main.i: main.c.i
-.PHONY : main.i
+dyn_mem_alloc_2d_arr.i: dyn_mem_alloc_2d_arr.c.i
+.PHONY : dyn_mem_alloc_2d_arr.i
 
 # target to preprocess a source file
-main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/main.c.i
-.PHONY : main.c.i
+dyn_mem_alloc_2d_arr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/dyn_mem_alloc_2d_arr.c.i
+.PHONY : dyn_mem_alloc_2d_arr.c.i
 
-main.s: main.c.s
-.PHONY : main.s
+dyn_mem_alloc_2d_arr.s: dyn_mem_alloc_2d_arr.c.s
+.PHONY : dyn_mem_alloc_2d_arr.s
 
 # target to generate assembly for a file
-main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/main.c.s
-.PHONY : main.c.s
+dyn_mem_alloc_2d_arr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/dyn_mem_alloc_2d_arr.c.s
+.PHONY : dyn_mem_alloc_2d_arr.c.s
+
+dyn_mem_alloc_examples.obj: dyn_mem_alloc_examples.c.obj
+.PHONY : dyn_mem_alloc_examples.obj
+
+# target to build an object file
+dyn_mem_alloc_examples.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/dyn_mem_alloc_examples.c.obj
+.PHONY : dyn_mem_alloc_examples.c.obj
+
+dyn_mem_alloc_examples.i: dyn_mem_alloc_examples.c.i
+.PHONY : dyn_mem_alloc_examples.i
+
+# target to preprocess a source file
+dyn_mem_alloc_examples.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/dyn_mem_alloc_examples.c.i
+.PHONY : dyn_mem_alloc_examples.c.i
+
+dyn_mem_alloc_examples.s: dyn_mem_alloc_examples.c.s
+.PHONY : dyn_mem_alloc_examples.s
+
+# target to generate assembly for a file
+dyn_mem_alloc_examples.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/dyn_mem_alloc_examples.c.s
+.PHONY : dyn_mem_alloc_examples.c.s
 
 # Help Target
 help:
@@ -161,9 +185,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... example_proj
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... dyn_mem_alloc_2d_arr.obj
+	@echo ... dyn_mem_alloc_2d_arr.i
+	@echo ... dyn_mem_alloc_2d_arr.s
+	@echo ... dyn_mem_alloc_examples.obj
+	@echo ... dyn_mem_alloc_examples.i
+	@echo ... dyn_mem_alloc_examples.s
 .PHONY : help
 
 

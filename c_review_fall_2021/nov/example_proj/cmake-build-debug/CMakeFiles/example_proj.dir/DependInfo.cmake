@@ -8,7 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/git/CPractice/c_review_fall_2021/nov/example_proj/main.c" "C:/git/CPractice/c_review_fall_2021/nov/example_proj/cmake-build-debug/CMakeFiles/example_proj.dir/main.c.obj"
+  "C:/git/CPractice/c_review_fall_2021/nov/example_proj/dyn_mem_alloc_2d_arr.c" "C:/git/CPractice/c_review_fall_2021/nov/example_proj/cmake-build-debug/CMakeFiles/example_proj.dir/dyn_mem_alloc_2d_arr.c.obj"
+  "C:/git/CPractice/c_review_fall_2021/nov/example_proj/dyn_mem_alloc_examples.c" "C:/git/CPractice/c_review_fall_2021/nov/example_proj/cmake-build-debug/CMakeFiles/example_proj.dir/dyn_mem_alloc_examples.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
