@@ -128,6 +128,30 @@ example_proj/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/build
 .PHONY : example_proj/fast
 
+code_practice_1.obj: code_practice_1.c.obj
+.PHONY : code_practice_1.obj
+
+# target to build an object file
+code_practice_1.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/code_practice_1.c.obj
+.PHONY : code_practice_1.c.obj
+
+code_practice_1.i: code_practice_1.c.i
+.PHONY : code_practice_1.i
+
+# target to preprocess a source file
+code_practice_1.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/code_practice_1.c.i
+.PHONY : code_practice_1.c.i
+
+code_practice_1.s: code_practice_1.c.s
+.PHONY : code_practice_1.s
+
+# target to generate assembly for a file
+code_practice_1.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/code_practice_1.c.s
+.PHONY : code_practice_1.c.s
+
 dyn_mem_alloc_2d_arr.obj: dyn_mem_alloc_2d_arr.c.obj
 .PHONY : dyn_mem_alloc_2d_arr.obj
 
@@ -176,6 +200,54 @@ dyn_mem_alloc_examples.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/dyn_mem_alloc_examples.c.s
 .PHONY : dyn_mem_alloc_examples.c.s
 
+scratch_pad_11-05-2021.obj: scratch_pad_11-05-2021.c.obj
+.PHONY : scratch_pad_11-05-2021.obj
+
+# target to build an object file
+scratch_pad_11-05-2021.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/scratch_pad_11-05-2021.c.obj
+.PHONY : scratch_pad_11-05-2021.c.obj
+
+scratch_pad_11-05-2021.i: scratch_pad_11-05-2021.c.i
+.PHONY : scratch_pad_11-05-2021.i
+
+# target to preprocess a source file
+scratch_pad_11-05-2021.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/scratch_pad_11-05-2021.c.i
+.PHONY : scratch_pad_11-05-2021.c.i
+
+scratch_pad_11-05-2021.s: scratch_pad_11-05-2021.c.s
+.PHONY : scratch_pad_11-05-2021.s
+
+# target to generate assembly for a file
+scratch_pad_11-05-2021.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/scratch_pad_11-05-2021.c.s
+.PHONY : scratch_pad_11-05-2021.c.s
+
+scratch_pad_11-12-21.obj: scratch_pad_11-12-21.c.obj
+.PHONY : scratch_pad_11-12-21.obj
+
+# target to build an object file
+scratch_pad_11-12-21.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/scratch_pad_11-12-21.c.obj
+.PHONY : scratch_pad_11-12-21.c.obj
+
+scratch_pad_11-12-21.i: scratch_pad_11-12-21.c.i
+.PHONY : scratch_pad_11-12-21.i
+
+# target to preprocess a source file
+scratch_pad_11-12-21.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/scratch_pad_11-12-21.c.i
+.PHONY : scratch_pad_11-12-21.c.i
+
+scratch_pad_11-12-21.s: scratch_pad_11-12-21.c.s
+.PHONY : scratch_pad_11-12-21.s
+
+# target to generate assembly for a file
+scratch_pad_11-12-21.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/scratch_pad_11-12-21.c.s
+.PHONY : scratch_pad_11-12-21.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -185,12 +257,21 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... example_proj
+	@echo ... code_practice_1.obj
+	@echo ... code_practice_1.i
+	@echo ... code_practice_1.s
 	@echo ... dyn_mem_alloc_2d_arr.obj
 	@echo ... dyn_mem_alloc_2d_arr.i
 	@echo ... dyn_mem_alloc_2d_arr.s
 	@echo ... dyn_mem_alloc_examples.obj
 	@echo ... dyn_mem_alloc_examples.i
 	@echo ... dyn_mem_alloc_examples.s
+	@echo ... scratch_pad_11-05-2021.obj
+	@echo ... scratch_pad_11-05-2021.i
+	@echo ... scratch_pad_11-05-2021.s
+	@echo ... scratch_pad_11-12-21.obj
+	@echo ... scratch_pad_11-12-21.i
+	@echo ... scratch_pad_11-12-21.s
 .PHONY : help
 
 

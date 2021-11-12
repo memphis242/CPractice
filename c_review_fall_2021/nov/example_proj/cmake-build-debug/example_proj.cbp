@@ -74,10 +74,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/git/CPractice/c_review_fall_2021/nov/example_proj/code_practice_1.c">
+			<Option target="example_proj"/>
+		</Unit>
 		<Unit filename="C:/git/CPractice/c_review_fall_2021/nov/example_proj/dyn_mem_alloc_2d_arr.c">
 			<Option target="example_proj"/>
 		</Unit>
 		<Unit filename="C:/git/CPractice/c_review_fall_2021/nov/example_proj/dyn_mem_alloc_examples.c">
+			<Option target="example_proj"/>
+		</Unit>
+		<Unit filename="C:/git/CPractice/c_review_fall_2021/nov/example_proj/scratch_pad_11-05-2021.c">
+			<Option target="example_proj"/>
+		</Unit>
+		<Unit filename="C:/git/CPractice/c_review_fall_2021/nov/example_proj/scratch_pad_11-12-21.c">
 			<Option target="example_proj"/>
 		</Unit>
 		<Unit filename="C:/git/CPractice/c_review_fall_2021/nov/example_proj/CMakeLists.txt">
