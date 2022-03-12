@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\filters.dir/objects.a
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\ar.exe cr CMakeFiles\filters.dir/objects.a @CMakeFiles\filters.dir\objects1.rsp
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\filters.dir/objects.a -Wl,--no-whole-archive -o filters.exe -Wl,--out-implib,libfilters.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\filters.dir\linklibs.rsp

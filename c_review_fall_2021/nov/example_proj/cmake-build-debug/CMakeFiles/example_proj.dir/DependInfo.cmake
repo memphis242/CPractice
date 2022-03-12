@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "C:/git/CPractice/c_review_fall_2021/nov/example_proj/dyn_mem_alloc_examples.c" "C:/git/CPractice/c_review_fall_2021/nov/example_proj/cmake-build-debug/CMakeFiles/example_proj.dir/dyn_mem_alloc_examples.c.obj"
   "C:/git/CPractice/c_review_fall_2021/nov/example_proj/scratch_pad_11-05-2021.c" "C:/git/CPractice/c_review_fall_2021/nov/example_proj/cmake-build-debug/CMakeFiles/example_proj.dir/scratch_pad_11-05-2021.c.obj"
   "C:/git/CPractice/c_review_fall_2021/nov/example_proj/scratch_pad_11-12-21.c" "C:/git/CPractice/c_review_fall_2021/nov/example_proj/cmake-build-debug/CMakeFiles/example_proj.dir/scratch_pad_11-12-21.c.obj"
+  "C:/git/CPractice/c_review_fall_2021/nov/example_proj/scratch_pad_11-27-21.c" "C:/git/CPractice/c_review_fall_2021/nov/example_proj/cmake-build-debug/CMakeFiles/example_proj.dir/scratch_pad_11-27-21.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

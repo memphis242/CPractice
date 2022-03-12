@@ -11,3 +11,5 @@ CMakeFiles/example_proj.dir/scratch_pad_11-05-2021.c.obj: \
  ../scratch_pad_11-05-2021.c
 CMakeFiles/example_proj.dir/scratch_pad_11-12-21.c.obj: \
  ../scratch_pad_11-12-21.c
+CMakeFiles/example_proj.dir/scratch_pad_11-27-21.c.obj: \
+ ../scratch_pad_11-27-21.c

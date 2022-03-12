@@ -1,0 +1,3 @@
+C:/git/CPractice/work/filters/cmake-build-debug/CMakeFiles/filters.dir
+C:/git/CPractice/work/filters/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/git/CPractice/work/filters/cmake-build-debug/CMakeFiles/rebuild_cache.dir

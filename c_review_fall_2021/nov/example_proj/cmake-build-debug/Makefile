@@ -248,6 +248,30 @@ scratch_pad_11-12-21.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/scratch_pad_11-12-21.c.s
 .PHONY : scratch_pad_11-12-21.c.s
 
+scratch_pad_11-27-21.obj: scratch_pad_11-27-21.c.obj
+.PHONY : scratch_pad_11-27-21.obj
+
+# target to build an object file
+scratch_pad_11-27-21.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/scratch_pad_11-27-21.c.obj
+.PHONY : scratch_pad_11-27-21.c.obj
+
+scratch_pad_11-27-21.i: scratch_pad_11-27-21.c.i
+.PHONY : scratch_pad_11-27-21.i
+
+# target to preprocess a source file
+scratch_pad_11-27-21.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/scratch_pad_11-27-21.c.i
+.PHONY : scratch_pad_11-27-21.c.i
+
+scratch_pad_11-27-21.s: scratch_pad_11-27-21.c.s
+.PHONY : scratch_pad_11-27-21.s
+
+# target to generate assembly for a file
+scratch_pad_11-27-21.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\example_proj.dir\build.make CMakeFiles/example_proj.dir/scratch_pad_11-27-21.c.s
+.PHONY : scratch_pad_11-27-21.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -272,6 +296,9 @@ help:
 	@echo ... scratch_pad_11-12-21.obj
 	@echo ... scratch_pad_11-12-21.i
 	@echo ... scratch_pad_11-12-21.s
+	@echo ... scratch_pad_11-27-21.obj
+	@echo ... scratch_pad_11-27-21.i
+	@echo ... scratch_pad_11-27-21.s
 .PHONY : help
 
 
