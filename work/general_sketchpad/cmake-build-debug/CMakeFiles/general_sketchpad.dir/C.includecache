@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/git/CPractice/work/general_sketchpad/circular_queue.c
+circular_queue.h
+C:/git/CPractice/work/general_sketchpad/circular_queue.h
+
+C:/git/CPractice/work/general_sketchpad/circular_queue.h
+stdbool.h
+-
+stdint.h
+-
+stdio.h
+-
+

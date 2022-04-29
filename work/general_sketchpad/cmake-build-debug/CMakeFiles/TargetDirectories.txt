@@ -1,0 +1,3 @@
+C:/git/CPractice/work/general_sketchpad/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/git/CPractice/work/general_sketchpad/cmake-build-debug/CMakeFiles/general_sketchpad.dir
+C:/git/CPractice/work/general_sketchpad/cmake-build-debug/CMakeFiles/edit_cache.dir

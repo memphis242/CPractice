@@ -1,0 +1,3 @@
+C:/git/CPractice/CPrimerPlusBook/Ch11Strings/ch11_strings_clionprj/cmake-build-debug/CMakeFiles/ch11_strings_clionprj.dir
+C:/git/CPractice/CPrimerPlusBook/Ch11Strings/ch11_strings_clionprj/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/git/CPractice/CPrimerPlusBook/Ch11Strings/ch11_strings_clionprj/cmake-build-debug/CMakeFiles/rebuild_cache.dir
