@@ -5,5 +5,4 @@ CMakeFiles/general_sketchpad.dir/circular_queue.c.obj: \
  ../circular_queue.c \
  ../circular_queue.h
 CMakeFiles/general_sketchpad.dir/main.c.obj: \
- ../circular_queue.h \
  ../main.c
