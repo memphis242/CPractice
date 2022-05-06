@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/git/CPractice/work/rx_queue_hash/callbacks.h
+std_can_ds.h
+C:/git/CPractice/work/rx_queue_hash/std_can_ds.h
+
+C:/git/CPractice/work/rx_queue_hash/std_can_ds.c
+std_can_ds.h
+C:/git/CPractice/work/rx_queue_hash/std_can_ds.h
+callbacks.h
+C:/git/CPractice/work/rx_queue_hash/callbacks.h
+stdio.h
+-
+
+C:/git/CPractice/work/rx_queue_hash/std_can_ds.h
+stdint.h
+-
+
