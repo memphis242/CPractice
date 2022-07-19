@@ -24,7 +24,7 @@
 /** Include Files **/
 #include "std_can_ds.h"
 
-extern struct Std_CAN_Queue_Item_S;
+//extern struct Std_CAN_Queue_Item_S;
 
 /** Definitions **/
 

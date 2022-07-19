@@ -22,6 +22,8 @@ for message_byte = 0x00:0xFF
         
     end
     
+	% To make things neat, I want to print out 8 entries of the table
+	% in a row then make a newline
     if(mod(k,8) == 0 && k > 0)
         fprintf(fid, '\n\t');
     end

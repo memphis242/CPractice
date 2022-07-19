@@ -1,98 +1,139 @@
 #include <stdio.h>
 #include <stdint.h>
-//#include "circular_queue.h"
 
-
-#define NUM_OF_RELEVANT_MSGS_RX 24U
-
-const static uint16_t RELEVANT_ID_TABLE[NUM_OF_RELEVANT_MSGS_RX] =
-        {
-                128U, 129U, 130U,
-                160U, 161U, 162U,
-                288U, 289U, 290U,
-                352U, 353U, 354U,
-                448U, 449U, 450U,
-                608U, 609U, 610U,
-                704U, 705U, 706U,
-                896U, 897U, 898U
-        };
-#define RELEVANT_ID_TABLE_MID_INDEX     (NUM_OF_RELEVANT_MSGS_RX / 2)
-#define RELEVANT_ID_TABLE_MAX_INDEX     (NUM_OF_RELEVANT_MSGS_RX - 1)
-
-static uint16_t example_ids[10u] =
-        { 898U, 128U, 449U, 898U, 2900U, 610U, 615U, 285U, 1000U, 447U };
-const static uint8_t example_ids_expected_relevancy[10U] =
-        { 1U,   1U,   1U,   1U,   0U,    1U,   0U,   0U,   0U,    0U };
-
-
-uint8_t std_queue_id_relevant(uint16_t id) {
-
-    uint8_t relevancy_val = 0u;
-
-    // Perform the hash function on the id
-    // FOR NOW, DON'T HAVE A GOOD HASH FUNCTION SO WILL USE TABLE INSTEAD
-    // Return the relevancy value the corresponded to this id
-
-    // Utilizing the RELEVANT_ID_TABLE... perform a binary search
-    // Go into search if value is within range of table, assuming table is sorted least to greatest
-    if ( id >= RELEVANT_ID_TABLE[0u] && id <= RELEVANT_ID_TABLE[RELEVANT_ID_TABLE_MAX_INDEX] ) {
-
-        uint8_t check_range_left = 0u;
-        uint8_t check_range_right = RELEVANT_ID_TABLE_MAX_INDEX;
-        uint8_t check_index = (check_range_right + check_range_left) >> 1;
-
-        // As long as the check range has a width greater than 1, keep searching
-        while( (check_range_right - check_range_left) > 0 ) {
-
-            // If we get an ID match...
-            if ( id == RELEVANT_ID_TABLE[check_index] ) {
-                relevancy_val = 1u;
-                break;
-
-                // Otherwise, update the check range and index
-            } else if ( id > RELEVANT_ID_TABLE[check_index] ) {
-                // To cover the corner case of the ID matching the last entry in the table...
-                if ( check_range_left == (check_range_right - 1u) ) {
-                    relevancy_val = (id == RELEVANT_ID_TABLE[check_range_right]);   // we will now check the last index
-                    break;
-                } else {
-                    check_range_left = check_index;
-                }
-
-            } else {
-                check_range_right = check_index;
-            }
-
-            check_index = (check_range_right + check_range_left) >> 1;
-
-        }
-
-    }
-
-    return relevancy_val;
-}
-
-uint8_t std_queue_id_relevant_linsearch(uint16_t id) {
-
-    uint8_t relevancy = 0u;
-
-    if ( id >= RELEVANT_ID_TABLE[0u] && id <= RELEVANT_ID_TABLE[RELEVANT_ID_TABLE_MAX_INDEX] ) {
-        for (uint8_t i = 0; i <= RELEVANT_ID_TABLE_MAX_INDEX; i++) {
-
-            if (id == RELEVANT_ID_TABLE[i]) {
-                relevancy = 1u;
-                break;
-            }
-        }
-    }
-
-    return relevancy;
-
-}
+static const uint16_t current_limit1 = 32600U;  // 30A in CurrentLimit_T form: Scale: 0.05, Offset: -1600
+static const uint16_t current_limit2 = 43178U;  // 558.9 in CurrentLimit_T --> The max that can be multiplied by 3 before upper limit of CurrentLimit_T
+static const uint16_t num_of_packs = 3u;
+static const uint16_t dc_bus_voltage = 7842U; // 392.1V /w Scale: 0.05
+static const uint16_t current_limit3 = 34064U; // 103.2A /w Scale: 0.05, Offset: -1600
 
 
 int main(void) {
 
+    uint16_t assembly_current_limit1;
+    uint16_t assembly_current_limit2;
+    uint16_t power_limit;
+
+    assembly_current_limit1 = (uint16_t) ( ( ( (int32_t) current_limit1 * num_of_packs ) + (32000L * (1L - ((int32_t)num_of_packs) )) ) );
+    assembly_current_limit2 = (uint16_t) ( ( ( (int32_t) current_limit2 * num_of_packs ) + (32000L * (1L - ((int32_t)num_of_packs) )) ) );
+
+    printf("Current Limit 1:\t\t%.2f\nCurrent Limit 2:\t\t%.2f\n\n", ((float)current_limit1 * 0.05 - 1600.0), ((float)current_limit2 * 0.05 - 1600.0));
+    printf("Assembly Limit 1:\t\t%.2f\nAssembly Limit 2:\t\t%.2f\n\n", ((float)assembly_current_limit1 * 0.05 - 1600.0), ((float)assembly_current_limit2 * 0.05 - 1600.0));
+
+    // Now let's try the power calc
+    power_limit = (uint16_t) ( ((uint32_t)(dc_bus_voltage / 20)) * ((uint32_t)((((int32_t)current_limit3) / 20) - 1600) ) / 50);
+    printf("DC Bus Voltage (V):\t\t%.2f\nCurrent Limit (A):\t\t%.2f\n", ((float)dc_bus_voltage * 0.05), ((float)current_limit3 * 0.05 - 1600.0));
+    printf("Power Limit (kW):\t\t%.2f\n\n", ((float)power_limit * 0.05));
+
+    // Debugging
+    uint32_t val1 = ((uint32_t)(dc_bus_voltage / 20));
+    uint32_t val2 = ((uint32_t)(((int32_t)current_limit3) / 20) - 1600);
+    uint32_t val3 = val1 * val2;
+    uint32_t val4 = val3 / 50;
+    uint16_t val5 = (uint16_t) val4;
+
+    return 0;
+}
+
+
+
+
+
+
+
+//#include "circular_queue.h"
+
+
+//#define NUM_OF_RELEVANT_MSGS_RX 24U
+
+//const static uint16_t RELEVANT_ID_TABLE[NUM_OF_RELEVANT_MSGS_RX] =
+//        {
+//                128U, 129U, 130U,
+//                160U, 161U, 162U,
+//                288U, 289U, 290U,
+//                352U, 353U, 354U,
+//                448U, 449U, 450U,
+//                608U, 609U, 610U,
+//                704U, 705U, 706U,
+//                896U, 897U, 898U
+//        };
+//#define RELEVANT_ID_TABLE_MID_INDEX     (NUM_OF_RELEVANT_MSGS_RX / 2)
+//#define RELEVANT_ID_TABLE_MAX_INDEX     (NUM_OF_RELEVANT_MSGS_RX - 1)
+//
+//static uint16_t example_ids[10u] =
+//        { 898U, 128U, 449U, 898U, 2900U, 610U, 615U, 285U, 1000U, 447U };
+//const static uint8_t example_ids_expected_relevancy[10U] =
+//        { 1U,   1U,   1U,   1U,   0U,    1U,   0U,   0U,   0U,    0U };
+
+
+//uint8_t std_queue_id_relevant(uint16_t id) {
+
+//    uint8_t relevancy_val = 0u;
+//
+//    // Perform the hash function on the id
+//    // FOR NOW, DON'T HAVE A GOOD HASH FUNCTION SO WILL USE TABLE INSTEAD
+//    // Return the relevancy value the corresponded to this id
+//
+//    // Utilizing the RELEVANT_ID_TABLE... perform a binary search
+//    // Go into search if value is within range of table, assuming table is sorted least to greatest
+//    if ( id >= RELEVANT_ID_TABLE[0u] && id <= RELEVANT_ID_TABLE[RELEVANT_ID_TABLE_MAX_INDEX] ) {
+//
+//        uint8_t check_range_left = 0u;
+//        uint8_t check_range_right = RELEVANT_ID_TABLE_MAX_INDEX;
+//        uint8_t check_index = (check_range_right + check_range_left) >> 1;
+//
+//        // As long as the check range has a width greater than 1, keep searching
+//        while( (check_range_right - check_range_left) > 0 ) {
+//
+//            // If we get an ID match...
+//            if ( id == RELEVANT_ID_TABLE[check_index] ) {
+//                relevancy_val = 1u;
+//                break;
+//
+//                // Otherwise, update the check range and index
+//            } else if ( id > RELEVANT_ID_TABLE[check_index] ) {
+//                // To cover the corner case of the ID matching the last entry in the table...
+//                if ( check_range_left == (check_range_right - 1u) ) {
+//                    relevancy_val = (id == RELEVANT_ID_TABLE[check_range_right]);   // we will now check the last index
+//                    break;
+//                } else {
+//                    check_range_left = check_index;
+//                }
+//
+//            } else {
+//                check_range_right = check_index;
+//            }
+//
+//            check_index = (check_range_right + check_range_left) >> 1;
+//
+//        }
+//
+//    }
+//
+//    return relevancy_val;
+//}
+
+//uint8_t std_queue_id_relevant_linsearch(uint16_t id) {
+//
+//    uint8_t relevancy = 0u;
+//
+//    if ( id >= RELEVANT_ID_TABLE[0u] && id <= RELEVANT_ID_TABLE[RELEVANT_ID_TABLE_MAX_INDEX] ) {
+//        for (uint8_t i = 0; i <= RELEVANT_ID_TABLE_MAX_INDEX; i++) {
+//
+//            if (id == RELEVANT_ID_TABLE[i]) {
+//                relevancy = 1u;
+//                break;
+//            }
+//        }
+//    }
+//
+//    return relevancy;
+//
+//}
+
+
+
+// WITHIN MAIN FUNCTION:
 //    uint8_t quick_example = std_queue_id_relevant(615U);
 //    printf("%d", quick_example);
 
@@ -120,36 +161,21 @@ int main(void) {
 //        printf("\t\t\t    %d--------------%d\n", relevancy_compute[i], example_ids_expected_relevancy[i]);
 //    }
 
-    // TEST 3 - Full range test
-    uint8_t match = 1u;
-    uint8_t val1, val2;
-    for ( uint16_t i=0u; i<=65534u; i++ ) {
-        val1 = std_queue_id_relevant_linsearch(i);
-        val2 = std_queue_id_relevant(i);
-
-        if ( val1 != val2 ) {
-            match = 0u;
-            printf("\nMismatch!\n\t\tId: %d\tLin Search: %d\tBin Search: %d\n\n", i, val1, val2);
-            break;
-        }
-    }
-
-    if ( match ) printf("Test passed!");
-
-
-
-    return 0;
-}
-
-
-
-
-
-
-
-
-
-
+//    // TEST 3 - Full range test
+//    uint8_t match = 1u;
+//    uint8_t val1, val2;
+//    for ( uint16_t i=0u; i<=65534u; i++ ) {
+//        val1 = std_queue_id_relevant_linsearch(i);
+//        val2 = std_queue_id_relevant(i);
+//
+//        if ( val1 != val2 ) {
+//            match = 0u;
+//            printf("\nMismatch!\n\t\tId: %d\tLin Search: %d\tBin Search: %d\n\n", i, val1, val2);
+//            break;
+//        }
+//    }
+//
+//    if ( match ) printf("Test passed!");
 
 //#define QUEUE_SIZE  30U
 //
