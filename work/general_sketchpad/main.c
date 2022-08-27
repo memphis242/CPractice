@@ -10,36 +10,69 @@ static const uint16_t current_limit3 = 34064U; // 103.2A /w Scale: 0.05, Offset:
 
 int main(void) {
 
-    uint16_t assembly_current_limit1;
-    uint16_t assembly_current_limit2;
-    uint16_t power_limit;
+    // Checking what a left shift does to a signed number
+    int8_t val = -3;    // 0xFD in two's complement, or 1111 1101
+    printf("\n\nValue before shifting left: %d", val);
 
-    assembly_current_limit1 = (uint16_t) ( ( ( (int32_t) current_limit1 * num_of_packs ) + (32000L * (1L - ((int32_t)num_of_packs) )) ) );
-    assembly_current_limit2 = (uint16_t) ( ( ( (int32_t) current_limit2 * num_of_packs ) + (32000L * (1L - ((int32_t)num_of_packs) )) ) );
+    // Working by hand:
+    // Left Shift       Original        Result          Value
+    // 0                1111 1101       1111 1101       -3
+    // 1                1111 1101       1111 1010       -6
+    // 2                1111 1101       1111 0100       -12
+    // 3                1111 1101       1110 1000       -24
+    // 4                1111 1101       1101 0000       -48
+    // 5                1111 1101       1010 0000       -96
+    // 6                1111 1101       0100 0000       64      --> No longer signed!
+    // 7                1111 1101       1000 0000       -128
+    // 8                1111 1101       0000 0000       0
+    // any more shifts result in 0
 
-    printf("Current Limit 1:\t\t%.2f\nCurrent Limit 2:\t\t%.2f\n\n", ((float)current_limit1 * 0.05 - 1600.0), ((float)current_limit2 * 0.05 - 1600.0));
-    printf("Assembly Limit 1:\t\t%.2f\nAssembly Limit 2:\t\t%.2f\n\n", ((float)assembly_current_limit1 * 0.05 - 1600.0), ((float)assembly_current_limit2 * 0.05 - 1600.0));
+    for ( uint8_t i=1; i<12; i++ )
+    {
+        int8_t val_shifted = val << i;
+        printf("\nValue after shifting left by %d: %d", i, val_shifted);
+    }
 
-    // Now let's try the power calc
-    power_limit = (uint16_t) ( ((uint32_t)(dc_bus_voltage / 20)) * ((uint32_t)((((int32_t)current_limit3) / 20) - 1600) ) / 50);
-    printf("DC Bus Voltage (V):\t\t%.2f\nCurrent Limit (A):\t\t%.2f\n", ((float)dc_bus_voltage * 0.05), ((float)current_limit3 * 0.05 - 1600.0));
-    printf("Power Limit (kW):\t\t%.2f\n\n", ((float)power_limit * 0.05));
+    // Let's start at a different initial value
+    printf("\n");
+    val = -15;    // 0xF4 in two's complement, or 1111 0001
+    printf("\n\nValue before shifting left: %d", val);
 
-    // Debugging
-    uint32_t val1 = ((uint32_t)(dc_bus_voltage / 20));
-    uint32_t val2 = ((uint32_t)(((int32_t)current_limit3) / 20) - 1600);
-    uint32_t val3 = val1 * val2;
-    uint32_t val4 = val3 / 50;
-    uint16_t val5 = (uint16_t) val4;
+    for ( uint8_t i=1; i<12; i++ )
+    {
+        int8_t val_shifted = val << i;
+        printf("\nValue after shifting left by %d: %d", i, val_shifted);
+    }
 
     return 0;
 }
 
 
 
+// ************************************************************
+//uint16_t assembly_current_limit1;
+//uint16_t assembly_current_limit2;
+//uint16_t power_limit;
+//
+//assembly_current_limit1 = (uint16_t) ( ( ( (int32_t) current_limit1 * num_of_packs ) + (32000L * (1L - ((int32_t)num_of_packs) )) ) );
+//assembly_current_limit2 = (uint16_t) ( ( ( (int32_t) current_limit2 * num_of_packs ) + (32000L * (1L - ((int32_t)num_of_packs) )) ) );
+//
+//printf("Current Limit 1:\t\t%.2f\nCurrent Limit 2:\t\t%.2f\n\n", ((float)current_limit1 * 0.05 - 1600.0), ((float)current_limit2 * 0.05 - 1600.0));
+//printf("Assembly Limit 1:\t\t%.2f\nAssembly Limit 2:\t\t%.2f\n\n", ((float)assembly_current_limit1 * 0.05 - 1600.0), ((float)assembly_current_limit2 * 0.05 - 1600.0));
+//
+//// Now let's try the power calc
+//power_limit = (uint16_t) ( ((uint32_t)(dc_bus_voltage / 20)) * ((uint32_t)((((int32_t)current_limit3) / 20) - 1600) ) / 50);
+//printf("DC Bus Voltage (V):\t\t%.2f\nCurrent Limit (A):\t\t%.2f\n", ((float)dc_bus_voltage * 0.05), ((float)current_limit3 * 0.05 - 1600.0));
+//printf("Power Limit (kW):\t\t%.2f\n\n", ((float)power_limit * 0.05));
+//
+//// Debugging
+//uint32_t val1 = ((uint32_t)(dc_bus_voltage / 20));
+//uint32_t val2 = ((uint32_t)(((int32_t)current_limit3) / 20) - 1600);
+//uint32_t val3 = val1 * val2;
+//uint32_t val4 = val3 / 50;
+//uint16_t val5 = (uint16_t) val4;
 
-
-
+// ***********************************************************************
 
 //#include "circular_queue.h"
 
