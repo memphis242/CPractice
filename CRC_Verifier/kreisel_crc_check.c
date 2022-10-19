@@ -1,5 +1,6 @@
 /************ INCLUDE HEADERS *****************************/
 #include <stdio.h>
+#include <string.h>
 
 
 /************* STRUCTURE DEFINITIONS *********************/
@@ -37,7 +38,7 @@ typedef struct
 static KREISEL_PTREQUEST_TYPE Kreisel_PTRequest;
 
 // Declaring the buffer that will be used to read in user input
-char data_bytes_as_ascii[30];	// 0xXX 0xXX 0xXX 0xXX 0xXX 0xXX
+char data_bytes_as_ascii[13];	// 0xXX 0xXX 0xXX 0xXX 0xXX 0xXX
 // Declaring the actual data bytes array that the CRC will be assigned to Kreisel_PTRequest
 char data_bytes[7];
 
@@ -80,12 +81,21 @@ static void KREISEL_CRC(void);
 int main( int argc, char *argv[] )
 {
 	// Obtain data bytes + alive counter from command-line input; for now, I'm going to expect bytes to be written in hex like 0xXX and to be space separated...
-	//fgets(data_bytes_as_ascii, 7, stdin);
+	if ( argc >= 2 )	memcpy(&data_bytes_as_ascii[0], argv[1], 2);
+	if ( argc >= 3 )	memcpy(&data_bytes_as_ascii[2], argv[2], 2);
+	if ( argc >= 4 )	memcpy(&data_bytes_as_ascii[4], argv[3], 2);
+	if ( argc >= 5 )	memcpy(&data_bytes_as_ascii[6], argv[4], 2);
+	if ( argc >= 6 )	memcpy(&data_bytes_as_ascii[8], argv[5], 2);
+	if ( argc >= 7 )	memcpy(&data_bytes_as_ascii[10], argv[6], 2);
+	// fgets(data_bytes_as_ascii, 30, stdin);
+	
+	// Now convert the hexadecimal ascii values to actual hexadecimal integers
+	
 	
 	// Confirm by printing out what was obtained...
-	//puts(data_bytes_as_ascii);	
+	printf("Read input was: %s", data_bytes_as_ascii);
 	
-	printf("Hello world\n");
+	//printf("Hello world\n");
 
 
 	return 0;
