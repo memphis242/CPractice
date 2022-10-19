@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 
 /************* STRUCTURE DEFINITIONS *********************/
@@ -121,14 +122,14 @@ int main( int argc, char *argv[] )
 
 
 	// Print converted values...
-	// printf("Read input converted into hexadecimal integer: %02X %02X %02X %02X %02X %02X\n", data_bytes[0], data_bytes[1], data_bytes[2], data_bytes[3], data_bytes[4], data_bytes[5]); 
+	printf("\nRead input converted into hexadecimal integer: %02X %02X %02X %02X %02X %02X\n", data_bytes[0], data_bytes[1], data_bytes[2], data_bytes[3], data_bytes[4], data_bytes[5]); 
 
 	// Now fill up the Kreisel_PTRequest struct...
 	// request part...
 	Kreisel_PTRequest.request.state_req = data_bytes[0] & 0x0Fu;
-	Kreisel_PTRequest.request.isolation_req = data_bytes[0] & 0xF0u;
-	Kreisel_PTRequest.request.sleep_req = data_bytes[1] & 0xF0u;
-	Kreisel_PTRequest.request.range_req = data_bytes[1] & 0xF0u;
+	Kreisel_PTRequest.request.isolation_req = ( data_bytes[0] & 0xF0u ) >> 4;
+	Kreisel_PTRequest.request.sleep_req = data_bytes[1] & 0x0Fu;
+	Kreisel_PTRequest.request.range_req = ( data_bytes[1] & 0xF0u ) >> 4;
 	// Charge Power Available
 	Kreisel_PTRequest.chargepoweravail[0] = data_bytes[2];
 	Kreisel_PTRequest.chargepoweravail[1] = data_bytes[3];
@@ -140,6 +141,14 @@ int main( int argc, char *argv[] )
 	Kreisel_PTRequest.comm.ctrl_aux3 = data_bytes[5] & 0x04u;
 	Kreisel_PTRequest.comm.ctrl_aux4 = data_bytes[5] & 0x08u;
 	Kreisel_PTRequest.comm.alivecounter = ( data_bytes[5] & 0xF0u ) >> 4;
+	
+	// Print out to confirm correct assignment...
+	uint16_t charge_power = ( (uint16_t) Kreisel_PTRequest.chargepoweravail[0] << 8 ) | ( (uint16_t) Kreisel_PTRequest.chargepoweravail[1] );
+	printf("\nState Request:\t\t%d\nIsolation Request:\t%d\nSleep Request:\t\t%d\nRange Request:\t\t%d\nCharge Power Available:\t%d\nReserved:\t\t%d\n",
+		Kreisel_PTRequest.request.state_req, Kreisel_PTRequest.request.isolation_req, Kreisel_PTRequest.request.sleep_req, Kreisel_PTRequest.request.range_req, charge_power,
+		Kreisel_PTRequest.rsvd);
+	printf("Ctrl Aux1:\t\t%d\nCtrl Aux2:\t\t%d\nCtrl Aux3:\t\t%d\nCtrl Aux4:\t\t%d\nAlive Counter:\t\t%d\n",
+		Kreisel_PTRequest.comm.ctrl_aux1, Kreisel_PTRequest.comm.ctrl_aux2, Kreisel_PTRequest.comm.ctrl_aux3, Kreisel_PTRequest.comm.ctrl_aux4, Kreisel_PTRequest.comm.alivecounter);
 
 	// Now compute the CRC!
 	KREISEL_CRC();
@@ -166,8 +175,8 @@ static void KREISEL_CRC(void)
 	// Six data bytes are used to compute the CRC first, prior to accounting for alive counter...
 	datalen = 6;
 	crc = 0xFF; // CRC = 255 Startvalue
-	// Incrememt alivecounter...
-	Kreisel_PTRequest.comm.alivecounter = (Kreisel_PTRequest.comm.alivecounter + 1) & 0x0F; // 4-Bit Counter
+	// Incrememt alivecounter...	-->		Not doing that because I'll assume we are passing in the alive counter as it should appear in the message!
+	// Kreisel_PTRequest.comm.alivecounter = (Kreisel_PTRequest.comm.alivecounter + 1) & 0x0F; // 4-Bit Counter
 
 	// Compute CRC over data bytes and alive counter ...
 	while (datalen--) crc = KREISELCRCTABLEDEF[*s++ ^ crc];
