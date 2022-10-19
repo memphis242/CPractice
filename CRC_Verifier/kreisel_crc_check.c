@@ -1,6 +1,7 @@
 /************ INCLUDE HEADERS *****************************/
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 
 /************* STRUCTURE DEFINITIONS *********************/
@@ -38,9 +39,9 @@ typedef struct
 static KREISEL_PTREQUEST_TYPE Kreisel_PTRequest;
 
 // Declaring the buffer that will be used to read in user input
-char data_bytes_as_ascii[13];	// 0xXX 0xXX 0xXX 0xXX 0xXX 0xXX
+char data_bytes_as_ascii[13];	// XX XX XX XX XX XX (ignoring the spaces)
 // Declaring the actual data bytes array that the CRC will be assigned to Kreisel_PTRequest
-char data_bytes[7];
+unsigned char data_bytes[6];
 
 
 
@@ -89,12 +90,46 @@ int main( int argc, char *argv[] )
 	if ( argc >= 7 )	memcpy(&data_bytes_as_ascii[10], argv[6], 2);
 	// fgets(data_bytes_as_ascii, 30, stdin);
 	
-	// Now convert the hexadecimal ascii values to actual hexadecimal integers
-	
-	
 	// Confirm by printing out what was obtained...
-	printf("Read input was: %s", data_bytes_as_ascii);
+	printf("Read input was: %s\n", data_bytes_as_ascii);
 	
+	// Now convert the hexadecimal ascii values to actual hexadecimal integers
+	// I really should have used arrays + for loops here...
+	char byte1[3];	
+	char byte2[3];
+	char byte3[3];
+	char byte4[3];
+	char byte5[3];
+	char byte6[3];
+	byte1[2] = '\0';
+	byte2[2] = '\0';
+	byte3[2] = '\0';
+	byte4[2] = '\0';
+	byte5[2] = '\0';
+	byte6[2] = '\0';
+	memcpy(byte1, &data_bytes_as_ascii[0], 2);
+	memcpy(byte2, &data_bytes_as_ascii[2], 2);
+	memcpy(byte3, &data_bytes_as_ascii[4], 2);
+	memcpy(byte4, &data_bytes_as_ascii[6], 2);
+	memcpy(byte5, &data_bytes_as_ascii[8], 2);
+	memcpy(byte6, &data_bytes_as_ascii[10], 2);
+	data_bytes[0] = (unsigned char) ( strtol(byte1, NULL, 16) & 0xFFu );
+	data_bytes[1] = (unsigned char) ( strtol(byte2, NULL, 16) & 0xFFu );
+	data_bytes[2] = (unsigned char) ( strtol(byte3, NULL, 16) & 0xFFu );
+	data_bytes[3] = (unsigned char) ( strtol(byte4, NULL, 16) & 0xFFu );
+	data_bytes[4] = (unsigned char) ( strtol(byte5, NULL, 16) & 0xFFu );
+	data_bytes[5] = (unsigned char) ( strtol(byte6, NULL, 16) & 0xFFu );
+
+
+	// Print converted values...
+	printf("Read input converted into hexadecimal integer: %02X %02X %02X %02X %02X %02X\n", data_bytes[0], data_bytes[1], data_bytes[2], data_bytes[3], data_bytes[4], data_bytes[5]); 
+	//char example[10] = "AE";
+	//printf("Example output: %.2x", strtol(example, NULL, 16));
+
+
+
+
+
 	//printf("Hello world\n");
 
 
