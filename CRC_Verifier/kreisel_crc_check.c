@@ -90,7 +90,7 @@ int main( int argc, char *argv[] )
 	if ( argc >= 7 )	memcpy(&data_bytes_as_ascii[10], argv[6], 2);
 
 	// Confirm by printing out what was obtained...
-	printf("Read input was: %s\n", data_bytes_as_ascii);
+	// printf("Read input was: %s\n", data_bytes_as_ascii);
 	
 	// Now convert the hexadecimal ascii values to actual hexadecimal integers
 	// I really should have used arrays + for loops here...
@@ -121,7 +121,7 @@ int main( int argc, char *argv[] )
 
 
 	// Print converted values...
-	printf("Read input converted into hexadecimal integer: %02X %02X %02X %02X %02X %02X\n", data_bytes[0], data_bytes[1], data_bytes[2], data_bytes[3], data_bytes[4], data_bytes[5]); 
+	// printf("Read input converted into hexadecimal integer: %02X %02X %02X %02X %02X %02X\n", data_bytes[0], data_bytes[1], data_bytes[2], data_bytes[3], data_bytes[4], data_bytes[5]); 
 
 	// Now fill up the Kreisel_PTRequest struct...
 	// request part...
@@ -145,7 +145,7 @@ int main( int argc, char *argv[] )
 	KREISEL_CRC();
 
 	// Print out CRC result... 
-	printf("\nCRC Result:\t\t%#02x", Kreisel_PTRequest.crc);
+	printf("\nCRC Result:\t\t%02X\n", Kreisel_PTRequest.crc);
 
 
 	return 0;

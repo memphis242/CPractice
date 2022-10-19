@@ -1,0 +1,1 @@
+i686-w64-mingw32-gcc -o kreisel_crc_calculator.exe kreisel_crc_check.c
