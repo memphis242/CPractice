@@ -41,8 +41,8 @@ static KREISEL_PTREQUEST_TYPE Kreisel_PTRequest;
 // Declaring the buffer that will be used to read in user input
 char data_bytes_as_ascii[13];	// XX XX XX XX XX XX (ignoring the spaces)
 // Declaring the actual data bytes array that the CRC will be assigned to Kreisel_PTRequest
-unsigned char data_bytes[6];
-
+unsigned char data_bytes[7];
+unsigned char alive_counter;
 
 
 // CRC Lookup-Table /w from Polynomial: 0x2F
@@ -88,8 +88,7 @@ int main( int argc, char *argv[] )
 	if ( argc >= 5 )	memcpy(&data_bytes_as_ascii[6], argv[4], 2);
 	if ( argc >= 6 )	memcpy(&data_bytes_as_ascii[8], argv[5], 2);
 	if ( argc >= 7 )	memcpy(&data_bytes_as_ascii[10], argv[6], 2);
-	// fgets(data_bytes_as_ascii, 30, stdin);
-	
+
 	// Confirm by printing out what was obtained...
 	printf("Read input was: %s\n", data_bytes_as_ascii);
 	
@@ -117,20 +116,36 @@ int main( int argc, char *argv[] )
 	data_bytes[1] = (unsigned char) ( strtol(byte2, NULL, 16) & 0xFFu );
 	data_bytes[2] = (unsigned char) ( strtol(byte3, NULL, 16) & 0xFFu );
 	data_bytes[3] = (unsigned char) ( strtol(byte4, NULL, 16) & 0xFFu );
-	data_bytes[4] = (unsigned char) ( strtol(byte5, NULL, 16) & 0xFFu );
+	data_bytes[4] = (unsigned char) 0u;	// Byte 5 is always zero
 	data_bytes[5] = (unsigned char) ( strtol(byte6, NULL, 16) & 0xFFu );
 
 
 	// Print converted values...
 	printf("Read input converted into hexadecimal integer: %02X %02X %02X %02X %02X %02X\n", data_bytes[0], data_bytes[1], data_bytes[2], data_bytes[3], data_bytes[4], data_bytes[5]); 
-	//char example[10] = "AE";
-	//printf("Example output: %.2x", strtol(example, NULL, 16));
 
+	// Now fill up the Kreisel_PTRequest struct...
+	// request part...
+	Kreisel_PTRequest.request.state_req = data_bytes[0] & 0x0Fu;
+	Kreisel_PTRequest.request.isolation_req = data_bytes[0] & 0xF0u;
+	Kreisel_PTRequest.request.sleep_req = data_bytes[1] & 0xF0u;
+	Kreisel_PTRequest.request.range_req = data_bytes[1] & 0xF0u;
+	// Charge Power Available
+	Kreisel_PTRequest.chargepoweravail[0] = data_bytes[2];
+	Kreisel_PTRequest.chargepoweravail[1] = data_bytes[3];
+	// reserved byte (byte 5)...
+	Kreisel_PTRequest.rsvd = data_bytes[4];
+	// comm part
+	Kreisel_PTRequest.comm.ctrl_aux1 = data_bytes[5] & 0x01u;
+	Kreisel_PTRequest.comm.ctrl_aux2 = data_bytes[5] & 0x02u;
+	Kreisel_PTRequest.comm.ctrl_aux3 = data_bytes[5] & 0x04u;
+	Kreisel_PTRequest.comm.ctrl_aux4 = data_bytes[5] & 0x08u;
+	Kreisel_PTRequest.comm.alivecounter = ( data_bytes[5] & 0xF0u ) >> 4;
 
+	// Now compute the CRC!
+	KREISEL_CRC();
 
-
-
-	//printf("Hello world\n");
+	// Print out CRC result... 
+	printf("\nCRC Result:\t\t%#02x", Kreisel_PTRequest.crc);
 
 
 	return 0;
@@ -140,7 +155,7 @@ int main( int argc, char *argv[] )
 
 
 /*************************** LOCAL FUNCTION DEFINITIONS *******************************/
-static void KREISEL_Crc(void)
+static void KREISEL_CRC(void)
 {
 	// Auto local variables...
 	unsigned char *s, crc, datalen;
