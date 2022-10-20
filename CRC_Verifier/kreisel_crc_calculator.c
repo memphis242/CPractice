@@ -85,48 +85,43 @@ static void KREISEL_CRC_4BYTES(void);
 int main( int argc, char *argv[] )
 {
 	/****** GET DATA BYTES FROM USER ********/
-	// Obtain data bytes + alive counter from command-line input; for now, I'm going to expect bytes to be written in hex like 0xXX and to be space separated...
+	// Verify that user has entered at least six bytes...
+	if ( argc < 7 )
+	{
+		printf("\nError: You need to enter at least six bytes.\n");
+		return 1;
+	}
+	// If user has entered more than seven bytes, give a warning but still proceed...
+	if ( argc > 8 )
+	{
+		printf("\nWarning: You entered more than six bytes. Only the first six bytes will be considered and the rest will be ignored.\n");
+	}
+	
+	// Obtain data bytes + alive counter from command-line input; for now, I'm going to expect bytes to be written in hex without the "0x" prefix and to be space separated...
 	if ( argc >= 2 )	memcpy(&data_bytes_as_ascii[0], argv[1], 2);
 	if ( argc >= 3 )	memcpy(&data_bytes_as_ascii[2], argv[2], 2);
 	if ( argc >= 4 )	memcpy(&data_bytes_as_ascii[4], argv[3], 2);
 	if ( argc >= 5 )	memcpy(&data_bytes_as_ascii[6], argv[4], 2);
 	if ( argc >= 6 )	memcpy(&data_bytes_as_ascii[8], argv[5], 2);
 	if ( argc >= 7 )	memcpy(&data_bytes_as_ascii[10], argv[6], 2);
-	if ( argc >= 8 )	num_of_bytes = (unsigned char) strtol(argv[7], NULL, 10);
+	if ( argc >= 8 )	num_of_bytes = (unsigned char) strtol(argv[7], NULL, 10);	// The user may pass this number of bytes through as one of the arguments in the command line invocation of the program
 
 	// Confirm by printing out what was obtained...
 	// printf("Read input was: %s\n", data_bytes_as_ascii);
 	
-	// Now convert the hexadecimal ascii values to actual hexadecimal integers
-	if ( num_of_bytes != 4u )
+	/****** CONVERT ASCII VALUES INTO HEXADECIMAL INTEGERS ********/
+	// For PT_Request, there are six bytes to compute the CRC over; for SC01_State, there are four. Hence the two control branches below...
+	if ( num_of_bytes != 4u )	// Message 11B --> PT_Request
 	{
-		// I really should have used arrays + for loops here...
-		char byte1[3];	
-		char byte2[3];
-		char byte3[3];
-		char byte4[3];
-		char byte5[3];
-		char byte6[3];
-		byte1[2] = '\0';
-		byte2[2] = '\0';
-		byte3[2] = '\0';
-		byte4[2] = '\0';
-		byte5[2] = '\0';
-		byte6[2] = '\0';
-		memcpy(byte1, &data_bytes_as_ascii[0], 2);
-		memcpy(byte2, &data_bytes_as_ascii[2], 2);
-		memcpy(byte3, &data_bytes_as_ascii[4], 2);
-		memcpy(byte4, &data_bytes_as_ascii[6], 2);
-		memcpy(byte5, &data_bytes_as_ascii[8], 2);
-		memcpy(byte6, &data_bytes_as_ascii[10], 2);
-		data_bytes[0] = (unsigned char) ( strtol(byte1, NULL, 16) & 0xFFu );
-		data_bytes[1] = (unsigned char) ( strtol(byte2, NULL, 16) & 0xFFu );
-		data_bytes[2] = (unsigned char) ( strtol(byte3, NULL, 16) & 0xFFu );
-		data_bytes[3] = (unsigned char) ( strtol(byte4, NULL, 16) & 0xFFu );
-		data_bytes[4] = (unsigned char) 0u;	// Byte 5 is always zero
-		data_bytes[5] = (unsigned char) ( strtol(byte6, NULL, 16) & 0xFFu );
-	
-
+		// Need to use a char array per hexadecimal entry in order to use strtol; hence the array of char arrays...
+		char bytes[6][3];
+		for ( uint8_t i=0; i<6; i++ )	bytes[i][3] = '\0';		// Terminate with null character to indicate this is a string...
+		// Copy bytes over from data_bytes_as_ascii into data_bytes
+		for ( uint8_t i=0; i<6; i++ )
+		{
+			memcpy(&bytes[0][i], &data_bytes_as_ascii[2*i], 2);
+			data_bytes[i] = (unsigned char) ( strtol(&bytes[0][i], NULL, 16) & 0xFFu );
+		}
 
 		// Print converted values...
 		printf("\nRead input converted into hexadecimal integer: %02X %02X %02X %02X %02X %02X\n", data_bytes[0], data_bytes[1], data_bytes[2], data_bytes[3], data_bytes[4], data_bytes[5]); 
@@ -162,11 +157,12 @@ int main( int argc, char *argv[] )
 		// Now compute the CRC!
 		KREISEL_CRC();
 	}
-	else
+	else		// TODO: Message 1F --> SC01_State	-->		STILL WORK IN PROGRESS!
 	{
-		// Message 1F --> SC01_State
-		char bytes[3][4];
-		for ( uint8_t i=0; i<4; i++ )	bytes[3][i] = '\0';
+		// Need to use a char array per hexadecimal entry in order to use strtol; hence the array of char arrays...
+		char bytes[4][3];
+		for ( uint8_t i=0; i<4; i++ )	bytes[i][3] = '\0';			// Terminate with null character to indicate this is a string...
+		// Copy bytes over from data_bytes_as_ascii into data_bytes
 		for ( uint8_t i=0; i<4; i++ )
 		{
 			memcpy(&bytes[0][i], &data_bytes_as_ascii[2*i], 2);
