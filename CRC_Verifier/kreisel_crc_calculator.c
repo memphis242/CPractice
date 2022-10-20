@@ -40,10 +40,11 @@ typedef struct
 static KREISEL_PTREQUEST_TYPE Kreisel_PTRequest;
 
 // Declaring the buffer that will be used to read in user input
-char data_bytes_as_ascii[13];	// XX XX XX XX XX XX (ignoring the spaces)
+static char data_bytes_as_ascii[13];	// XX XX XX XX XX XX (ignoring the spaces)
 // Declaring the actual data bytes array that the CRC will be assigned to Kreisel_PTRequest
-unsigned char data_bytes[7];
-unsigned char alive_counter;
+static unsigned char data_bytes[7];
+static unsigned char alive_counter;
+static unsigned char num_of_bytes;
 
 
 // CRC Lookup-Table /w from Polynomial: 0x2F
@@ -75,6 +76,7 @@ static const unsigned char KREISELCTCTABLEMSG[] = {
 
 /************************** LOCAL FUNCTION DECLARATIONS *******************************/
 static void KREISEL_CRC(void);
+static void KREISEL_CRC_4BYTES(void);
 
 
 
@@ -82,6 +84,7 @@ static void KREISEL_CRC(void);
 
 int main( int argc, char *argv[] )
 {
+	/****** GET DATA BYTES FROM USER ********/
 	// Obtain data bytes + alive counter from command-line input; for now, I'm going to expect bytes to be written in hex like 0xXX and to be space separated...
 	if ( argc >= 2 )	memcpy(&data_bytes_as_ascii[0], argv[1], 2);
 	if ( argc >= 3 )	memcpy(&data_bytes_as_ascii[2], argv[2], 2);
@@ -89,69 +92,90 @@ int main( int argc, char *argv[] )
 	if ( argc >= 5 )	memcpy(&data_bytes_as_ascii[6], argv[4], 2);
 	if ( argc >= 6 )	memcpy(&data_bytes_as_ascii[8], argv[5], 2);
 	if ( argc >= 7 )	memcpy(&data_bytes_as_ascii[10], argv[6], 2);
+	if ( argc >= 8 )	num_of_bytes = (unsigned char) strtol(argv[7], NULL, 10);
 
 	// Confirm by printing out what was obtained...
 	// printf("Read input was: %s\n", data_bytes_as_ascii);
 	
 	// Now convert the hexadecimal ascii values to actual hexadecimal integers
-	// I really should have used arrays + for loops here...
-	char byte1[3];	
-	char byte2[3];
-	char byte3[3];
-	char byte4[3];
-	char byte5[3];
-	char byte6[3];
-	byte1[2] = '\0';
-	byte2[2] = '\0';
-	byte3[2] = '\0';
-	byte4[2] = '\0';
-	byte5[2] = '\0';
-	byte6[2] = '\0';
-	memcpy(byte1, &data_bytes_as_ascii[0], 2);
-	memcpy(byte2, &data_bytes_as_ascii[2], 2);
-	memcpy(byte3, &data_bytes_as_ascii[4], 2);
-	memcpy(byte4, &data_bytes_as_ascii[6], 2);
-	memcpy(byte5, &data_bytes_as_ascii[8], 2);
-	memcpy(byte6, &data_bytes_as_ascii[10], 2);
-	data_bytes[0] = (unsigned char) ( strtol(byte1, NULL, 16) & 0xFFu );
-	data_bytes[1] = (unsigned char) ( strtol(byte2, NULL, 16) & 0xFFu );
-	data_bytes[2] = (unsigned char) ( strtol(byte3, NULL, 16) & 0xFFu );
-	data_bytes[3] = (unsigned char) ( strtol(byte4, NULL, 16) & 0xFFu );
-	data_bytes[4] = (unsigned char) 0u;	// Byte 5 is always zero
-	data_bytes[5] = (unsigned char) ( strtol(byte6, NULL, 16) & 0xFFu );
-
-
-	// Print converted values...
-	printf("\nRead input converted into hexadecimal integer: %02X %02X %02X %02X %02X %02X\n", data_bytes[0], data_bytes[1], data_bytes[2], data_bytes[3], data_bytes[4], data_bytes[5]); 
-
-	// Now fill up the Kreisel_PTRequest struct...
-	// request part...
-	Kreisel_PTRequest.request.state_req = data_bytes[0] & 0x0Fu;
-	Kreisel_PTRequest.request.isolation_req = ( data_bytes[0] & 0xF0u ) >> 4;
-	Kreisel_PTRequest.request.sleep_req = data_bytes[1] & 0x0Fu;
-	Kreisel_PTRequest.request.range_req = ( data_bytes[1] & 0xF0u ) >> 4;
-	// Charge Power Available
-	Kreisel_PTRequest.chargepoweravail[0] = data_bytes[2];
-	Kreisel_PTRequest.chargepoweravail[1] = data_bytes[3];
-	// reserved byte (byte 5)...
-	Kreisel_PTRequest.rsvd = data_bytes[4];
-	// comm part
-	Kreisel_PTRequest.comm.ctrl_aux1 = data_bytes[5] & 0x01u;
-	Kreisel_PTRequest.comm.ctrl_aux2 = data_bytes[5] & 0x02u;
-	Kreisel_PTRequest.comm.ctrl_aux3 = data_bytes[5] & 0x04u;
-	Kreisel_PTRequest.comm.ctrl_aux4 = data_bytes[5] & 0x08u;
-	Kreisel_PTRequest.comm.alivecounter = ( data_bytes[5] & 0xF0u ) >> 4;
+	if ( num_of_bytes != 4u )
+	{
+		// I really should have used arrays + for loops here...
+		char byte1[3];	
+		char byte2[3];
+		char byte3[3];
+		char byte4[3];
+		char byte5[3];
+		char byte6[3];
+		byte1[2] = '\0';
+		byte2[2] = '\0';
+		byte3[2] = '\0';
+		byte4[2] = '\0';
+		byte5[2] = '\0';
+		byte6[2] = '\0';
+		memcpy(byte1, &data_bytes_as_ascii[0], 2);
+		memcpy(byte2, &data_bytes_as_ascii[2], 2);
+		memcpy(byte3, &data_bytes_as_ascii[4], 2);
+		memcpy(byte4, &data_bytes_as_ascii[6], 2);
+		memcpy(byte5, &data_bytes_as_ascii[8], 2);
+		memcpy(byte6, &data_bytes_as_ascii[10], 2);
+		data_bytes[0] = (unsigned char) ( strtol(byte1, NULL, 16) & 0xFFu );
+		data_bytes[1] = (unsigned char) ( strtol(byte2, NULL, 16) & 0xFFu );
+		data_bytes[2] = (unsigned char) ( strtol(byte3, NULL, 16) & 0xFFu );
+		data_bytes[3] = (unsigned char) ( strtol(byte4, NULL, 16) & 0xFFu );
+		data_bytes[4] = (unsigned char) 0u;	// Byte 5 is always zero
+		data_bytes[5] = (unsigned char) ( strtol(byte6, NULL, 16) & 0xFFu );
 	
-	// Print out to confirm correct assignment...
-	uint16_t charge_power = ( (uint16_t) Kreisel_PTRequest.chargepoweravail[0] << 8 ) | ( (uint16_t) Kreisel_PTRequest.chargepoweravail[1] );
-	printf("\nState Request:\t\t%d\nIsolation Request:\t%d\nSleep Request:\t\t%d\nRange Request:\t\t%d\nCharge Power Available:\t%d\nReserved:\t\t%d\n",
-		Kreisel_PTRequest.request.state_req, Kreisel_PTRequest.request.isolation_req, Kreisel_PTRequest.request.sleep_req, Kreisel_PTRequest.request.range_req, charge_power,
-		Kreisel_PTRequest.rsvd);
-	printf("Ctrl Aux1:\t\t%d\nCtrl Aux2:\t\t%d\nCtrl Aux3:\t\t%d\nCtrl Aux4:\t\t%d\nAlive Counter:\t\t%d\n",
-		Kreisel_PTRequest.comm.ctrl_aux1, Kreisel_PTRequest.comm.ctrl_aux2, Kreisel_PTRequest.comm.ctrl_aux3, Kreisel_PTRequest.comm.ctrl_aux4, Kreisel_PTRequest.comm.alivecounter);
 
-	// Now compute the CRC!
-	KREISEL_CRC();
+
+		// Print converted values...
+		printf("\nRead input converted into hexadecimal integer: %02X %02X %02X %02X %02X %02X\n", data_bytes[0], data_bytes[1], data_bytes[2], data_bytes[3], data_bytes[4], data_bytes[5]); 
+
+		// Now fill up the Kreisel_PTRequest struct...
+		// request part...
+		Kreisel_PTRequest.request.state_req = data_bytes[0] & 0x0Fu;
+		Kreisel_PTRequest.request.isolation_req = ( data_bytes[0] & 0xF0u ) >> 4;
+		Kreisel_PTRequest.request.sleep_req = data_bytes[1] & 0x0Fu;
+		Kreisel_PTRequest.request.range_req = ( data_bytes[1] & 0xF0u ) >> 4;
+		// Charge Power Available
+		Kreisel_PTRequest.chargepoweravail[0] = data_bytes[2];
+		Kreisel_PTRequest.chargepoweravail[1] = data_bytes[3];
+		// reserved byte (byte 5)...
+		Kreisel_PTRequest.rsvd = data_bytes[4];
+		// comm part
+		Kreisel_PTRequest.comm.ctrl_aux1 = data_bytes[5] & 0x01u;
+		Kreisel_PTRequest.comm.ctrl_aux2 = data_bytes[5] & 0x02u;
+		Kreisel_PTRequest.comm.ctrl_aux3 = data_bytes[5] & 0x04u;
+		Kreisel_PTRequest.comm.ctrl_aux4 = data_bytes[5] & 0x08u;
+		Kreisel_PTRequest.comm.alivecounter = ( data_bytes[5] & 0xF0u ) >> 4;
+		
+		// Print out to confirm correct assignment...
+		uint16_t charge_power = ( (uint16_t) Kreisel_PTRequest.chargepoweravail[0] << 8 ) | ( (uint16_t) Kreisel_PTRequest.chargepoweravail[1] );
+		printf("\nState Request:\t\t%d\nIsolation Request:\t%d\nSleep Request:\t\t%d\nRange Request:\t\t%d\nCharge Power Available:\t%d\nReserved:\t\t%d\n",
+			Kreisel_PTRequest.request.state_req, Kreisel_PTRequest.request.isolation_req, Kreisel_PTRequest.request.sleep_req, Kreisel_PTRequest.request.range_req, charge_power,
+			Kreisel_PTRequest.rsvd);
+		printf("Ctrl Aux1:\t\t%d\nCtrl Aux2:\t\t%d\nCtrl Aux3:\t\t%d\nCtrl Aux4:\t\t%d\nAlive Counter:\t\t%d\n",
+			Kreisel_PTRequest.comm.ctrl_aux1, Kreisel_PTRequest.comm.ctrl_aux2, Kreisel_PTRequest.comm.ctrl_aux3, Kreisel_PTRequest.comm.ctrl_aux4, Kreisel_PTRequest.comm.alivecounter);
+		
+		
+		/****** CALL CRC FUNCTION AND PRINT RESULT ********/
+		// Now compute the CRC!
+		KREISEL_CRC();
+	}
+	else
+	{
+		// Message 1F --> SC01_State
+		char bytes[3][4];
+		for ( uint8_t i=0; i<4; i++ )	bytes[3][i] = '\0';
+		for ( uint8_t i=0; i<4; i++ )
+		{
+			memcpy(&bytes[0][i], &data_bytes_as_ascii[2*i], 2);
+			data_bytes[i] = (unsigned char) ( strtol(&bytes[0][i], NULL, 16) & 0xFFu );
+		}
+		alive_counter = data_bytes[3] & 0x0Fu;	// Alive counter in this message is the lower 4 bits of byte 4
+		
+		KREISEL_CRC_4BYTES();
+	}
 
 	// Print out CRC result... 
 	printf("\nCRC Result:\t\t%02X\n", Kreisel_PTRequest.crc);
@@ -187,6 +211,27 @@ static void KREISEL_CRC(void)
 	Kreisel_PTRequest.crc = crc ^ 0xFF;
 }
 
+static void KREISEL_CRC_4BYTES(void)
+{
+	// Auto local variables...
+	unsigned char *s, crc, datalen;
+
+	// s will be used to point to the data_bytes buffer that was updated /w user input bytes
+	s = (unsigned char*) data_bytes;
+	// Four data bytes are used to compute the CRC first
+	datalen = 4;
+	crc = 0xFF; // CRC = 255 Startvalue
+	// Incrememt alivecounter...	-->		Not doing that because I'll assume we are passing in the alive counter as it should appear in the message!
+	// Kreisel_PTRequest.comm.alivecounter = (Kreisel_PTRequest.comm.alivecounter + 1) & 0x0F; // 4-Bit Counter
+
+	// Compute CRC over data bytes and alive counter ...
+	while (datalen--) crc = KREISELCRCTABLEDEF[*s++ ^ crc];
+	// Now do additional step /w alivecounter...
+	crc = KREISELCTCTABLEMSG[alive_counter] ^ crc;
+	// Finalze CRC
+	crc = KREISELCRCTABLEDEF[crc];
+	Kreisel_PTRequest.crc = crc ^ 0xFF;
+}
 
 
 
