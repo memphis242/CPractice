@@ -139,12 +139,13 @@ int main( int argc, char * argv[] )
 
 static void print_log( void )
 {
+	// printf("\npeak_oldest_measurement(): %d", peak_oldest_measurement());
 	printf("\nLog in Hex:\t%0.4x %0.4x", log_arr[1], log_arr[0]);
 	printf( "\nLog in Binary:\t" TWENTY_BITS_PATTERN, 
 		TWENTY_BITS_TO_BINARY(log_arr[1], log_arr[0]) );
 	printf("\nNewest Idx: %d\tNewest Bit: %d", newest_idx, newest_bit);
 	printf("\nOldest Idx: %d\tOldest Bit: %d", oldest_idx, oldest_bit);
-	printf("\nActive Counter: %d\nInactive Counter: %d\nLog Counter: %d\n", active_counter, inactive_counter, log_counter);
+	printf("\nActive Counter: %d\nInactive Counter: %d\nLog Counter: %d\n\n", active_counter, inactive_counter, log_counter);
 }
 	
 
@@ -152,18 +153,18 @@ static void add_measurement_to_log( uint8_t measurement )
 {
 	if ( measurement == 1u )
 	{
+		if ( peak_oldest_measurement() == 0u && log_counter >= LOG_SIZE )
+		{
+			active_counter++;
+			inactive_counter--;
+		}
+
 		log_arr[newest_idx] |= ( 0x0001u << newest_bit );
 		
 		// if the oldest measurement was different than this newest measurement,
 		// and we are at full-size, then increment and decrement the corresponding counters
 		if ( log_counter >= LOG_SIZE )
 		{
-			if ( peak_oldest_measurement() != 1u )
-			{
-				active_counter++;
-				inactive_counter--;
-			}
-
 			// Now increment newest and oldest variables in such a way that newest tracks the next position to be filled
 			// and oldest tracks the measurement that was 19 measurements ago (i.e., the oldest measurement)
 			// if we are at full size, then increment both newest and oldest bits
@@ -183,18 +184,18 @@ static void add_measurement_to_log( uint8_t measurement )
 
 	else if ( measurement == 0u )
 	{
+		if ( peak_oldest_measurement() == 1u )
+		{
+			inactive_counter++;
+			active_counter--;
+		}
+
 		log_arr[newest_idx] &= ~( 0x0001u << newest_bit );
 	
 		// if the oldest measurement was different than this newest measurement,
 		// and we are at full-size, then increment and decrement the corresponding counters
 		if ( log_counter >= LOG_SIZE )
 		{
-			if ( peak_oldest_measurement() != 0u )
-			{
-				inactive_counter++;
-				active_counter--;
-			}
-
 			newest_bit++;
 			oldest_bit++;
 		}
@@ -224,9 +225,15 @@ static void wrap_queue_trackers( uint8_t * tracker_bit, uint8_t * tracker_idx )
 			*tracker_idx = 0u;	// wrap idx around
 		}
 	}
+	else if ( *tracker_bit > 3u && *tracker_idx == 1u )
+	{
+		*tracker_bit = 0u;
+		*tracker_idx = 0u;
+	}
+	
 }
 
 static uint8_t peak_oldest_measurement( void )
 {
-	return ( log_arr[oldest_idx] & ( 0x0001u << oldest_bit ) ) > 0u;
+	return ( log_arr[oldest_idx] & ( 0x0001u << oldest_bit ) ) >> oldest_bit;
 }
