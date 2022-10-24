@@ -153,6 +153,8 @@ static void add_measurement_to_log( uint8_t measurement )
 {
 	if ( measurement == 1u )
 	{
+		// if the oldest measurement was different than this newest measurement,
+		// and we are at full-size, then increment and decrement the corresponding counters
 		if ( peak_oldest_measurement() == 0u && log_counter >= LOG_SIZE )
 		{
 			active_counter++;
@@ -161,13 +163,11 @@ static void add_measurement_to_log( uint8_t measurement )
 
 		log_arr[newest_idx] |= ( 0x0001u << newest_bit );
 		
-		// if the oldest measurement was different than this newest measurement,
-		// and we are at full-size, then increment and decrement the corresponding counters
-		if ( log_counter >= LOG_SIZE )
-		{
-			// Now increment newest and oldest variables in such a way that newest tracks the next position to be filled
+		// Now increment newest and oldest variables in such a way that newest tracks the next position to be filled
 			// and oldest tracks the measurement that was 19 measurements ago (i.e., the oldest measurement)
 			// if we are at full size, then increment both newest and oldest bits
+		if ( log_counter >= LOG_SIZE )
+		{
 			newest_bit++;
 			oldest_bit++;
 		}
@@ -184,7 +184,7 @@ static void add_measurement_to_log( uint8_t measurement )
 
 	else if ( measurement == 0u )
 	{
-		if ( peak_oldest_measurement() == 1u )
+		if ( peak_oldest_measurement() == 1u && log_counter >= LOG_SIZE )
 		{
 			inactive_counter++;
 			active_counter--;
