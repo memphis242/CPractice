@@ -4,6 +4,7 @@
 /************* USEFUL MACROS *************/
 #define BYTE_TO_BINARY_PATTERN "%c%c%c%c%c%c%c%c"
 #define TWO_BYTE_TO_BINARY_PATTERN BYTE_TO_BINARY_PATTERN BYTE_TO_BINARY_PATTERN
+#define TWENTY_BITS_PATTERN "%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c"
 
 #define BYTE_TO_BINARY(byte)  \
   (byte & 0x80 ? '1' : '0'), \
@@ -32,6 +33,28 @@
   (word & 0x0004 ? '1' : '0'), \
   (word & 0x0002 ? '1' : '0'), \
   (word & 0x0001 ? '1' : '0')
+
+  #define TWENTY_BITS_TO_BINARY(word1, word2)  \
+  (word1 & 0x0008 ? '1' : '0'), \
+  (word1 & 0x0004 ? '1' : '0'), \
+  (word1 & 0x0002 ? '1' : '0'), \
+  (word1 & 0x0001 ? '1' : '0'), \
+  (word2 & 0x8000 ? '1' : '0'), \
+  (word2 & 0x4000 ? '1' : '0'), \
+  (word2 & 0x2000 ? '1' : '0'), \
+  (word2 & 0x1000 ? '1' : '0'), \
+  (word2 & 0x0800 ? '1' : '0'), \
+  (word2 & 0x0400 ? '1' : '0'), \
+  (word2 & 0x0200 ? '1' : '0'), \
+  (word2 & 0x0100 ? '1' : '0'), \
+  (word2 & 0x0080 ? '1' : '0'), \
+  (word2 & 0x0040 ? '1' : '0'), \
+  (word2 & 0x0020 ? '1' : '0'), \
+  (word2 & 0x0010 ? '1' : '0'), \
+  (word2 & 0x0008 ? '1' : '0'), \
+  (word2 & 0x0004 ? '1' : '0'), \
+  (word2 & 0x0002 ? '1' : '0'), \
+  (word2 & 0x0001 ? '1' : '0')
 
 #define LOG_SIZE	20u
 
@@ -83,23 +106,29 @@ int main( int argc, char * argv[] )
 	print_log();
 	
 	// Now ask user to start feeding in data one at a time, and print out the log at each step, again in hex and binary
-	printf("\nNow, enter in measurements, one at a time, and the log will be printed at each step. At any point, enter q to stop.\n");
+	printf("\nNow, enter in measurements, one at a time, and the log will be printed at each step. At any point, enter q to stop.\n\n");
 	unsigned char measurement = 0u;
-	do
+	while ( ( measurement = getchar() ) != 'q' )
 	{
-		measurement = getc(stdin);
+
 		if ( measurement == '1' )
 		{
 			add_measurement_to_log(1u);
+			print_log();
 		}
 		else if ( measurement == '0' )
 		{
 			add_measurement_to_log(0u);
+			print_log();
 		}
 
-		print_log();
+		// get rid of any newline characters from previous input...
+		while ( getchar() != '\n' )
+		{
+			continue;
+		}
 
-	} while ( measurement != 'q' );
+	}
 
 
 
@@ -111,8 +140,8 @@ int main( int argc, char * argv[] )
 static void print_log( void )
 {
 	printf("\nLog in Hex:\t%0.4x %0.4x", log_arr[1], log_arr[0]);
-	printf( "\nLog in Binary:\t" TWO_BYTE_TO_BINARY_PATTERN TWO_BYTE_TO_BINARY_PATTERN, 
-		TWO_BYTE_TO_BINARY(log_arr[1]), TWO_BYTE_TO_BINARY(log_arr[0]) );
+	printf( "\nLog in Binary:\t" TWENTY_BITS_PATTERN, 
+		TWENTY_BITS_TO_BINARY(log_arr[1], log_arr[0]) );
 	printf("\nNewest Idx: %d\tNewest Bit: %d", newest_idx, newest_bit);
 	printf("\nOldest Idx: %d\tOldest Bit: %d", oldest_idx, oldest_bit);
 	printf("\nActive Counter: %d\nInactive Counter: %d\nLog Counter: %d\n", active_counter, inactive_counter, log_counter);
