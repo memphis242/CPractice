@@ -1,51 +1,272 @@
 #include <stdio.h>
 #include <stdint.h>
 
-static const uint16_t current_limit1 = 32600U;  // 30A in CurrentLimit_T form: Scale: 0.05, Offset: -1600
-static const uint16_t current_limit2 = 43178U;  // 558.9 in CurrentLimit_T --> The max that can be multiplied by 3 before upper limit of CurrentLimit_T
-static const uint16_t num_of_packs = 3u;
-static const uint16_t dc_bus_voltage = 7842U; // 392.1V /w Scale: 0.05
-static const uint16_t current_limit3 = 34064U; // 103.2A /w Scale: 0.05, Offset: -1600
+#define INVALID_TEMP        0xFFFFu
+#define VALID_TEMP(T)       ( ( (T) != 0u) && ( (T) != INVALID_TEMP) )    // Temperature validity check macro; I am assuming values of 0u and 0xFFFFu are invalid values
+#define DATA_GOODDATA       (-1)
+#define DATA_NOTAVAILABLE   (31)
+#define RWV_TO_SI_TEMP_INPUT(rwv)     ( (uint16_t) ( ( rwv + 273 ) * 32 ) )
+#define RWV_TO_SI_TEMP_OUTPUT(rwv)    ( (uint16_t) ( rwv + 40 ) )
+
+#define INLET_COOLANT_TEMP_VALUE    _vars[CAN_HVESSIntCoolantTemp].value
+#define INLET_COOLANT_TEMP_STATUS   _vars[CAN_HVESSIntCoolantTemp].status
+#define OUTLET_COOLANT_TEMP_VALUE    _vars[CAN_HVESSOutletCoolantTemp].value
+#define OUTLET_COOLANT_TEMP_STATUS   _vars[CAN_HVESSOutletCoolantTemp].status
+
+#define SET_TEMP_ARRAYS(val) {                                          \
+                                   CoolantTempInlet_Array[0] = val;     \
+                                   CoolantTempInlet_Array[1] = val;     \
+                                   CoolantTempInlet_Array[2] = val;     \
+                                   CoolantTempOutlet_Array[0] = val;    \
+                                   CoolantTempOutlet_Array[1] = val;    \
+                                   CoolantTempOutlet_Array[2] = val;    \
+                             }
+
+typedef uint16_t JD_VARMNGR_OBJ;
+typedef int16_t Status_T;
+typedef uint8_t UInt8_T;
+typedef uint16_t UInt16_T;
+typedef int16_t SInt16_T;
+typedef uint32_t UInt32_T;
+
+enum CAN_VARS_E
+{
+    CAN_HVESSIntCoolantTemp,
+    CAN_HVESSOutletCoolantTemp,
+    NUM_OF_CAN_VARS
+};
+
+struct SYSTEMVARIABLE_S
+{
+    JD_VARMNGR_OBJ value;
+    Status_T status;
+};
+typedef struct SYSTEMVARIABLE_S SYSTEMVARIABLE_T;
+                   
+
+
+// Global Variables
+struct SYSTEMVARIABLE_S _vars[NUM_OF_CAN_VARS];
+
+
+// Static variables
+static uint16_t CoolantTempInlet_Array[] = { INVALID_TEMP, INVALID_TEMP, INVALID_TEMP };
+static uint16_t CoolantTempOutlet_Array[] = { INVALID_TEMP, INVALID_TEMP, INVALID_TEMP };
+
+static void Compute_CoolantTemps(void);
+static void JD_WriteVar(enum CAN_VARS_E can_var, SYSTEMVARIABLE_T * var);
+
+
 
 
 int main(void) {
 
-    // Checking what a left shift does to a signed number
-    int8_t val = -3;    // 0xFD in two's complement, or 1111 1101
-    printf("\n\nValue before shifting left: %d", val);
-
-    // Working by hand:
-    // Left Shift       Original        Result          Value
-    // 0                1111 1101       1111 1101       -3
-    // 1                1111 1101       1111 1010       -6
-    // 2                1111 1101       1111 0100       -12
-    // 3                1111 1101       1110 1000       -24
-    // 4                1111 1101       1101 0000       -48
-    // 5                1111 1101       1010 0000       -96
-    // 6                1111 1101       0100 0000       64      --> No longer signed!
-    // 7                1111 1101       1000 0000       -128
-    // 8                1111 1101       0000 0000       0
-    // any more shifts result in 0
-
-    for ( uint8_t i=1; i<12; i++ )
+    // Let's unit test my coolant temp function!
+    printf("\n\nSTARTING UNIT TEST OF Compute_CoolantTemps FUNCTION\n");
+    printf("----------------------------------------------------\n\n");
+    
+    // First test invalid values...
+    // First set will be INVALID_TEMP, which is what the arrays are initialized to already
+    printf("\nChecking INVALID_TEMP input...");
+    Compute_CoolantTemps();
+    if ( INLET_COOLANT_TEMP_VALUE != INVALID_TEMP || OUTLET_COOLANT_TEMP_VALUE != INVALID_TEMP )
     {
-        int8_t val_shifted = val << i;
-        printf("\nValue after shifting left by %d: %d", i, val_shifted);
+        printf("\tFAIL at INVALID_TEMP input!\n");
+    }
+    else
+    {
+        printf("\tPASS :D\n");
     }
 
-    // Let's start at a different initial value
-    printf("\n");
-    val = -15;    // 0xF4 in two's complement, or 1111 0001
-    printf("\n\nValue before shifting left: %d", val);
-
-    for ( uint8_t i=1; i<12; i++ )
+    // Now checking for input of 0
+    printf("\nChecking 0 input...");
+    SET_TEMP_ARRAYS(0);
+    Compute_CoolantTemps();
+    if ( INLET_COOLANT_TEMP_VALUE != INVALID_TEMP || OUTLET_COOLANT_TEMP_VALUE != INVALID_TEMP )
     {
-        int8_t val_shifted = val << i;
-        printf("\nValue after shifting left by %d: %d", i, val_shifted);
+        printf("\tFAIL at 0 input!\n");
     }
+    else
+    {
+        printf("\tPASS :D\n");
+    }
+
+    // Now checking for correct averaging...
+    // First, set all values the same way and see; we'll try three different values
+    printf("\nChecking 23C input...");
+    SET_TEMP_ARRAYS( RWV_TO_SI_TEMP_INPUT(23) );
+    Compute_CoolantTemps();
+    if ( INLET_COOLANT_TEMP_VALUE != RWV_TO_SI_TEMP_OUTPUT(23) || OUTLET_COOLANT_TEMP_VALUE != RWV_TO_SI_TEMP_OUTPUT(23) )
+    {
+        printf("\tFAIL at 23C input!\n");
+    }
+    else
+    {
+        printf("\tPASS :D\n");
+    }
+    printf("\nChecking -40C input...");
+    SET_TEMP_ARRAYS( RWV_TO_SI_TEMP_INPUT(-40) );
+    Compute_CoolantTemps();
+    if ( INLET_COOLANT_TEMP_VALUE != RWV_TO_SI_TEMP_OUTPUT(-40) || OUTLET_COOLANT_TEMP_VALUE != RWV_TO_SI_TEMP_OUTPUT(-40) )
+    {
+        printf("\tFAIL at -40C input!\n");
+    }
+    else
+    {
+        printf("\tPASS :D\n");
+    }
+    printf("\nChecking 70C input...");
+    SET_TEMP_ARRAYS( RWV_TO_SI_TEMP_INPUT(70) );
+    Compute_CoolantTemps();
+    if ( INLET_COOLANT_TEMP_VALUE != RWV_TO_SI_TEMP_OUTPUT(70) || OUTLET_COOLANT_TEMP_VALUE != RWV_TO_SI_TEMP_OUTPUT(70) )
+    {
+        printf("\tFAIL at 70C input!\n");
+    }
+    else
+    {
+        printf("\tPASS :D\n");
+    }
+
+    // Okay, now check for uneven input values...
+    printf("\nChecking uneven input...");
+    CoolantTempInlet_Array[0] = RWV_TO_SI_TEMP_INPUT(27);
+    CoolantTempInlet_Array[1] = RWV_TO_SI_TEMP_INPUT(25);
+    CoolantTempInlet_Array[2] = RWV_TO_SI_TEMP_INPUT(28);
+    CoolantTempOutlet_Array[0] = RWV_TO_SI_TEMP_INPUT(20);
+    CoolantTempOutlet_Array[1] = RWV_TO_SI_TEMP_INPUT(22);
+    CoolantTempOutlet_Array[2] = RWV_TO_SI_TEMP_INPUT(19);
+    Compute_CoolantTemps();
+    if ( INLET_COOLANT_TEMP_VALUE != RWV_TO_SI_TEMP_OUTPUT(26) || OUTLET_COOLANT_TEMP_VALUE != RWV_TO_SI_TEMP_OUTPUT(20) )
+    {
+        printf("\tFAIL at uneven input!\n");
+    }
+    else
+    {
+        printf("\tPASS :D\n");
+    }
+
+    printf("\nChecking uneven input with one invalid value...");
+    CoolantTempInlet_Array[0] = RWV_TO_SI_TEMP_INPUT(29);
+    CoolantTempInlet_Array[1] = RWV_TO_SI_TEMP_INPUT(25);
+    CoolantTempInlet_Array[2] = INVALID_TEMP;
+    CoolantTempOutlet_Array[0] = RWV_TO_SI_TEMP_INPUT(20);
+    CoolantTempOutlet_Array[1] = RWV_TO_SI_TEMP_INPUT(22);
+    CoolantTempOutlet_Array[2] = INVALID_TEMP;
+    Compute_CoolantTemps();
+    if ( INLET_COOLANT_TEMP_VALUE != RWV_TO_SI_TEMP_OUTPUT(27) || OUTLET_COOLANT_TEMP_VALUE != RWV_TO_SI_TEMP_OUTPUT(21) )
+    {
+        printf("\tFAIL at uneven input with one invalid value!\n");
+    }
+    else
+    {
+        printf("\tPASS :D\n");
+    }
+
 
     return 0;
 }
+
+
+
+static void JD_WriteVar(enum CAN_VARS_E can_var, SYSTEMVARIABLE_T * var)
+{
+    if ( can_var < NUM_OF_CAN_VARS )
+    {
+        _vars[can_var] = *var;
+    }
+}
+
+
+static void Compute_CoolantTemps(void)
+{
+    SYSTEMVARIABLE_T inlet_temp = {INVALID_TEMP, DATA_NOTAVAILABLE}, outlet_temp = {INVALID_TEMP, DATA_NOTAVAILABLE};
+    UInt16_T inlet1 = INVALID_TEMP, inlet2 = INVALID_TEMP, inlet3 = INVALID_TEMP;
+    UInt16_T outlet1 = INVALID_TEMP, outlet2 = INVALID_TEMP, outlet3 = INVALID_TEMP;
+    UInt8_T validity_count = 0u;
+    UInt32_T cumulative_sum = 0u;
+
+    // Coming in from Romeo batteries: Scale: 0.03125, Offset: -273
+    // Going out over CAN: Scale: 1, Offset: -40
+    // (same units --> Celsius)
+    // To convert, SIcan = SIbat / 32 - 233
+    // Also, we are going with the Average Coolant Temperature measurement
+    // I will first convert all types to the output CAN type IF VALID then handle the averaging
+    if ( VALID_TEMP(CoolantTempInlet_Array[0]) )
+    {
+        inlet1 = (UInt16_T) ( (SInt16_T)( CoolantTempInlet_Array[0] >> 5 ) - 233 );
+    }
+    if ( VALID_TEMP(CoolantTempInlet_Array[1]) )
+    {
+        inlet2 = (UInt16_T) ( (SInt16_T)( CoolantTempInlet_Array[1] >> 5 ) - 233 );
+    }
+    if ( VALID_TEMP(CoolantTempInlet_Array[2]) )
+    {
+        inlet3 = (UInt16_T) ( (SInt16_T)( CoolantTempInlet_Array[2] >> 5 ) - 233 );
+    }
+    if ( VALID_TEMP(CoolantTempOutlet_Array[0]) )
+    {
+        outlet1 = (UInt16_T) ( (SInt16_T)( CoolantTempOutlet_Array[0] >> 5 ) - 233 );
+    }
+    if ( VALID_TEMP(CoolantTempOutlet_Array[1]) )
+    {
+        outlet2 = (UInt16_T) ( (SInt16_T)( CoolantTempOutlet_Array[1] >> 5 ) - 233 );
+    }
+    if ( VALID_TEMP(CoolantTempOutlet_Array[2]) )
+    {
+        outlet3 = (UInt16_T) ( (SInt16_T)( CoolantTempOutlet_Array[2] >> 5 ) - 233 );
+    }
+
+    // Now take the average.
+    // Only average over valid values.
+    // NOTE! I'm not worried about overflow because 32 bits is more than enough to
+    //       hold the sum of three 16 bit integers, and the division afterwards is
+    //       guaranteed to bring the result to a 16-bit value.
+    // We'll start with the inlet temperature.
+    if ( inlet1 != INVALID_TEMP )
+    {
+        cumulative_sum += inlet1; validity_count++;
+    }
+    if ( inlet2 != INVALID_TEMP )
+    {
+        cumulative_sum += inlet2; validity_count++;
+    }
+    if ( inlet3 != INVALID_TEMP )
+    {
+        cumulative_sum += inlet3; validity_count++;
+    }
+    if ( validity_count > 0 )
+    {
+        inlet_temp.value = (UInt16_T) ( cumulative_sum / validity_count );
+        inlet_temp.status = DATA_GOODDATA;
+    }
+    // Otherwise, inlet_temp stays at INVALID_TEMP value
+
+    // Now the outlet temps
+    cumulative_sum = 0; validity_count = 0u;    // Reset cumulative sum and validity counter
+    if ( outlet1 != INVALID_TEMP )
+    {
+        cumulative_sum += outlet1; validity_count++;
+    }
+    if ( outlet2 != INVALID_TEMP )
+    {
+        cumulative_sum += outlet2; validity_count++;
+    }
+    if ( outlet3 != INVALID_TEMP )
+    {
+        cumulative_sum += outlet3; validity_count++;
+    }
+    if ( validity_count > 0 )
+    {
+        outlet_temp.value = (UInt16_T) ( cumulative_sum / validity_count );
+        outlet_temp.status = DATA_GOODDATA;
+    }
+
+    // Write to CAN vars
+    // TODO: Passing pointer to variables on the stack... Dangerous if not careful!
+    JD_WriteVar(CAN_HVESSIntCoolantTemp, &inlet_temp);
+    JD_WriteVar(CAN_HVESSOutletCoolantTemp, &outlet_temp);
+}
+
 
 
 
