@@ -4,3 +4,6 @@ This is when I first *really* taught myself to program in C using the book "C Pr
 
 ### Intent
 I intend to use this repo for any practice C code I do for generic, non-embedded applications. For one thing, I intend to finally return to Chapter 17 - Advanced Data Representation of the textbook I had used, and cover the material in there. I am actually already familiar with general data structure forms used in programming through my Computer Science II class at NDSU (*we had used Java instead*), but C is a different ball game, and also more directly applicable to embedded systems, which is what I work with.
+
+### How To Build
+i686-w64-mingw32-gcc -o name_of_file.exe name_of_file.c
