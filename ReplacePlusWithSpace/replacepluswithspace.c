@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
    newFileName[STRING_MAX_SIZE + 1] = '\0';
 
    // Replace filename
-   ret = replace( myFileName, newFileName );
+   ret = rename( myFileName, newFileName );
    if ( ret == 0 )
    {
       printf("File name changed successfully.");
